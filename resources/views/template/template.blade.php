@@ -10,6 +10,7 @@
 
     <!-- Vite css -->
     @vite(['resources/css/app.css'])
+
     <!-- Favicon -->
     <link rel="shortcut icon" href="{{ asset('favicon.ico') }}" type="image/x-icon">
 
