@@ -13,6 +13,10 @@ module.exports = {
             fontFamily: {
                 sans: ['Figtree', ...defaultTheme.fontFamily.sans],
             },
+            colors: {
+                // contoh custom color
+                'BLUE-OCEAN': '#4f42b5'
+            }
         },
     },
 
