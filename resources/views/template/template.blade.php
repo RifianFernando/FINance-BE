@@ -21,32 +21,39 @@
     @yield('head')
 </head>
     <script>
-        const Change=0;
-        const ChangeIcon = true;
-        const ChangeStyles = ['fixed flex left-[-65%] top-0 h-full border-r border-r-gray-900 bg-gray-500 ease-in-out duration-500','fixed flex left-0 top-0 h-full border-r border-r-gray-900 bg-gray-500 ease-in-out duration-500 justify-center w-[100%]'];
-        const [Change, setChange] = useState(0);
-        const [ChangeIcon, setChangeIcon] = useState(true);
+        let Index=0;
+        var image = document.querySelector('#MobileIcon');
+        let ChangeStyles = [
+            'fixed flex flex-col text-center left-[-100%] top-0 h-full border-r border-r-gray-900 bg-gray-500',
+            'fixed flex flex-col text-center left-0 top-0 h-full border-r border-r-gray-900 bg-gray-500 ease-in-out duration-500 w-[100%]'
+        ];
 
-        const ClickNav = () => {
-            Change = (Change+1) % ChangeStyles.length;
-            ChangeIcon = !ChangeIcon;
+        let url = [
+            "{{ asset('assets/navbar/Hamburger.png') }}",
+            "{{ asset('assets/navbar/Close.png') }}"
+        ]
+
+
+
+        function ClickNav() {
+            Index = (Index+1) % ChangeStyles.length;
+        }
+
+        function ChangeNavStyle(){
+            ClickNav();
+            document.getElementById("nav-container").className = ChangeStyles[Index];
+            image.src = url[Index];
         }
         
-        const Nav = document.getElementByID("#nav-container")
-
-        const ChangeNavStyle = () => {
-            ClickNav();
-            document.getElementById("nav-container").className(ChangeStyles[Change])
-        }
 
     </script>
 
     <div class="flex flex-row">
             <div class="sticky max-w-[300px] hidden flex-col px-10 pt-16 h-screen bg-[#23273C] text-[#FAFAFA] md:flex justify-between left-0 top-0">
                 <div class="flex flex-col ">
-                    <h3 class="w-full text-4xl font-bold text-left">FINEance</h3>
-                    <ul class="pt-5 text-md ">
-                        <li class="pt-5 ">Dashboard</li>
+                    <h3 class="text-4xl font-bold text-left">FINEance</h3>
+                    <ul class="text-md">
+                        <li class="pt-5">Dashboard</li>
                         <li class="pt-5">Transaction</li>
                         <li class="pt-5 ">Report</li>
                         <li class="pt-5">Subscription</li>
@@ -55,22 +62,21 @@
                 </div>
                 <div class="mb-8">Option</div>
             </div>
-
-            <div onClick={ClickNav} class="md:hidden"  id="nav-container">
-                {ChangeIcon ? <img class="w-full" src="{{ asset('assets/customer-center/Frame2766.png') }}"> : <AiOutlineClose size={20} class="transition-transform"/>}
-            </div>
-            <div class="hidden" onClick="ChangeNavStyle()"  id="nav-container">
-                <h3 class="pt-2 text-4xl font-bold fixed bg-gray-500 ml-5">FINEance</h3>
-                <ul class="pt-20 ml-5 bg-gray-500">
-                    <li class=" bg-gray-500 ">HOME</li>
-                    <li class="pt-3 bg-gray-500 ">ABOUT</li>
-                    <li class="pt-3 bg-gray-500 ">CONTACT</li>
-                    <li class="pt-3 bg-gray-500 ">SIGN IN</li>
-                    <li class="pt-3 bg-gray-500 ">REGISTER</li>
-                </ul>
-            </div>
-            <div>
-                @yield('body')
+            @yield('body')
+            <div class="flex flex-col right-0 top-0 fixed py-4 px-8">
+                <div onClick="ChangeNavStyle()" class="md:hidden" >
+                    <button><img class="w-[30px] h-[30px]" src="{{ asset('assets/navbar/Hamburger.png') }}" id="MobileIcon"></button>
+                </div>
+                <div class="hidden mt-10" onClick="ChangeNavStyle()" id="nav-container" >
+                    <h3 class="mt-10 text-4xl font-bold">FINEance</h3>
+                    <ul class="mt-10 text-xl">
+                        <li class="">HOME</li>
+                        <li class="pt-8">ABOUT</li>
+                        <li class="pt-8">CONTACT</li>
+                        <li class="pt-8">SIGN IN</li>
+                        <li class="pt-8">REGISTER</li>
+                    </ul>
+                </div>
             </div>
         </div>
 
