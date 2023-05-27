@@ -6,6 +6,6 @@
 
 @section('body')
     <h1 class="text-BLUE-OCEAN">
-        Hello world!
+
     </h1>
 @endsection
