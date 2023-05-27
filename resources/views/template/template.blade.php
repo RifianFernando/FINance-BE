@@ -22,9 +22,7 @@
 </head>
 
 <body>
-    @include('template.navbar')
-    @yield('body')
-</body>
+
 
         const ChangeNavStyle = () => {
             ClickNav();
@@ -61,11 +59,11 @@
                     <li class="pt-3 bg-gray-500 ">REGISTER</li>
                 </ul>
             </div>
-            <div>
-                @yield('body')
-            </div>
-        </div>
 
+                @yield('body')
+
+        </div>
+        </body>
 
             <!-- <div class='grid max-w-[1240px] mx-auto py-16 px-4 gap-8 text-gray-800 md:grid-cols-6'>
                 <div class='col-span-2'>
