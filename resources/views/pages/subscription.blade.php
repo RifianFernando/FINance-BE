@@ -3,7 +3,7 @@
 @section('head')
 
 @endsection
-
+    
 @section('body')
 
     <body>
