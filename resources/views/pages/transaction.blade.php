@@ -7,7 +7,7 @@
 @section('body')
 
     <body>
-       <div class="w-full">
+       <div class="w-full h-full">
             <div class="flex justify-evenly items-center">
                 <h1 class="font-castoro text-[64px] items-center">Transaction</h1>
             </div>
