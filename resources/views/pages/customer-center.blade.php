@@ -28,18 +28,20 @@
 
             <div class="w-full flex justify-center">
                 <div class="grid grid-cols-2 w-2/5 gap-6">
-                    <div class="bg-fin-blue rounded-xl text-lg">
+                    <a href="https://outlook.office.com/" class="flex bg-fin-blue rounded-xl text-lg items-center">
+                        <img class="w-3 h-3 mx-2" src="{{asset('assets/customer-center/mail.png')}}">
                         <p class="font-castoro text-[15px] text-center text-white">rifian.fernando@binus.ac.id</p>
-                    </div>
-                    <div class="bg-fin-blue rounded-xl text-lg">
+                    </a>
+                    <a href="https://www.skype.com/" class="flex bg-fin-blue rounded-xl text-lg items-center">
+                        <img class="w-3 h-3 mx-2" src="{{asset('assets/customer-center/phone.png')}}">
                         <p class="font-castoro text-[15px] text-center text-white">+62 812 3456 7890</p>
-                    </div>
+<                   /a>
                 </div>
             </div>
 
             <div>
                 <br>
-                <img class="w-full" src="{{asset('assets/customer-center/Frame2766.png')}}">
+                <img class="w-full" src="{{asset('assets/customer-center/pic.png')}}">
             </div>
         </div>
     </body>
