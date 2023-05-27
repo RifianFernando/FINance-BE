@@ -6,7 +6,7 @@
 @section('body')
 
     <body>
-        <div>
+        <div class="w-full">
             <div>
                 <br>
                 <h1 class="font-castoro text-[64px] text-center text-black">Customer Center</h1>
