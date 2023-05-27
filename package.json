@@ -2,7 +2,8 @@
     "private": true,
     "scripts": {
         "dev": "vite",
-        "build": "vite build"
+        "build": "vite build",
+        "prepare": "npm install && composer install && cp .env.example .env && php artisan key:generate && php artisan migrate:fresh --seed && php artisan storage:link"
     },
     "devDependencies": {
         "@tailwindcss/forms": "^0.5.2",
