@@ -8,7 +8,7 @@
 
     <body>
         
-        <div class="flex flex-col justify-evenly items-center w-full h-screen bg-darker-white">
+        <div class="flex flex-col justify-evenly items-center w-full h-full bg-darker-white">
             
             <div>
                 <h1 class="font-castoro text-[64px]">Subscription</h1>
@@ -64,6 +64,7 @@
 
         </div>
 
+        
         <script src="">
 
         </script>
