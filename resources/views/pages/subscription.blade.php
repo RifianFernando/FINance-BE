@@ -8,7 +8,7 @@
 
     <body>
         
-        <div class="flex flex-col justify-evenly items-center w-full h-screen bg-darker-white">
+        <div class="flex flex-col justify-evenly items-center w-full h-full bg-darker-white">
             
             <div>
                 <h1 class="font-castoro text-[64px]">Subscription</h1>
@@ -22,7 +22,7 @@
 
                 <div class="flex flex-col items-center w-3/12 h-[580px] rounded-[10px] bg-white drop-shadow-subs-card">
                     <h1 class="text-[52px] text-subs-brown">BASIC</h1>
-                    <p class="text-[24px]">Free Financial Management</p>
+                    <p class="text-[24px] text-center">Free Financial Management</p>
                     <h1 class="text-[52px] flex flex-col justify-center items-center h-1/4">Free</h1>
                     <h2 class="text-[20px] bg-fin-blue rounded-[10px] w-1/2 text-center text-white">SIGN UP NOW</h2>
                     
@@ -34,7 +34,7 @@
 
                 <div class="flex flex-col items-center w-3/12 h-[580px] rounded-[10px] bg-white drop-shadow-subs-card">
                     <h1 class="text-[52px] text-subs-brown">AD-FREE</h1>
-                    <p class="text-[24px]">No Obstruction</p>
+                    <p class="text-[24px] text-center">No Obstruction</p>
                     <h1 class="text-[52px] flex flex-col justify-center items-center h-1/4">$5<span class="text-[14px] text-subs-brown">Per Month</span></h1>
                     <h2 class="text-[20px] bg-fin-blue rounded-[10px] w-1/2 text-center text-white">SIGN UP NOW</h2>
 
@@ -47,7 +47,7 @@
 
                 <div class="flex flex-col items-center w-3/12 h-[580px] rounded-[10px] bg-white drop-shadow-subs-card">
                     <h1 class="text-[52px] text-subs-brown">PRO</h1>
-                    <p class="text-[24px]">Complete Package</p>
+                    <p class="text-[24px] text-center">Complete Package</p>
                     <h1 class="text-[52px] flex flex-col justify-center items-center h-1/4">$10<span class="text-[14px] text-subs-brown">Per Month</span></h1>
                     <h2 class="text-[20px] bg-fin-blue rounded-[10px] w-1/2 text-center text-white">SIGN UP NOW</h2>
 
