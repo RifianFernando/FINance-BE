@@ -1,3 +1,5 @@
+
+
 <script>
     const Change = 0;
     const ChangeIcon = true;
@@ -26,10 +28,10 @@
     <div class=" max-w-[300px] hidden flex-col px-10 pt-16 h-screen bg-[#23273C] text-[#FAFAFA] md:flex justify-between">
         <div class="flex flex-col ">
             <h3 class="w-full text-4xl font-bold text-left">FINEance</h3>
-            <ul class="pt-5 text-md ">
-                <li class="pt-5 ">Dashboard</li>
+            <ul class="pt-5 text-md">
+                <li class="pt-5">Dashboard</li>
                 <li class="pt-5">Transaction</li>
-                <li class="pt-5 ">Report</li>
+                <li class="pt-5">Report</li>
                 <li class="pt-5">Subscription</li>
                 <li class="pt-5">Customer Center</li>
             </ul>
