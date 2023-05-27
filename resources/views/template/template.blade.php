@@ -63,7 +63,7 @@
                 <div class="mb-8">Option</div>
             </div>
             @yield('body')
-            <div class="flex flex-col right-0 top-0 fixed py-4 px-8">
+            <div class="flex flex-col right-0 top-0 fixed py-4 px-8 md:hidden">
                 <div onClick="ChangeNavStyle()" class="md:hidden" >
                     <button><img class="w-[30px] h-[30px]" src="{{ asset('assets/navbar/Hamburger.png') }}" id="MobileIcon"></button>
                 </div>
@@ -72,35 +72,16 @@
                     <ul class="mt-10 text-xl">
                         <li class="">HOME</li>
                         <li class="pt-8">ABOUT</li>
-                        <li class="pt-8">CONTACT</li>
-                        <li class="pt-8">SIGN IN</li>
-                        <li class="pt-8">REGISTER</li>
+                        <li class="pt-5">CONTACT</li>
+                        <li class="pt-5">SIGN IN</li>
+                        <li class="pt-5">REGISTER</li>
                     </ul>
                 </div>
             </div>
         </div>
 
-        <div onClick={ClickNav} class="md:hidden" id="nav-container">
-            {ChangeIcon ? <img class="w-full" src="{{ asset('assets/customer-center/Frame2766.png') }}"> :
-            <AiOutlineClose size={20} class="transition-transform" />}
-        </div>
-        <div class="hidden" onClick="ChangeNavStyle()" id="nav-container">
-            <h3 class="pt-2 text-4xl font-bold fixed bg-gray-500 ml-5">FINEance</h3>
-            <ul class="pt-20 ml-5 bg-gray-500">
-                <li class=" bg-gray-500 ">HOME</li>
-                <li class="pt-3 bg-gray-500 ">ABOUT</li>
-                <li class="pt-3 bg-gray-500 ">CONTACT</li>
-                <li class="pt-3 bg-gray-500 ">SIGN IN</li>
-                <li class="pt-3 bg-gray-500 ">REGISTER</li>
-            </ul>
-        </div>
 
-        @yield('body')
-
-    </div>
-</body>
-
-<!-- <div class='grid max-w-[1240px] mx-auto py-16 px-4 gap-8 text-gray-800 md:grid-cols-6'>
+            <!-- <div class='grid max-w-[1240px] mx-auto py-16 px-4 gap-8 text-gray-800 md:grid-cols-6'>
                 <div class='col-span-2'>
                     <h1 class='Brand w-full text-3xl font-bold font-play text-left'> Otter</h1>
                     <p class='py-4 text-xs text-left md:text-sm '>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
@@ -123,7 +104,7 @@
                     </ul>
                 </div>
 
-                <div class='max-w-[150px] md:px-2'>
+                <div class='max-w-[150px] md:px-2'> 
                     <h4 class='font-bold pb-2'>Latest News</h4>
                     <ul class='grid gap-y-2 grid-row-2'>
                         <li class='grid grid-cols-2 justify-center gap-x-3'>
@@ -163,5 +144,4 @@
                 </div>
             </div>
         </div> -->
-
 </html>
