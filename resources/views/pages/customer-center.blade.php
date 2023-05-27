@@ -28,10 +28,10 @@
 
             <div class="w-full flex justify-center">
                 <div class="grid grid-cols-2 w-2/5 gap-6">
-                    <div class="bg-slate-950 rounded-xl text-lg">
+                    <div class="bg-fin-blue rounded-xl text-lg">
                         <p class="font-castoro text-[15px] text-center text-white">rifian.fernando@binus.ac.id</p>
                     </div>
-                    <div class="bg-slate-950 rounded-xl text-lg">
+                    <div class="bg-fin-blue rounded-xl text-lg">
                         <p class="font-castoro text-[15px] text-center text-white">+62 812 3456 7890</p>
                     </div>
                 </div>
