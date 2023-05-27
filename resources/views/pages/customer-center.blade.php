@@ -13,7 +13,7 @@
             </div>
 
             <div>
-                <hr class="h-px my-8 bg-gray-200 border-0 dark:bg-black">
+                <hr class="h-px my-8 border-0 bg-black">
             </div>
 
             <div>
