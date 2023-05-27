@@ -38,6 +38,7 @@
             </div>
 
             <div>
+                <br>
                 <img class="w-full" src="{{asset('assets/customer-center/Frame2766.png')}}">
             </div>
         </div>
