@@ -46,7 +46,9 @@ module.exports = {
                     'Noto Color Emoji',
                     'Figtree',
                     ...defaultTheme.fontFamily.sans
-                ]
+                ],
+
+                'castoro': ['Castoro', 'serif']
             },
             colors: {
                 // contoh custom color
