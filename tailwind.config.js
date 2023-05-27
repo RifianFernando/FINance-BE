@@ -53,6 +53,9 @@ module.exports = {
             colors: {
                 // contoh custom color
                 'BLUE-OCEAN': '#4f42b5',
+                'darker-white' : '#F7F7FA',
+                'subs-brown': '#756D6D',
+                'fin-blue': '#23273C',
                 primary: {
                     "50": "#eff6ff",
                     "100": "#dbeafe",
@@ -65,6 +68,9 @@ module.exports = {
                     "800": "#1e40af",
                     "900": "#1e3a8a"
                 }
+            },
+            dropShadow: {
+                'subs-card': '2px 2px 4px rgba(0, 0, 0, 0.25)'
             }
         },
     },
