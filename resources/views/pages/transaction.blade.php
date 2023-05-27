@@ -5,7 +5,7 @@
 
 @section('body')
 
-    <body class="">
+    <div class="flex-reverse justify-center items-center m-0 w-max">
 
         <div class="flex flex-col justify-center items-center">
 
@@ -26,5 +26,5 @@
         </form>
 
         <script src=""></script>
-    </body>
+    </d>
 @endsection
