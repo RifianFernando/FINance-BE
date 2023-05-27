@@ -35,7 +35,7 @@
                     <a href="https://www.skype.com/" class="flex bg-fin-blue rounded-xl text-lg items-center">
                         <img class="w-3 h-3 mx-2" src="{{asset('assets/customer-center/phone.png')}}">
                         <p class="font-castoro text-[15px] text-center text-white">+62 812 3456 7890</p>
-<                   /a>
+                    </a>
                 </div>
             </div>
 
