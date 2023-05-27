@@ -28,6 +28,19 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
+Route::get('/transaction', function () {
+    return view('pages.transaction');
+});
+
+
+Route::get('/subscription', function () {
+    return view('pages.subscription');
+});
+
+Route::get('/customer-center', function () {
+    return view('pages.customer-center');
+});
+
 Route::get('/test', function () {
     return view('auth.test');
 });
