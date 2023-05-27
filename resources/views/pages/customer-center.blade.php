@@ -20,7 +20,8 @@
                 <h2 class="font-castoro text-[32px] text-center text-black">Have A Problem?</h2>
                 <br>
                 <p class="font-castoro text-[16px] text-center text-black">Contact our best service,</p>
-                <p class="font-castoro text-[16px] text-center text-black">our customer service provide helping yet loving tech support</p>
+                <p class="font-castoro text-[16px] text-center text-black">our customer service provide helping yet loving
+                    tech support</p>
                 <br>
                 <p class="font-castoro text-[16px] text-center text-black">Available from 9AM to 5 PM</p><br>
             </div>
@@ -35,9 +36,9 @@
                     </div>
                 </div>
             </div>
-            
+
             <div>
-                <img class="w-full" src="{{asset('assets/customer-center/Frame2786.png')}">
+                <img class="w-full" src="{{ asset('assets/customer-center/Frame2766.png') }}">
             </div>
         </div>
     </body>
