@@ -20,7 +20,7 @@
 
             <div class="flex flex-row justify-evenly items-center w-full font-castoro">
 
-                <div class="flex flex-col items-center w-3/12 h-[580px] rounded-[10px] bg-white drop-shadow-subs-card">
+                <a href="#" class="flex flex-col items-center w-3/12 h-[580px] rounded-[10px] bg-white drop-shadow-subs-card">
                     <h1 class="text-[52px] text-subs-brown">BASIC</h1>
                     <p class="text-[24px] text-center">Free Financial Management</p>
                     <h1 class="text-[52px] flex flex-col justify-center items-center h-1/4">Free</h1>
@@ -30,9 +30,9 @@
                         <li>Fitur 1</li>
                         <li>Fitur 2</li>
                     </ul>
-                </div>
+                </a>
 
-                <div class="flex flex-col items-center w-3/12 h-[580px] rounded-[10px] bg-white drop-shadow-subs-card">
+                <a href="#" class="flex flex-col items-center w-3/12 h-[580px] rounded-[10px] bg-white drop-shadow-subs-card">
                     <h1 class="text-[52px] text-subs-brown">AD-FREE</h1>
                     <p class="text-[24px] text-center">No Obstruction</p>
                     <h1 class="text-[52px] flex flex-col justify-center items-center h-1/4">$5<span class="text-[14px] text-subs-brown">Per Month</span></h1>
@@ -43,9 +43,9 @@
                         <li>Fitur 2</li>
                         <li>Fitur 3</li>
                     </ul>
-                </div>
+                </a>
 
-                <div class="flex flex-col items-center w-3/12 h-[580px] rounded-[10px] bg-white drop-shadow-subs-card">
+                <a href="#" class="flex flex-col items-center w-3/12 h-[580px] rounded-[10px] bg-white drop-shadow-subs-card">
                     <h1 class="text-[52px] text-subs-brown">PRO</h1>
                     <p class="text-[24px] text-center">Complete Package</p>
                     <h1 class="text-[52px] flex flex-col justify-center items-center h-1/4">$10<span class="text-[14px] text-subs-brown">Per Month</span></h1>
@@ -58,7 +58,7 @@
                         <li>Fitur 4</li>
                         <li>Fitur 5</li>
                     </ul>
-                </div>
+                </a>
 
             </div>
 
