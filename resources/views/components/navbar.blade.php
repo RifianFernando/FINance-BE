@@ -20,12 +20,4 @@
 </body>
 </html>
 
-const ChangeStyles = ['fixed flex left-[-65%] top-0 h-full border-r border-r-gray-900 bg-gray-500 ease-in-out duration-500','fixed flex left-0 top-0 h-full border-r border-r-gray-900 bg-gray-500 ease-in-out duration-500 justify-center w-[100%]'];
-const [Change, setChange] = useState(0);
-const [ChangeIcon, setChangeIcon] = useState(true);
-
-const ClickNav = () => {
-        setChange( (Change + 1) % ChangeStyles.length);
-        setChangeIcon(!ChangeIcon);
-}
 

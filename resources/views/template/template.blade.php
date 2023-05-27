@@ -41,9 +41,8 @@
 
     </script>
 
-    <div class="flex">
-
-            <div class=" max-w-[300px] hidden flex-col px-10 pt-16 h-screen bg-[#23273C] text-[#FAFAFA] md:flex justify-between">
+    <div class="flex flex-row">
+            <div class="sticky max-w-[300px] hidden flex-col px-10 pt-16 h-screen bg-[#23273C] text-[#FAFAFA] md:flex justify-between left-0 top-0">
                 <div class="flex flex-col ">
                     <h3 class="w-full text-4xl font-bold text-left">FINEance</h3>
                     <ul class="pt-5 text-md ">
@@ -70,8 +69,10 @@
                     <li class="pt-3 bg-gray-500 ">REGISTER</li>
                 </ul>
             </div>
+            <div>
+                @yield('body')
+            </div>
         </div>
-@yield('body')
 
 
             <!-- <div class='grid max-w-[1240px] mx-auto py-16 px-4 gap-8 text-gray-800 md:grid-cols-6'>
