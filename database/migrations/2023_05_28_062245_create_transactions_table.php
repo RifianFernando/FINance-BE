@@ -15,8 +15,18 @@ return new class extends Migration
             $table->id();
             $table->decimal('amount', 10, 2);
             $table->date('date');
-            
+            $table->set('category', [
+                'Food & Beverage',
+                'Transportation',
+                'House Bill',
+                'Medical',
+                'Education',
+                'Gift & Donations',
+                'Fun Money',
+                'Other Expenses'
+            ]);
             $table->string('description');
+            $table->boolean('is_expense');
             $table->timestamps();
         });
     }
