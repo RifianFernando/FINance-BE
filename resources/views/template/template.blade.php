@@ -50,11 +50,11 @@
                 <div class="flex flex-col">
                     <h3 class="text-4xl font-bold text-left">FINEance</h3>
                     <ul class="mt-8 text-sm">
-                        <li class="pt-5 hover:scale-110 hover:pl-1"><a href="">Home</a></li>
-                        <li class="pt-5 hover:scale-110 hover:pl-1"><a href="">Transaction</a></li>
-                        <li class="pt-5 hover:scale-110 hover:pl-1"><a href="">Report</a></li>
-                        <li class="pt-5 hover:scale-110 hover:pl-1">Subscription</li>
-                        <li class="pt-5 hover:scale-110 hover:pl-1">Customer Center</li>
+                        <li class="pt-5 hover:scale-110 hover:pl-1"><a href="/dashboard" class="text-white no-underline">Dashboard</a></li>
+                        <li class="pt-5 hover:scale-110 hover:pl-1"><a href="/transaction" class="text-white no-underline">Transaction</a></li>
+                        <li class="pt-5 hover:scale-110 hover:pl-1"><a href="/report" class="text-white no-underline">Report</a></li>
+                        <li class="pt-5 hover:scale-110 hover:pl-1"><a href="/subscription" class="text-white no-underline">Subscription</a></li>
+                        <li class="pt-5 hover:scale-110 hover:pl-1"><a href="/customer-center" class="text-white no-underline">Customer Center</a></li>
                     </ul>
                 </div>
                 <div class="mb-8 flex items-center">
@@ -70,12 +70,11 @@
                 <div class="hidden mt-10" onClick="ChangeNavStyle()" id="nav-container" >
                     <h3 class="mt-10 text-4xl font-bold">FINEance</h3>
                     <ul class="mt-10 text-xl">
-                        <li class="">HOME</li>
-                        <li class="pt-8">ABOUT</li>
-                        <li class="pt-5">CONTACT</li>
-                        <li class="pt-5">SIGN IN</li>
-                        <li class="pt-5">REGISTER</li>
-                        <li class="pt-5">OPTION</li>
+                        <li class=""><a href="/dashboard" class="text-white no-underline">Dashboard</a></li>
+                        <li class="pt-8"><a href="/transaction" class="text-white no-underline">Transaction</a></li>
+                        <li class="pt-5"><a href="/report" class="text-white no-underline">Report</a></li>
+                        <li class="pt-5"><a href="/subscription" class="text-white no-underline">Subscription</a></li>
+                        <li class="pt-5"><a href="/customer-center" class="text-white no-underline">Customer Center</a></li>
                     </ul>
                 </div>
             </div>
