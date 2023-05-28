@@ -25,17 +25,18 @@
                     <div class="flex flex-col items-center h-full justify-evenly">
                         <div class="w-[90%] flex-col items-center">
                             <h1>Amount</h1>
-                            <input type="text" id="amountTxt" name="amountTxt" class="w-full">
+                            <input type="text" placeholder="0" id="amountTxt" name="amountTxt" class="w-full border-gray-300" >                            
 
                             <div class="flex">
                                 <div class="w-1/2 pr-2">
                                     <h1>Date</h1>
-                                    <input type="date" id="dateTxt" name="dateTxt" class="w-full">
+                                    <input type="date" id="dateTxt" name="dateTxt" class="w-full border-gray-300">
                                 </div>
 
                                 <div class="w-1/2 pl-2">
                                     <h1>Category</h1>
-                                    <select name="categoryDropdown" id="categoryDropdown" class="w-full">
+                                    <select name="categoryDropdown" id="categoryDropdown" class="w-full border-gray-300">
+                                        <option value="" disabled selected>Select a category</option>
                                         <option value="option1">Option 1</option>
                                         <option value="option2">Option 2</option>
                                         <option value="option3">Option 3</option>
@@ -46,15 +47,15 @@
                             <div class="flex">
                                 <div class="w-1/2 pr-2">
                                     <h1>Description</h1>
-                                    <input type="text" id="descTxt" name="descTxt" class="w-full">
+                                    <input type="text" placeholder="Insert transaction description" id="descTxt" name="descTxt" class="w-full border-gray-300">
                                 </div>                            
                             </div>
                         </div>
 
                         <div class="flex justify-end w-[90%]">
-                            <div class="flex justify-between w-[22%]">
-                                <button class="bg-fin-blue text-white font-bold py-2 px-4 rounded">Cancel</button>
-                                <button class="bg-fin-blue text-white font-bold py-2 px-4 rounded">Add</button>                            
+                            <div class="flex justify-between w-[30%]">
+                                <button class="bg-fin-blue text-white font-bold py-3 px-9 rounded">Cancel</button>
+                                <button class="bg-fin-blue text-white font-bold py-3 px-9 rounded">Add</button>                            
                             </div>                                                    
                         </div>
                     </div>
