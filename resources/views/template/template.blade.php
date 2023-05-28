@@ -42,7 +42,7 @@
             document.getElementById("nav-container").className = ChangeStyles[Index];
             image.src = url[Index];
         }
-        
+
     </script>
 
     <div class="flex flex-row">

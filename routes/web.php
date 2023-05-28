@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Models\TransactionController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -28,8 +29,9 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-Route::get('/transaction', function () {
-    return view('pages.transaction');
+Route::group(['middleware' => ['auth']], function () {
+    Route::get('/transaction', [TransactionController::class, 'view'])->name('transaction.view');
+    Route::post('/transaction', [TransactionController::class, 'insert'])->name('transaction.insert');
 });
 
 
@@ -53,4 +55,4 @@ Route::get('/dashboard', function () {
     return view('pages.dashboard');
 });
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';
