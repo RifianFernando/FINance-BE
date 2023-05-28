@@ -46,8 +46,8 @@
     </script>
 
     <div class="flex flex-row">
-            <div class="sticky max-w-[300px] hidden flex-col px-10 pt-16 h-screen bg-[#23273C] text-[#FAFAFA] md:flex justify-between left-0 top-0">
-                <div class="flex flex-col ">
+            <div class="sticky max-w-[300px] hidden flex-col px-10 pt-16 h-screen bg-[#23273C] text-[#FAFAFA] md:flex justify-between left-0 top-0 font-poppins">
+                <div class="flex flex-col">
                     <h3 class="text-4xl font-bold text-left">FINEance</h3>
                     <ul class="mt-8 text-sm">
                         <li class="pt-5 hover:scale-110 hover:pl-1"><a href="">Home</a></li>
@@ -63,7 +63,7 @@
                 </div>
             </div>
             @yield('body')
-            <div class="flex flex-col right-0 top-0 fixed py-4 px-8">
+            <div class="flex flex-col right-0 top-0 fixed py-4 px-8 font-poppins">
                 <div onClick="ChangeNavStyle()" class="md:hidden" >
                     <button><img class="w-[30px] h-[30px]" src="{{ asset('assets/navbar/Hamburger.png') }}" id="MobileIcon"></button>
                 </div>
@@ -82,7 +82,7 @@
         </div>
 
 
-            <div class='grid max-w-full mx-auto py-8 px-10 gap-8 gap-y-10 md:grid-cols-5 bg-[#383A40] text-[#EDEDF3] lg:gap-y-0'>
+            <div class='grid max-w-full mx-auto py-16 px-10 gap-8 gap-y-10 md:grid-cols-5 bg-[#383A40] text-[#EDEDF3] lg:gap-y-0 font-poppins'>
                 <div class='col-span-1'>
                     <h1 class='Brand w-full text-3xl font-bold font-play text-left'>FINEance</h1>
                     <p class='py-4 text-xs text-left md:text-sm '></p>

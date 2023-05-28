@@ -20,7 +20,7 @@ module.exports = {
                     'Segoe UI',
                     'Roboto',
                     'Helvetica Neue',
-                    'Arial',
+                    'Arial',    
                     'Noto Sans',
                     'sans-serif',
                     'Apple Color Emoji',
@@ -48,7 +48,8 @@ module.exports = {
                     ...defaultTheme.fontFamily.sans
                 ],
 
-                'castoro': ['Castoro', 'serif']
+                'castoro': ['Castoro', 'serif'],
+                'poppins': ['Poppins', 'sans-serif']
             },
             colors: {
                 // contoh custom color

@@ -49,4 +49,8 @@ Route::get('/report', function () {
     return view('report');
 });
 
+Route::get('/dashboard', function () {
+    return view('pages.dashboard');
+});
+
 require __DIR__.'/auth.php';
