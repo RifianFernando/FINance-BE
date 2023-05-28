@@ -2,17 +2,17 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Transaction;
+use App\Models\TransactionJoinTable;
 use Illuminate\Http\Request;
 
-class TransactionController extends Controller
+class TransactionJoinTableController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        return view('pages.transaction');
+        //
     }
 
     /**
@@ -34,7 +34,7 @@ class TransactionController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Transaction $transaction)
+    public function show(TransactionJoinTable $transactionJoinTable)
     {
         //
     }
@@ -42,7 +42,7 @@ class TransactionController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Transaction $transaction)
+    public function edit(TransactionJoinTable $transactionJoinTable)
     {
         //
     }
@@ -50,7 +50,7 @@ class TransactionController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Transaction $transaction)
+    public function update(Request $request, TransactionJoinTable $transactionJoinTable)
     {
         //
     }
@@ -58,7 +58,7 @@ class TransactionController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Transaction $transaction)
+    public function destroy(TransactionJoinTable $transactionJoinTable)
     {
         //
     }
