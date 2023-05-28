@@ -22,7 +22,7 @@
                     <h1 class="text-5xl text-subs-brown pl-10 py-4">Add Expense</h1>
                     <hr class="h-[2px] border-0 w-[100%] bg-black">
                                                         
-                    <div class="flex flex-col items-center h-full justify-evenly">
+                    <div class="flex flex-col items-center h-full justify-evenly ">
                         <div class="w-[90%] flex-col items-center">
                             <h1>Amount</h1>
                             <input type="text" id="amountTxt" name="amountTxt" class="w-full">
