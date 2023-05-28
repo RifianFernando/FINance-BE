@@ -6,57 +6,107 @@
 
 @section('body')
 
-    <body>
-        
-        <div class="flex flex-col justify-evenly items-center w-full h-full bg-darker-white">
+    <body> 
+        <div class="flex flex-col justify-evenly items-center w-full h-full bg-darker-white py-3">
             
             <div>
-                <h1 class="font-castoro text-[64px]">Subscription</h1>
+                <h1 class="font-castoro text-5xl">Subscription</h1>
             </div>
 
-            <div class="w-[100%]">
-                <hr class="h-[2px] border-0 w-[100%] bg-black">
+            <div class="w-[100%] py-4 flex flex-col gap-y-4 justify-center items-center">
+                <hr class="h-[2px] border-0 w-[50%] bg-black">
+                <hr class="h-[2px] border-0 w-[30%] bg-black">
             </div>
 
-            <div class="flex flex-row justify-evenly items-center w-full font-castoro">
+            <div class="grid grid-rows-1 lg:grid-cols-2 xl:grid-cols-3 justify-center items-center font-castoro gap-x-10 gap-y-10 p-4 py-10">
 
-                <a href="#" class="flex flex-col items-center w-3/12 h-[580px] rounded-[10px] bg-white drop-shadow-subs-card">
-                    <h1 class="text-[52px] text-subs-brown">BASIC</h1>
-                    <p class="text-[24px] text-center">Free Financial Management</p>
-                    <h1 class="text-[52px] flex flex-col justify-center items-center h-1/4">Free</h1>
-                    <h2 class="text-[20px] bg-fin-blue rounded-[10px] w-1/2 text-center text-white">SIGN UP NOW</h2>
-                    
-                    <ul class="text-[24px] list-disc">
-                        <li>Fitur 1</li>
-                        <li>Fitur 2</li>
+                <a href="#" class="flex flex-col w-[300px] h-auto rounded-[10px] bg-white drop-shadow-subs-card px-10 md:px-8 py-6 focus:bg-gray-100 focus:scale-110 duration-500 ease-in-out">
+                    <h1 class=" text-subs-brown text-left text-2xl font-bold">BASIC</h1>
+                    <h1 class="text-[48px] flex items-end h-1/6 font-bold">Free <span class="text-sm text-gray-500 ml-2">/ month</span></h1>
+                    <p class="text-sm text-gray-500 mt-2">Free financial plan for all users</p>
+                    <h2 class="text-xl border-2 bg-fin-blue  text-center text-white py-2 my-4 rounded-md hover:border-fin-blue hover:bg-gray-100 hover:text-fin-blue duration-500 ease-in-out">SIGN UP NOW</h2>
+                    <p class="text-md text-gray-500 font-bold">Features:</p>
+                    <ul class="text-[20px] pt-4 flex flex-col gap-y-4 text-gray-500">
+                        <li class="flex items-center">
+                            <img class="w-[25px] h-[25px] bg-gray-200 rounded-md" src="{{ asset('assets/subscription/Check.png') }}" id="MobileIcon">
+                            <p class="pl-4">Fitur 1</p>
+                        </li>
+                        <li class="flex items-center">
+                            <img class="w-[25px] h-[25px] bg-gray-200 rounded-md" src="{{ asset('assets/subscription/Check.png') }}" id="MobileIcon">
+                            <p class="pl-4">Fitur 1</p>
+                        </li>
+                        <li class="flex items-center">
+                            <img class="w-[25px] h-[25px]" src="{{ asset('assets/subscription/Close.png') }}" id="MobileIcon">
+                            <p class="pl-4">Fitur 1</p>
+                        </li>
+                        <li class="flex items-center">
+                            <img class="w-[25px] h-[25px]" src="{{ asset('assets/subscription/Close.png') }}" id="MobileIcon">
+                            <p class="pl-4">Fitur 1</p>
+                        </li>
+                        <li class="flex items-center">
+                            <img class="w-[25px] h-[25px]" src="{{ asset('assets/subscription/Close.png') }}" id="MobileIcon">
+                            <p class="pl-4">Fitur 1</p>
+                        </li>
                     </ul>
                 </a>
 
-                <a href="#" class="flex flex-col items-center w-3/12 h-[580px] rounded-[10px] bg-white drop-shadow-subs-card">
-                    <h1 class="text-[52px] text-subs-brown">AD-FREE</h1>
-                    <p class="text-[24px] text-center">No Obstruction</p>
-                    <h1 class="text-[52px] flex flex-col justify-center items-center h-1/4">$5<span class="text-[14px] text-subs-brown">Per Month</span></h1>
-                    <h2 class="text-[20px] bg-fin-blue rounded-[10px] w-1/2 text-center text-white">SIGN UP NOW</h2>
-
-                    <ul class="text-[24px] list-disc">
-                        <li>Fitur 1</li>
-                        <li>Fitur 2</li>
-                        <li>Fitur 3</li>
+                <a href="#" class="flex flex-col w-[300px] h-auto rounded-[10px] bg-white drop-shadow-subs-card px-10 md:px-8 py-6 focus:bg-gray-100 focus:scale-110 duration-500 ease-in-out">
+                    <h1 class=" text-subs-brown text-left text-2xl font-bold">AD-FREE</h1>
+                    <h1 class="text-[48px] flex items-end h-1/6 font-bold">$15 <span class="text-sm text-gray-500 ml-2">/ month</span></h1>
+                    <p class="text-sm text-gray-500 mt-2">Free financial plan for all users</p>
+                    <h2 class="text-xl border-2 bg-fin-blue  text-center text-white py-2 my-4 rounded-md hover:border-fin-blue hover:bg-gray-100 hover:text-fin-blue duration-500 ease-in-out">SIGN UP NOW</h2>
+                    <p class="text-md text-gray-500 font-bold">Features:</p>
+                    <ul class="text-[20px] pt-4 flex flex-col gap-y-4 text-gray-500">
+                        <li class="flex items-center">
+                            <img class="w-[25px] h-[25px] bg-gray-200 rounded-md" src="{{ asset('assets/subscription/Check.png') }}" id="MobileIcon">
+                            <p class="pl-4">Fitur 1</p>
+                        </li>
+                        <li class="flex items-center">
+                            <img class="w-[25px] h-[25px] bg-gray-200 rounded-md" src="{{ asset('assets/subscription/Check.png') }}" id="MobileIcon">
+                            <p class="pl-4">Fitur 1</p>
+                        </li>
+                        <li class="flex items-center">
+                            <img class="w-[25px] h-[25px] bg-gray-200 rounded-md" src="{{ asset('assets/subscription/Check.png') }}" id="MobileIcon">
+                            <p class="pl-4">Fitur 1</p>
+                        </li>
+                        <li class="flex items-center">
+                            <img class="w-[25px] h-[25px]" src="{{ asset('assets/subscription/Close.png') }}" id="MobileIcon">
+                            <p class="pl-4">Fitur 1</p>
+                        </li>
+                        <li class="flex items-center">
+                            <img class="w-[25px] h-[25px]" src="{{ asset('assets/subscription/Close.png') }}" id="MobileIcon">
+                            <p class="pl-4">Fitur 1</p>
+                        </li>
                     </ul>
                 </a>
 
-                <a href="#" class="flex flex-col items-center w-3/12 h-[580px] rounded-[10px] bg-white drop-shadow-subs-card">
-                    <h1 class="text-[52px] text-subs-brown">PRO</h1>
-                    <p class="text-[24px] text-center">Complete Package</p>
-                    <h1 class="text-[52px] flex flex-col justify-center items-center h-1/4">$10<span class="text-[14px] text-subs-brown">Per Month</span></h1>
-                    <h2 class="text-[20px] bg-fin-blue rounded-[10px] w-1/2 text-center text-white">SIGN UP NOW</h2>
-
-                    <ul class="text-[24px] list-disc">
-                        <li>Fitur 1</li>
-                        <li>Fitur 2</li>
-                        <li>Fitur 3</li>
-                        <li>Fitur 4</li>
-                        <li>Fitur 5</li>
+                <a href="#" class="flex flex-col w-[300px] h-auto rounded-[10px] bg-white drop-shadow-subs-card px-10 md:px-8 py-6 focus:bg-gray-100 focus:scale-110 duration-500 ease-in-out">
+                    <h1 class=" text-subs-brown text-left text-2xl font-bold">PROFESSIONAL</h1>
+                    <h1 class="text-[48px] flex items-end h-1/6 font-bold">$99 <span class="text-sm text-gray-500 ml-2">/ month</span></h1>
+                    <p class="text-sm text-gray-500 mt-2">Free financial plan for all users</p>
+                    <h2 class="text-xl border-2 bg-fin-blue  text-center text-white py-2 my-4 rounded-md hover:border-fin-blue hover:bg-gray-100 hover:text-fin-blue duration-500 ease-in-out">SIGN UP NOW</h2>
+                    <p class="text-md text-gray-500 font-bold">Features:</p>
+                    <ul class="text-[20px] pt-4 flex flex-col gap-y-4 text-gray-500">
+                        <li class="flex items-center">
+                            <img class="w-[25px] h-[25px] bg-gray-200 rounded-md" src="{{ asset('assets/subscription/Check.png') }}" id="MobileIcon">
+                            <p class="pl-4">Fitur 1</p>
+                        </li>
+                        <li class="flex items-center">
+                            <img class="w-[25px] h-[25px] bg-gray-200 rounded-md" src="{{ asset('assets/subscription/Check.png') }}" id="MobileIcon">
+                            <p class="pl-4">Fitur 1</p>
+                        </li>
+                        <li class="flex items-center">
+                            <img class="w-[25px] h-[25px] bg-gray-200 rounded-md" src="{{ asset('assets/subscription/Check.png') }}" id="MobileIcon">
+                            <p class="pl-4">Fitur 1</p>
+                        </li>
+                        <li class="flex items-center">
+                            <img class="w-[25px] h-[25px] bg-gray-200 rounded-md" src="{{ asset('assets/subscription/Check.png') }}" id="MobileIcon">
+                            <p class="pl-4">Fitur 1</p>
+                        </li>
+                        <li class="flex items-center">
+                            <img class="w-[25px] h-[25px] bg-gray-200 rounded-md" src="{{ asset('assets/subscription/Check.png') }}" id="MobileIcon">
+                            <p class="pl-4">Fitur 1</p>
+                        </li>
                     </ul>
                 </a>
 
