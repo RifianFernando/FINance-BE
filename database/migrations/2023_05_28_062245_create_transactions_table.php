@@ -23,7 +23,9 @@ return new class extends Migration
                 'Education',
                 'Gift & Donations',
                 'Fun Money',
-                'Other Expenses'
+                'Other Expenses',
+                'Salary',
+                'Other Income',
             ]);
             $table->string('description');
             $table->boolean('is_expense');
