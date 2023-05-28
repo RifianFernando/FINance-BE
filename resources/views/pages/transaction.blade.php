@@ -7,18 +7,19 @@
 @section('body')
 
     <body>
-       <div class="w-full h-full">
+       <div class="w-full h-full bg-darker-white">
             <div class="flex justify-evenly items-center">
-                <h1 class="font-castoro text-[64px] items-center">Transaction</h1>
+                <h1 class="font-castoro text-5xl items-center">Transaction</h1>
             </div>
 
-            <div>
-                <hr class="h-[2px] border-0 w-[100%] bg-black">
-            </div> <br><br><br>
+            <div class="w-[100%] py-4 flex flex-col gap-y-4 justify-center items-center">
+                <hr class="h-[2px] border-0 w-[50%] bg-black">
+                <hr class="h-[2px] border-0 w-[30%] bg-black">
+            </div>
 
-            <div class="flex flex-row justify-evenly w-fullfont-castoro">
-                <div class="flex flex-col w-10/12 h-[500px] rounded-[10px] bg-white drop-shadow-xl">
-                    <h1 class="text-[52px] text-subs-brown pl-10">Add Expense</h1>
+            <div class="flex flex-row justify-evenly w-full font-castoro">
+                <div class="flex flex-col w-10/12 h-[500px] rounded-[10px] bg-white drop-shadow-subs-card">
+                    <h1 class="text-5xl text-subs-brown pl-10 py-4">Add Expense</h1>
                     <hr class="h-[2px] border-0 w-[100%] bg-black">
                                                         
                     <div class="flex flex-col items-center h-full justify-evenly">

@@ -14,8 +14,9 @@
                 <h1 class="font-castoro text-5xl">Dashboard</h1>
             </div>
 
-            <div class="w-[80%] py-4 gap-y-4">
-                <hr class="h-[2px] border-0 w-[100%] bg-black">
+            <div class="w-[100%] py-4 flex flex-col gap-y-4 justify-center items-center">
+                <hr class="h-[2px] border-0 w-[50%] bg-black">
+                <hr class="h-[2px] border-0 w-[30%] bg-black">
             </div>
 
             <div class="flex flex-col items-center w-[70%] font-castoro gap-y-10 text-darker-white">
