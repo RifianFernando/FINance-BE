@@ -51,7 +51,7 @@
                 </div>
 
                 <div class="flex flex-col w-[300px] h-auto rounded-[10px] bg-white drop-shadow-subs-card px-10 md:px-8 py-6 focus:bg-gray-100 hover:scale-110 duration-500 ease-in-out">
-                    <h1 class=" text-subs-brown text-left text-2xl font-bold">NO-OBSTRUCTION</h1>
+                    <h1 class=" text-subs-brown text-left text-2xl font-bold">PREMIUM</h1>
                     <h1 class="text-[48px] flex items-end h-1/6 font-bold">$15 <span class="text-sm text-gray-500 ml-2">/ month</span></h1>
                     <p class="text-sm text-gray-500 mt-2">Financial plan with more ease of use</p>
                     <a href="#" class="text-xl border-2 bg-fin-blue  text-center text-white py-2 my-4 rounded-md hover:border-fin-blue hover:bg-gray-100 hover:text-fin-blue duration-500 ease-in-out">SIGN UP NOW</a>
