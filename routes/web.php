@@ -43,10 +43,6 @@ Route::get('/customer-center', function () {
     return view('pages.customer-center');
 });
 
-Route::get('/test', function () {
-    return view('auth.test');
-});
-
 Route::get('/report', function () {
     return view('report');
 });
