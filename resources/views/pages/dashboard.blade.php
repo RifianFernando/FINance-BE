@@ -20,7 +20,7 @@
             </div>
 
             <div class="flex flex-col justify-center items-center p-4">
-                <div>
+                <div class="grid grid-cols-2 justify-center items-center ">
 
                 </div>
                 <div>

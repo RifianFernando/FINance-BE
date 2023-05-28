@@ -20,7 +20,7 @@
 
             <div class="grid grid-rows-1 lg:grid-cols-2 xl:grid-cols-3 justify-center items-center font-castoro gap-x-10 gap-y-10 p-4 py-10">
 
-                <div class="flex flex-col w-[300px] h-auto rounded-[10px] bg-white drop-shadow-subs-card px-10 md:px-8 py-6 focus:bg-gray-100 focus:scale-110 duration-500 ease-in-out">
+                <div class="flex flex-col w-[300px] h-auto rounded-[10px] bg-white drop-shadow-subs-card px-10 md:px-8 py-6 focus:bg-gray-100 hover:scale-110 duration-500 ease-in-out">
                     <h1 class=" text-subs-brown text-left text-2xl font-bold">BASIC</h1>
                     <h1 class="text-[48px] flex items-end h-1/6 font-bold">Free</h1>
                     <p class="text-sm text-gray-500 mt-2">Free financial plan for all users</p>
@@ -50,7 +50,7 @@
                     </ul>
                 </div>
 
-                <div class="flex flex-col w-[300px] h-auto rounded-[10px] bg-white drop-shadow-subs-card px-10 md:px-8 py-6 focus:bg-gray-100 focus:scale-110 duration-500 ease-in-out">
+                <div class="flex flex-col w-[300px] h-auto rounded-[10px] bg-white drop-shadow-subs-card px-10 md:px-8 py-6 focus:bg-gray-100 hover:scale-110 duration-500 ease-in-out">
                     <h1 class=" text-subs-brown text-left text-2xl font-bold">NO-OBSTRUCTION</h1>
                     <h1 class="text-[48px] flex items-end h-1/6 font-bold">$15 <span class="text-sm text-gray-500 ml-2">/ month</span></h1>
                     <p class="text-sm text-gray-500 mt-2">Financial plan with more ease of use</p>
@@ -80,7 +80,7 @@
                     </ul>
                 </div>
 
-                <div class="flex flex-col w-[300px] h-auto rounded-[10px] bg-white drop-shadow-subs-card px-10 md:px-8 py-6 focus:bg-gray-100 focus:scale-110 duration-500 ease-in-out">
+                <div class="flex flex-col w-[300px] h-auto rounded-[10px] bg-white drop-shadow-subs-card px-10 md:px-8 py-6 focus:bg-gray-100 hover:scale-110 duration-500 ease-in-out">
                     <h1 class=" text-subs-brown text-left text-2xl font-bold">PROFESSIONAL</h1>
                     <h1 class="text-[48px] flex items-end h-1/6 font-bold">$99 <span class="text-sm text-gray-500 ml-2">/ month</span></h1>
                     <p class="text-sm text-gray-500 mt-2">Complete package of financial plan</p>
