@@ -1,7 +1,7 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
-use App\Models\TransactionController;
+use App\Http\Controllers\TransactionController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -30,8 +30,8 @@ Route::middleware('auth')->group(function () {
 });
 
 Route::group(['middleware' => ['auth']], function () {
-    Route::get('/transaction', [TransactionController::class, 'view'])->name('transaction.view');
-    Route::post('/transaction', [TransactionController::class, 'insert'])->name('transaction.insert');
+    Route::get('/transaction', [TransactionController::class, 'index'])->name('transaction.view');
+    Route::post('/transaction', [TransactionController::class, 'create'])->name('transaction.create');
 });
 
 
