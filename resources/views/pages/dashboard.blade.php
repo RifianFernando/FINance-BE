@@ -101,43 +101,43 @@
                                 <h1 class="col-span-1 font-bold text-lg">17-08-1945</h1>
                                 <h1 class="col-span-2">Beliin Rifian Starbucks Expresso  </h1>
                                 <h1 class="col-span-1 font-bold text-md">Food & Beverage</h1>
-                                <h1 class="col-span-1 font-bold text-lg text-red-600">- Rp 200.000</h1>
+                                <h1 class="col-span-1 font-bold text-lg text-red-600">- Rp 200,000</h1>
                             </div>
                             <div class="grid grid-cols-5 py-3 gap-x-4 border-b-2 border-gray-200">
                                 <h1 class="col-span-1 font-bold text-lg">17-08-1945</h1>
                                 <h1 class="col-span-2">Beliin Rifian Starbucks Expresso </h1>
                                 <h1 class="col-span-1 font-bold text-md">Food & Beverage</h1>
-                                <h1 class="col-span-1 font-bold text-lg text-red-600">- Rp 200.000</h1>
+                                <h1 class="col-span-1 font-bold text-lg text-red-600">- Rp 200,000</h1>
                             </div>
                             <div class="grid grid-cols-5 py-3 gap-x-4 border-b-2 border-gray-200">
                                 <h1 class="col-span-1 font-bold text-lg">17-08-1945</h1>
                                 <h1 class="col-span-2">Beliin Rifian Starbucks Expresso </h1>
                                 <h1 class="col-span-1 font-bold text-md">Food & Beverage</h1>
-                                <h1 class="col-span-1 font-bold text-lg text-red-600">- Rp 200.000</h1>
+                                <h1 class="col-span-1 font-bold text-lg text-red-600">- Rp 200,000</h1>
                             </div>
                             <div class="grid grid-cols-5 py-3 gap-x-4 border-b-2 border-gray-200">
                                 <h1 class="col-span-1 font-bold text-lg">17-08-1945</h1>
                                 <h1 class="col-span-2">Beliin Rifian Starbucks Expresso </h1>
                                 <h1 class="col-span-1 font-bold text-md">Food & Beverage</h1>
-                                <h1 class="col-span-1 font-bold text-lg text-red-600">- Rp 200.000</h1>
+                                <h1 class="col-span-1 font-bold text-lg text-red-600">- Rp 200,000</h1>
                             </div>
                             <div class="grid grid-cols-5 py-3 gap-x-4 border-b-2 border-gray-200">
                                 <h1 class="col-span-1 font-bold text-lg">17-08-1945</h1>
                                 <h1 class="col-span-2">Beliin Rifian Starbucks Expresso </h1>
                                 <h1 class="col-span-1 font-bold text-md">Food & Beverage</h1>
-                                <h1 class="col-span-1 font-bold text-lg text-red-600">- Rp 200.000</h1>
+                                <h1 class="col-span-1 font-bold text-lg text-red-600">- Rp 200,000</h1>
                             </div>
                             <div class="grid grid-cols-5 py-3 gap-x-4 border-b-2 border-gray-200">
                                 <h1 class="col-span-1 font-bold text-lg">17-08-1945</h1>
                                 <h1 class="col-span-2">Beliin Rifian Starbucks Expresso </h1>
                                 <h1 class="col-span-1 font-bold text-md">Food & Beverage</h1>
-                                <h1 class="col-span-1 font-bold text-lg text-red-600">- Rp 200.000</h1>
+                                <h1 class="col-span-1 font-bold text-lg text-red-600">- Rp 200,000</h1>
                             </div>
                             <div class="grid grid-cols-5 py-3 gap-x-4 border-b-2 border-gray-200">
                                 <h1 class="col-span-1 font-bold text-lg">17-08-1945</h1>
                                 <h1 class="col-span-2">Beliin Rifian Starbucks Expresso </h1>
                                 <h1 class="col-span-1 font-bold text-md">Food & Beverage</h1>
-                                <h1 class="col-span-1 font-bold text-lg text-red-600">- Rp 200.000</h1>
+                                <h1 class="col-span-1 font-bold text-lg text-red-600">- Rp 200,000</h1>
                             </div>
                         </div>
                         
@@ -164,8 +164,8 @@
                                             <img class="w-[30px] h-[30px] text-white p-[3px]" src="{{ asset('assets/dashboard/Bill.png') }}">
                                         </div>
                                         <div>
-                                            <h1 class="font-bold text-lg ml-2">Food and Beverage</h1>
-                                            <h1 class="col-span-2 text-xl ml-2">Rp. 1.000.000</h1>
+                                            <h1 class="font-bold text-lg ml-2">Food & Beverage</h1>
+                                            <h1 class="col-span-2 text-xl ml-2">Rp 1,000,000.00</h1>
                                         </div>
                                     </div>
                                     <div class="flex flex-row items-center py-5 border-b-2 border-gray-200">
@@ -173,8 +173,8 @@
                                             <img class="w-[30px] h-[30px] text-white p-[3px]" src="{{ asset('assets/dashboard/Bill.png') }}">
                                         </div>
                                         <div>
-                                            <h1 class="font-bold text-lg ml-2">Food and Beverage</h1>
-                                            <h1 class="col-span-2 text-xl ml-2">Rp. 1.000.000</h1>
+                                            <h1 class="font-bold text-lg ml-2">House Bill</h1>
+                                            <h1 class="col-span-2 text-xl ml-2">Rp 800,000.00</h1>
                                         </div>
                                     </div>
                                     <div class="flex flex-row items-center py-5 border-b-2 border-gray-200">
@@ -182,8 +182,8 @@
                                             <img class="w-[30px] h-[30px] text-white p-[3px]" src="{{ asset('assets/dashboard/Bill.png') }}">
                                         </div>
                                         <div>
-                                            <h1 class="font-bold text-lg ml-2">Food and Beverage</h1>
-                                            <h1 class="col-span-2 text-xl ml-2">Rp. 1.000.000</h1>
+                                            <h1 class="font-bold text-lg ml-2">Transportation</h1>
+                                            <h1 class="col-span-2 text-xl ml-2">Rp 300,000.00</h1>
                                         </div>
                                     </div>    
                                 </div>

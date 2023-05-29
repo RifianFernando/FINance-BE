@@ -50,6 +50,7 @@
                                     <select name="category" id="categoryDropdown"
                                         class="w-full border-gray-300 border-0 border-b-2 outline-none">
                                         <option value="" disabled selected>Select a category</option>
+                                        <option value="expense" disabled>Expenese</option>
                                         <option value="Food & Beverage">Food & Beverage</option>
                                         <option value="Transportation">Transportation</option>
                                         <option value="House Bill">House Bill</option>
@@ -57,7 +58,8 @@
                                         <option value="Education">Education</option>
                                         <option value="Gift & Donations">Gift & Donations</option>
                                         <option value="Fun Money">Fun Money</option>
-
+                                        <option value="" disabled></option>
+                                        <option value="" disabled>Income</option>
                                         <option value="Salary">Salary</option>
                                         <option value="Other Income">Other Income</option>
                                     </select>
