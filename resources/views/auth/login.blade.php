@@ -36,7 +36,7 @@
         <div class="row">
             <div class="col-12">
                 <!-- Navbar -->
-                <nav
+                <!-- <nav
                     class="navbar navbar-expand-lg blur border-radius-lg top-0 z-index-3 shadow position-absolute mt-4 py-2 start-0 end-0 mx-4">
                     <div class="container-fluid ps-2 pe-0">
                         <a class="navbar-brand font-weight-bolder ms-lg-0 ms-3 " href="../pages/dashboard.html">
@@ -87,7 +87,7 @@
                             </ul>
                         </div>
                     </div>
-                </nav>
+                </nav> -->
                 <!-- End Navbar -->
             </div>
         </div>
