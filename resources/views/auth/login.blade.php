@@ -130,8 +130,8 @@
                                             </label>
                                         </div>
                                         <div class="text-center">
-                                            <button type="submit"
-                                                class="btn btn-lg bg-gradient-primary btn-lg w-100 mt-4 mb-0">Sign
+                                            <button type="submit" style="background-color: #23273C;color:white"
+                                                class="btn btn-lg bg-gradient btn-lg w-100 mt-4 mb-0">Sign
                                                 In</button>
                                         </div>
                                     </form>
@@ -140,7 +140,7 @@
                                     <p class="mb-2 text-sm mx-auto">
                                         Create new account?
                                         <a href="{{ route('register') }}"
-                                            class="text-primary text-gradient font-weight-bold">Register</a>
+                                            class="text-gradient font-weight-bold" style="background-color: #23273C;">Register</a>
                                     </p>
                                 </div>
                             </div>
