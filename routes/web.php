@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\TransactionController;
 use Illuminate\Support\Facades\Route;
@@ -29,11 +30,15 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
+// Pages in website
 Route::group(['middleware' => ['auth']], function () {
     Route::get('/transaction', [TransactionController::class, 'index'])->name('transaction.view');
+    Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
     Route::post('/transaction', [TransactionController::class, 'create'])->name('transaction.create');
+    Route::get('/report', function () {
+        return view('report');
+    });
 });
-
 
 Route::get('/subscription', function () {
     return view('pages.subscription');
@@ -41,14 +46,6 @@ Route::get('/subscription', function () {
 
 Route::get('/customer-center', function () {
     return view('pages.customer-center');
-});
-
-Route::get('/report', function () {
-    return view('report');
-});
-
-Route::get('/dashboard', function () {
-    return view('pages.dashboard');
 });
 
 require __DIR__ . '/auth.php';
