@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\TransactionRequest;
+use App\Models\Balance_Money_User;
 use App\Models\Transaction;
 use App\Models\TransactionJoinTable;
 use Illuminate\Http\Request;
@@ -23,7 +24,6 @@ class TransactionController extends Controller
     public function create(TransactionRequest $request)
     {
         $validated = $request->validated();
-        return redirect()->route('transaction.index');
 
         // check Balance Money User Table
         $user_id = auth()->user()->id;
@@ -39,19 +39,33 @@ class TransactionController extends Controller
             'description' => $validated['description'],
             'is_expense' => $Is_Expense,
         ]);
+        $amount = 0;
+        if ($Is_Expense == true) {
+            $amount = -$Transaction->amount;
+        } else {
+            $amount = $Transaction->amount;
+        }
 
         // Check JoinTable for user_id
         $user_id = auth()->user()->id;
-        $TransactionJoinTable = Transaction::where('user_id', $user_id)->first();
+        $TransactionJoinTable = TransactionJoinTable::where('user_id', $user_id)->first();
         if ($TransactionJoinTable == null) {
+            $balanceCreate = Balance_Money_User::create([
+                'balance_amount' => $amount
+            ]);
+
             TransactionJoinTable::create([
                 'user_id' => $user_id,
                 'transaction_id' => $Transaction->id,
-                // 'balance_id' => auth()->user()->balance_id,
+                'balance_id' => $balanceCreate->id
             ]);
+        } else {
+            $Balance_Money_User = Balance_Money_User::where('id', $TransactionJoinTable->balance_id)->first();
+            $Balance_Money_User->balance_amount += $amount;
+            $Balance_Money_User->save();
         }
 
-        return redirect()->route('transaction.index');
+        return redirect()->route('transaction.view');
     }
 
     /**
