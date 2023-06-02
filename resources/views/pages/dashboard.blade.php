@@ -174,9 +174,9 @@
                                             </div>
                                         </div>
 
-                                        <a href="#" class="text-sm border-2 bg-fin-blue text-center text-white py-3 rounded-md hover:border-fin-blue hover:bg-gray-100 hover:text-fin-blue duration-500 ease-in-out">
+                                        <button id="showFormButton" class="text-sm border-2 bg-fin-blue text-center text-white py-3 rounded-md hover:border-fin-blue hover:bg-gray-100 hover:text-fin-blue duration-500 ease-in-out">
                                             Set Budget
-                                        </a>
+                                        </button>
 
                                         <p class="text-xs text-gray-500 py-2">
                                         <Span class="font-bold">Reminder :</Span> 
@@ -225,6 +225,46 @@
 
             </div>
         </div>
+
+        <div id="formContainer" class="hidden fixed inset-0 flex items-center justify-center">
+
+            <div class="overlay fixed inset-0 bg-black/[0.5]"></div>
+
+            <div class="flex flex-col justify-between items-center bg-darker-white p-8 rounded-md relative h-[50vh] w-[40vw]">
+
+                <h2 class="text-3xl font-bold mb-4 text-center text-fin-blue">Let's set your budget</h2>
+
+                <div class="w-full">
+                    <div>
+                        <h1 class="text-sm ">Current set budget</h1>
+                        <h1 class="text-3xl">Rp 500,000.00</h1>
+                    </div>
+
+                    <br>
+
+                    <div class="flex flex-col">
+                        <label for="newbudget">Set new budget</label>
+                        <input type="text" id="newbudget" name="budget" class="border rounded-md px-3 py-2 mb-2" required />
+                    </div>
+                </div>
+
+                <button type="submit" id="submitButton" class="bg-fin-blue border-2 text-white font-bold py-2 px-4 rounded-md hover:border-fin-blue hover:bg-gray-100 hover:text-fin-blue duration-500 ease-in-out">
+                    Submit
+                </button>
+
+                <button id="closeFormButton" class="absolute top-2 right-2 text-gray-600 hover:text-gray-800">
+                    <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            d="M6 18L18 6M6 6l12 12"
+                        ></path>
+                    </svg>
+                </button>
+
+            </div>
+        </div>
         
         <script>
 
@@ -266,6 +306,29 @@
                     counter = 1;
                 }
             },1000);
+
+            const showFormButton = document.getElementById('showFormButton');
+            const formContainer = document.getElementById('formContainer');
+            const closeFormButton = document.getElementById('closeFormButton');
+            const submitButton = document.getElementById('submitButton')
+
+            showFormButton.addEventListener('click', () => {
+                formContainer.classList.remove('hidden');
+            });
+
+            closeFormButton.addEventListener('click', () => {
+                formContainer.classList.add('hidden');
+            });
+
+            formContainer.addEventListener('click', (event) => {
+            if (event.target === formContainer) {
+                formContainer.classList.add('hidden');
+            }
+            });
+
+            submitButton.addEventListener('click', (event) => {
+                formContainer.classList.add('hidden')
+            });
 
         </script>
 
