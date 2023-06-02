@@ -74,7 +74,7 @@ module.exports = {
                 'subs-card': '2px 2px 4px rgba(0, 0, 0, 0.25)'
             },
             backgroundImage: {
-                'customer-center': "url(..'assets/customer-center/pic.png')",
+                'customer-center': "url(..assets/customer-center/pic.png')",
             }
         },
 

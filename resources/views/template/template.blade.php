@@ -48,7 +48,7 @@
     <div class="flex flex-row">
             <div class="sticky max-w-[300px] hidden flex-col px-10 pt-16 h-screen bg-[#23273C] text-[#FAFAFA] md:flex justify-between left-0 top-0 font-poppins">
                 <div class="flex flex-col">
-                    <h3 class="text-4xl font-bold text-left">FINEance</h3>
+                    <h3 class="text-2xl lg:text-4xl font-bold text-left">FINEance</h3>
                     <ul class="mt-8 text-sm">
                         <li class="pt-5 hover:scale-110 hover:pl-1"><a href="/dashboard" class="text-white no-underline">Dashboard</a></li>
                         <li class="pt-5 hover:scale-110 hover:pl-1"><a href="/transaction" class="text-white no-underline">Transaction</a></li>
