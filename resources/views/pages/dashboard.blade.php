@@ -27,7 +27,9 @@
                     <div class="flex flex-row justify-around items-center w-full py-4 bg-fin-blue rounded-[10px] col-span-3">
                         <img src="{{ asset('assets/customer-center/pic.png') }}" class="rounded-full w-[150px] h-[150px]">
                         <div class="flex flex-col justify-between gap-y-3 text-white max-w-[350px]">
-                            <h1 class="text-2xl">Hello, {{ $Data['FirstName'] }}</h1>
+                            <h1 class="text-2xl">Hello, 
+                                <!-- {{ $Data['FirstName'] }} -->
+                            </h1>
                             <p class="text-lg">Your financial state is in good condition, keep it up</p>
                         </div>
                     </div>
@@ -58,7 +60,9 @@
                                     class="w-[20px] h-[12px]" src="{{ asset('assets/dashboard/Income.png') }}"></div>
                             <h1 class="ml-2">Income</h1>
                         </div>
-                        <h1 class="flex flex-row items-center text-2xl font-castoro">Rp{{ $Data['Income'] }}</h1>
+                        <h1 class="flex flex-row items-center text-2xl font-castoro">Rp
+                            <!-- {{ $Data['Income'] }} -->
+                        </h1>
                         <h1 class="text-gray-400 text-xs">This Month's <span class="font-bold">Income</span></h1>
                     </div>
 
@@ -81,7 +85,10 @@
                         </div>
                         <div class="flex flex-row justify-between text-black font-bold text-sm py-2 font-poppins">
                             <h1 class="flex flex-row items-center text-2xl"><img class="w-[25px] h-[25px] text-white mr-2"
-                                    src="{{ asset('assets/dashboard/Wallet.png') }}"> {{ $Data['FirstName'] }}'s Wallet</h1>
+                                    src="{{ asset('assets/dashboard/Wallet.png') }}"> 
+                                    <!-- {{ $Data['FirstName'] }}'s  -->
+                                    Wallet
+                                </h1>
                             <h1 class="text-2xl font-castoro">Rp. 100.000.000</h1>
                         </div>
                         <div class="flex flex-row text-black font-bold text-sm py-4 font-poppins">
@@ -267,45 +274,25 @@
         </div>
         
         <script>
-
-            const Images = getImage.querySelectorAll('#image-slide img');
-
-            const Radios = document.querySelectorAll('#radio-list input[type="radio"]');
-
-            const ImageLength = Images.length;
-            const RadioLength = Radios.length;
-            let ArrayRadio[]
-            let selectedIndex = -1;
-
-            function ImageSlider(){
-                Images.forEach(function(image) {
-                    image.style.display = 'none';
-                }); 
-
-                Radios.forEach(function(radio, index) {
-                    if (radio.checked) {
-                        selectedIndex = index;
-                    }
-                });
-
-                Radios.forEach(function(radio) {
-                    radio.checked = false;
-                });
-                
-                const specificImage = images[selectedIndex];    
-                specificImage.style.display = 'block';
+            var Images = document.querySelectorAll('.ImageSlider img');
+            var RadioBtns = document.querySelectorAll('.RadioList div');
+            var currentIndex = 0;
             
+            function Slide() {
+                Images[currentIndex].style.display= 'flex';
+                RadioBtns[currentIndex].style.backgroundColor = '#23273C';
+                setInterval(next, 1000);
             }
 
-            let counter = 1;
-
-            setInterval(function(){
-                document.getElementById('Radio' + counter).checked = true;
-                counter++;
-                if(counter>3){
-                    counter = 1;
-                }
-            },1000);
+            function next() {
+                Images[currentIndex].style.display= 'none';
+                RadioBtns[currentIndex].style.backgroundColor = '#F7F7FA';
+                currentIndex = (currentIndex + 1) % Images.length;
+                Images[currentIndex].style.display= 'flex';
+                RadioBtns[currentIndex].style.backgroundColor = '#23273C';
+            }
+        
+            window.onload = Slide();
 
             const showFormButton = document.getElementById('showFormButton');
             const formContainer = document.getElementById('formContainer');
