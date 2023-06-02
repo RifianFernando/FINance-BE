@@ -81,7 +81,7 @@
                         </div>
                         <div class="flex flex-row justify-between text-black font-bold text-sm py-2 font-poppins">
                             <h1 class="flex flex-row items-center text-2xl"><img class="w-[25px] h-[25px] text-white mr-2"
-                                    src="{{ asset('assets/dashboard/Wallet.png') }}"> Rifian's Wallet</h1>
+                                    src="{{ asset('assets/dashboard/Wallet.png') }}"> {{ $Data['FirstName'] }}'s Wallet</h1>
                             <h1 class="text-2xl font-castoro">Rp. 100.000.000</h1>
                         </div>
                         <div class="flex flex-row text-black font-bold text-sm py-4 font-poppins">
