@@ -28,9 +28,9 @@
                         <img src="{{ asset('assets/customer-center/pic.png') }}" class="rounded-full w-[150px] h-[150px]">
                         <div class="flex flex-col justify-between gap-y-3 text-white max-w-[350px]">
                             <h1 class="text-2xl">Hello,
-                                <!-- {{ $Data['FirstName'] }} -->
+                                {{ $Data['FirstName'] }}
                             </h1>
-                            <p class="text-lg">Your financial state is in good condition, keep it up</p>
+                            <p class="text-md">Your financial state is in good condition, keep it up</p>
                         </div>
                     </div>
 
@@ -54,7 +54,7 @@
                 <div class="grid grid-cols-5 w-full gap-x-6">
 
                     <!-- Income  -->
-                    <div class="grid col-span-1 bg-white drop-shadow-subs-card py-1 px-7 rounded-md">
+                    <div class="grid col-span-1 bg-white drop-shadow-subs-card py-1 px-4 rounded-md">
                         <div class="flex flex-row items-center text-gray-500 text-lg gap-y-2">
                             <div class="py-3 px-2 bg-fin-blue flex justify-center items-center rounded-full"><img
                                     class="w-[20px] h-[12px]" src="{{ asset('assets/dashboard/Income.png') }}"></div>
@@ -67,7 +67,7 @@
                     </div>
 
                     <!-- Expense  -->
-                    <div class="grid col-span-1 bg-white drop-shadow-subs-card py-1 px-7 rounded-md">
+                    <div class="grid col-span-1 bg-white drop-shadow-subs-card py-1 px-4 rounded-md">
                         <div class="flex flex-row items-center text-gray-500 text-lg gap-y-2">
                             <div class="py-3 px-2 bg-fin-blue flex justify-center items-center rounded-full"><img
                                     class="w-[20px] h-[12px]" src="{{ asset('assets/dashboard/Expense.png') }}"></div>
@@ -86,7 +86,7 @@
                         <div class="flex flex-row justify-between text-black font-bold text-sm py-2 font-poppins">
                             <h1 class="flex flex-row items-center text-2xl"><img class="w-[25px] h-[25px] text-white mr-2"
                                     src="{{ asset('assets/dashboard/Wallet.png') }}">
-                                <!-- {{ $Data['FirstName'] }}'s  -->
+                                {{ $Data['FirstName'] }}'s 
                                 Wallet
                             </h1>
                             <h1 class="text-2xl font-castoro">Rp. 100.000.000</h1>
@@ -108,63 +108,68 @@
                             <hr class="h-[3px] border-0 w-[5%] bg-black">
                         </div>
 
-                        <div class="w-full flex flex-col items-center h-full justify-center">
+                        <!-- Jika Transaction Kosong -->
+
+                        <!-- <div class="w-full flex flex-col items-center h-full justify-center">
                             <img class=" text-white mr-2" src="{{ asset('assets/dashboard/Empty.png') }}">
                             <h1 class="text-2xl text-gray-400">
                                 No Transaction Yet ! :)
                             </h1>
-                        </div>
-                        <!-- <div class="flex flex-col w-full">
+                        </div> -->
+
+                        <!-- Jika Transaction ada-->
+
+                        <div class="flex flex-col w-full">
                             <div class="grid grid-cols-5 py-3 gap-x-4 border-b-2 border-gray-200">
-                                <h1 class="col-span-1 font-bold text-lg">17-08-1945</h1>
-                                <h1 class="col-span-2">Beliin Rifian Starbucks Expresso </h1>
-                                <h1 class="col-span-1 font-bold text-md">Food & Beverage</h1>
-                                <h1 class="col-span-1 font-bold text-lg text-red-600">- Rp 200.000</h1>
+                                <h1 class="col-span-1 font-bold text-md">17-08-1945</h1>
+                                <h1 class="col-span-2">Beliin Rifian Starbucks Expresso</h1>
+                                <h1 class="col-span-1 font-bold text-sm">Food & Beverage</h1>
+                                <h1 class="col-span-1 font-bold text-md text-red-600">- Rp 200.000</h1>
                             </div>
                             <div class="grid grid-cols-5 py-3 gap-x-4 border-b-2 border-gray-300">
                                 <h1 class="col-span-1 font-bold text-md">17-08-1945</h1>
                                 <h1 class="col-span-2">Beliin Rifian Starbucks Expresso </h1>
-                                <h1 class="col-span-1 font-bold text-md">Food & Beverage</h1>
-                                <h1 class="col-span-1 font-bold text-lg text-red-600">- Rp 200.000</h1>
+                                <h1 class="col-span-1 font-bold text-sm">Food & Beverage</h1>
+                                <h1 class="col-span-1 font-bold text-md text-red-600">- Rp 200.000</h1>
                             </div>
                             <div class="grid grid-cols-5 py-3 gap-x-4 border-b-2 border-gray-300">
                                 <h1 class="col-span-1 font-bold text-md">17-08-1945</h1>
                                 <h1 class="col-span-2">Beliin Rifian Starbucks Expresso </h1>
-                                <h1 class="col-span-1 font-bold text-md">Food & Beverage</h1>
-                                <h1 class="col-span-1 font-bold text-lg text-red-600">- Rp 200.000</h1>
+                                <h1 class="col-span-1 font-bold text-sm">Food & Beverage</h1>
+                                <h1 class="col-span-1 font-bold text-md text-red-600">- Rp 200.000</h1>
                             </div>
                             <div class="grid grid-cols-5 py-3 gap-x-4 border-b-2 border-gray-300">
                                 <h1 class="col-span-1 font-bold text-md">17-08-1945</h1>
                                 <h1 class="col-span-2">Beliin Rifian Starbucks Expresso </h1>
-                                <h1 class="col-span-1 font-bold text-md">Food & Beverage</h1>
-                                <h1 class="col-span-1 font-bold text-lg text-red-600">- Rp 200.000</h1>
+                                <h1 class="col-span-1 font-bold text-sm">Food & Beverage</h1>
+                                <h1 class="col-span-1 font-bold text-md text-red-600">- Rp 200.000</h1>
                             </div>
                             <div class="grid grid-cols-5 py-3 gap-x-4 border-b-2 border-gray-300">
                                 <h1 class="col-span-1 font-bold text-md">17-08-1945</h1>
                                 <h1 class="col-span-2">Beliin Rifian Starbucks Expresso </h1>
-                                <h1 class="col-span-1 font-bold text-md">Food & Beverage</h1>
-                                <h1 class="col-span-1 font-bold text-lg text-red-600">- Rp 200.000</h1>
+                                <h1 class="col-span-1 font-bold text-sm">Food & Beverage</h1>
+                                <h1 class="col-span-1 font-bold text-md text-red-600">- Rp 200.000</h1>
                             </div>
                             <div class="grid grid-cols-5 py-3 gap-x-4 border-b-2 border-gray-300">
                                 <h1 class="col-span-1 font-bold text-md">17-08-1945</h1>
                                 <h1 class="col-span-2">Beliin Rifian Starbucks Expresso </h1>
-                                <h1 class="col-span-1 font-bold text-md">Food & Beverage</h1>
-                                <h1 class="col-span-1 font-bold text-lg text-red-600">- Rp 200.000</h1>
+                                <h1 class="col-span-1 font-bold text-sm">Food & Beverage</h1>
+                                <h1 class="col-span-1 font-bold text-md text-red-600">- Rp 200.000</h1>
                             </div>
                             <div class="grid grid-cols-5 py-3 gap-x-4 border-b-2 border-gray-300">
                                 <h1 class="col-span-1 font-bold text-md">17-08-1945</h1>
                                 <h1 class="col-span-2">Beliin Rifian Starbucks Expresso </h1>
-                                <h1 class="col-span-1 font-bold text-md">Food & Beverage</h1>
-                                <h1 class="col-span-1 font-bold text-lg text-red-600">- Rp 200.000</h1>
+                                <h1 class="col-span-1 font-bold text-sm">Food & Beverage</h1>
+                                <h1 class="col-span-1 font-bold text-md text-red-600">- Rp 200.000</h1>
                             </div>
                         </div>
 
-                        <div class="flex flex-row text-black font-bold text-sm py-4 font-poppins justify-center">
-                            <a href="#" class="flex flex-row items-center gap-x-2">See More<img
-                                    class="w-[15px] h-[12px] text-white mr-2"
-                                    src="{{ asset('assets/dashboard/SeeMoreBlack.png') }}">
+                        <div class="flex flex-row w-full text-black font-bold text-sm py-4 font-poppins justify-center items-center">
+                            <a href="#" class="flex flex-row items-center gap-x-2">
+                                See More
+                                <img class="w-[15px] h-[12px] text-white mr-2" src="{{ asset('assets/dashboard/SeeMoreBlack.png') }}">
                             </a>
-                        </div> -->
+                        </div>
                     </div>
 
                     <!-- Budget  -->
@@ -210,7 +215,7 @@
                     <!-- Top Spending  -->
                     <div
                         class="col-span-3 bg-white drop-shadow-subs-card py-3 px-6 rounded-md w-full flex flex-col row-span-1">
-                        <h1 class="text-xl">Top Spending This Month</h1>
+                        <h1 class="text-lg">Top Spending This Month</h1>
                         <div class="w-[100%] py-2">
                             <hr class="h-[3px] border-0 w-[20%] bg-black">
                         </div>
@@ -255,13 +260,11 @@
 
                 <h2 class="text-3xl font-bold mb-4 text-center text-fin-blue">Let's set your budget</h2>
 
-                <div class="w-full">
+                <div class="w-full h-full flex flex-col justify-around">
                     <div>
                         <h1 class="text-sm ">Current set budget</h1>
                         <h1 class="text-3xl">Rp 500,000.00</h1>
                     </div>
-
-                    <br>
 
                     <div class="flex flex-col">
                         <label for="newbudget">Set new budget</label>
