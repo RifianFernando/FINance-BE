@@ -29,7 +29,8 @@ class TransactionRequest extends FormRequest
                 'string',
                 'in:Food & Beverage,Transportation,House Bill,Medical,Education,Gift & Donations,Fun Money,Other Expenses,Salary,Other Income'
             ],
-            'description' => 'required|string',
+            'topik' => 'required|string|max:255|in:',
+            'description' => 'required|string'
         ];
     }
 
