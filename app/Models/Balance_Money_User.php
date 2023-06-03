@@ -16,6 +16,7 @@ class Balance_Money_User extends Model
      */
     protected $fillable = [
         'balance_amount',
+        'budget_amount'
     ];
 
     public function TransactionJoinTable()

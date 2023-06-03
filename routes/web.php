@@ -34,6 +34,9 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/report', function () {
         return view('report');
     });
+    Route::post('/budget/add', [
+        TransactionController::class, 'setBudget'
+    ])->name('budget.set');
 });
 
 Route::get('/subscription', function () {
