@@ -36,11 +36,11 @@
 
 
                     <!-- News Image Slider-->
-                    <div class="flex  bg-white drop-shadow-subs-card rounded-md col-span-2">
-                        <div class=" flex flex-row" id="image-slide">
-                            <img class="w-full h-full fixed" src="{{ asset('assets/customer-center/pic.png') }}">
-                            <img class="w-full h-full fixed" src="{{ asset('assets/register/illustration-signup.jpg') }}">
-                            <img class="w-full h-full fixed" src="{{ asset('assets/customer-center/pic.png') }}">
+                    <div class="flex bg-white drop-shadow-subs-card rounded-md col-span-2 overflow-hidden">
+                        <div class="ImageSlider flex flex-row">
+                            <img class="w-full h-full fixed" src="{{ asset('assets/dashboard/Dummy2.jpeg') }}">
+                            <img class="w-full h-full fixed" src="{{ asset('assets/dashboard/Dummy1.jpeg') }}">
+                            <img class="w-full h-full fixed" src="{{ asset('assets/dashboard/Dummy3.jpeg') }}">
                         </div>
                         <div class="RadioList absolute top-2 right-2 flex flex-row gap-x-2">
                             <div class="w-3 h-3 bg-white rounded-full"></div>
@@ -61,7 +61,7 @@
                             <h1 class="ml-2">Income</h1>
                         </div>
                         <h1 class="flex flex-row items-center text-2xl font-castoro">
-                            Rp{{ $Data['Income'] }}
+                            Rp. {{ $Data['Income'] }}
                         </h1>
                         <h1 class="text-gray-400 text-xs">This Month's <span class="font-bold">Income</span></h1>
                     </div>
@@ -73,7 +73,7 @@
                                     class="w-[20px] h-[12px]" src="{{ asset('assets/dashboard/Expense.png') }}"></div>
                             <h1 class="ml-2">Expense</h1>
                         </div>
-                        <h1 class="flex flex-row items-center text-2xl font-castoro">Rp.{{ $Data['Expense'] }}</h1>
+                        <h1 class="flex flex-row items-center text-2xl font-castoro">Rp. {{ $Data['Expense'] }}</h1>
                         <h1 class="text-gray-400 text-xs">This Month's <span class="font-bold">Expense</span></h1>
                     </div>
 
@@ -100,14 +100,21 @@
                 </div>
 
                 <!-- Third Row -->
-                <div class="grid grid-cols-10 w-full gap-x-6">
+                <div class="grid grid-cols-10 w-full gap-x-6 grid-rows-2 gap-y-2">
                     <!-- Transaction Container -->
-                    <div class="grid col-span-7 bg-white drop-shadow-subs-card py-2 px-8 rounded-md w-full">
+                    <div class="flex flex-col items-start col-span-7 bg-white drop-shadow-subs-card py-2 px-8 rounded-md w-full row-span-2">
                         <h1 class="text-2xl pt-2">Latest Transaction</h1>
                         <div class="w-[100%] py-2 flex flex-col gap-y-4">
                             <hr class="h-[3px] border-0 w-[5%] bg-black">
                         </div>
-                        <div class="flex flex-col w-full">
+
+                        <div class="w-full flex flex-col items-center h-full justify-center">
+                            <img class=" text-white mr-2" src="{{ asset('assets/dashboard/Empty.png') }}">
+                            <h1 class="text-2xl text-gray-400">
+                                No Transaction Yet ! :)
+                            </h1>
+                        </div>
+                        <!-- <div class="flex flex-col w-full">
                             <div class="grid grid-cols-5 py-3 gap-x-4 border-b-2 border-gray-200">
                                 <h1 class="col-span-1 font-bold text-lg">17-08-1945</h1>
                                 <h1 class="col-span-2">Beliin Rifian Starbucks Expresso </h1>
@@ -157,7 +164,7 @@
                                     class="w-[15px] h-[12px] text-white mr-2"
                                     src="{{ asset('assets/dashboard/SeeMoreBlack.png') }}">
                             </a>
-                        </div>
+                        </div> -->
                     </div>
 
                     <!-- Budget  -->
