@@ -255,13 +255,11 @@
 
                 <h2 class="text-3xl font-bold mb-4 text-center text-fin-blue">Let's set your budget</h2>
 
-                <div class="w-full">
+                <div class="w-full h-full flex flex-col justify-around">
                     <div>
                         <h1 class="text-sm ">Current set budget</h1>
                         <h1 class="text-3xl">Rp 500,000.00</h1>
                     </div>
-
-                    <br>
 
                     <div class="flex flex-col">
                         <label for="newbudget">Set new budget</label>
