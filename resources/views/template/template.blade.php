@@ -22,16 +22,10 @@
 </head>
     <script>
         let Index=0;
-        var image = document.querySelector('#MobileIcon');
         let ChangeStyles = [
             'fixed flex flex-col text-center left-[-100%] top-0 h-full border-r border-r-gray-900 bg-gray-500',
             'fixed flex flex-col text-center left-0 top-0 h-full border-r border-r-gray-900 bg-gray-500 ease-in-out duration-500 w-[100%]'
         ];
-
-        let url = [
-            "{{ asset('assets/navbar/Hamburger.png') }}",
-            "{{ asset('assets/navbar/Close.png') }}"
-        ]
 
         function ClickNav() {
             Index = (Index+1) % ChangeStyles.length;
@@ -46,6 +40,7 @@
     </script>
 
     <div class="flex flex-row">
+            <!-- Side Menu Desktop  -->
             <div class="sticky max-w-[300px] hidden flex-col px-10 pt-16 h-screen bg-[#23273C] text-[#FAFAFA] md:flex justify-between left-0 top-0 font-poppins">
                 <div class="flex flex-col">
                     <h3 class="text-2xl lg:text-4xl font-bold text-left">FINEance</h3>
@@ -63,6 +58,8 @@
                 </div>
             </div>
             @yield('body')
+            
+            <!-- Burger Bar -->
             <div class="flex flex-col right-0 top-0 fixed py-4 px-8 font-poppins">
                 <div onClick="ChangeNavStyle()" class="md:hidden" >
                     <button><img class="w-[30px] h-[30px]" src="{{ asset('assets/navbar/Hamburger.png') }}" id="MobileIcon"></button>
