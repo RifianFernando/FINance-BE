@@ -8,6 +8,24 @@ use Illuminate\Support\Facades\DB;
 
 class DashboardController extends Controller
 {
+    private function getValueIsExpense($is_expense)
+    {
+        //get income or expense with query builder
+        $transaction = TransactionJoinTable::where('user_id', auth()->user()->id)->get();
+        $data = 0;
+        if (isset($transaction[0])) {
+            $data
+                = DB::table('transaction_join_tables AS tj')
+                ->leftJoin('transactions AS t', 'tj.transaction_id', '=', 't.id')
+                ->where('tj.user_id', $transaction[0]->user_id)
+                ->where('t.is_expense', $is_expense)
+                ->selectRaw('SUM(t.amount) as amount')
+                ->first();
+            $data = $data->amount;
+        }
+
+        return $data;
+    }
     public function index()
     {
         //get first name
@@ -15,23 +33,15 @@ class DashboardController extends Controller
         $FirstName = explode(' ', trim($UserName))[0];
 
         //get income with query builder
-        $user_id = auth()->user()->id;
-        $Income = DB::table('transactions')
-            ->join('transaction_join_tables', 'transactions.id', '=', 'transaction_joi  n_tables.transaction_id')
-            ->where('transactions.is_expense', '=', false)
-            ->sum('transactions.amount');
+        $Income = $this->getValueIsExpense(false);
 
-        // DB::table('transactions')
-        // ->leftJoin('transaction_join_tables', 'transactiions.id', '=', 'transaction_join_tables.transaction_id')
-        // ->select('transactions.*', DB::raw('COUNT(transaction_join_tables.amount) as order_count'))
-        // ->groupBy('transactions.id')
-        // ->get();
-
-        //get expense with query builder
+        //get expense with query builder\
+        $Expense = $this->getValueIsExpense(true);
 
         $Data = [
             'FirstName' => $FirstName,
             'Income' => $Income,
+            'Expense' => $Expense,
         ];
 
         return view('pages.dashboard', [

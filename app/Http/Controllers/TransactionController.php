@@ -53,17 +53,16 @@ class TransactionController extends Controller
             $balanceCreate = Balance_Money_User::create([
                 'balance_amount' => $amount
             ]);
-
-            TransactionJoinTable::create([
-                'user_id' => $user_id,
-                'transaction_id' => $Transaction->id,
-                'balance_id' => $balanceCreate->id
-            ]);
         } else {
-            $Balance_Money_User = Balance_Money_User::where('id', $TransactionJoinTable->balance_id)->first();
-            $Balance_Money_User->balance_amount += $amount;
-            $Balance_Money_User->save();
+            $balanceCreate = Balance_Money_User::where('id', $TransactionJoinTable->balance_id)->first();
+            $balanceCreate->balance_amount += $amount;
+            $balanceCreate->save();
         }
+        TransactionJoinTable::create([
+            'user_id' => $user_id,
+            'transaction_id' => $Transaction->id,
+            'balance_id' => $balanceCreate->id
+        ]);
 
         return redirect()->route('transaction.view');
     }
