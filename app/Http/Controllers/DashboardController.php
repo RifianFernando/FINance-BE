@@ -27,7 +27,7 @@ class DashboardController extends Controller
                 ->leftJoin('transactions AS t', 'tj.transaction_id', '=', 't.id')
                 ->where('tj.user_id', $transaction[0]->user_id)
                 ->where('t.is_expense', $is_expense)
-                ->whereMonth('t.created_at', '=', $currentMonth)
+                ->whereMonth('t.date', '=', $currentMonth)
                 ->selectRaw('SUM(t.amount) as amount')
                 ->first();
             $data = $data->amount == null ? 0 : $data->amount;
@@ -35,8 +35,6 @@ class DashboardController extends Controller
 
         return $data;
     }
-
-
     private function getTotalBalance($userId)
     {
         //get total balance with query builder
@@ -47,6 +45,21 @@ class DashboardController extends Controller
             ->first();
 
         $data = $data == null ? 0 : $data->amount;
+
+        return $data;
+    }
+
+    private function getBudget($userId)
+    {
+        //get total balance with query builder
+        $data =  TransactionJoinTable::where('user_id', $userId)
+            ->join('balance__money__users AS bmu', 'bmu.id', '=', 'transaction_join_tables.balance_id')
+            ->select('budget_amount AS amount')
+            ->first();
+        $data = $data == null ? 0 : $data->amount;
+        if ($data == null) {
+            $data = 0;
+        }
 
         return $data;
     }
@@ -69,11 +82,15 @@ class DashboardController extends Controller
         //get total balance
         $TotalBalance = $this->getTotalBalance($user->id);
 
+        //get budget
+        $Budget = $this->getBudget($user->id);
+
         $Data = [
             'FirstName' => $FirstName,
             'Income' => $Income,
             'Expense' => $Expense,
-            'TotalBalance' => $TotalBalance
+            'TotalBalance' => $TotalBalance,
+            'Budget' => $Budget,
         ];
 
         return view('pages.dashboard', [

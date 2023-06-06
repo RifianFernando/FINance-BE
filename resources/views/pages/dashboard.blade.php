@@ -92,7 +92,7 @@
                             <h1 class="text-2xl font-castoro">Rp {{ $Data['TotalBalance'] }}</h1>
                         </div>
                         <div class="flex flex-row text-black font-bold text-sm py-4 font-poppins">
-                            <a href="#"
+                            <a href="{{ route('transaction.view') }}"
                                 class="text-sm border-2 bg-fin-blue text-center text-white py-3 px-6 rounded-md hover:border-fin-blue hover:bg-gray-100 hover:text-fin-blue duration-500 ease-in-out ">Add
                                 Transaction</a>
                         </div>
@@ -112,11 +112,11 @@
                         <!-- Jika Transaction Kosong -->
 
                         <!-- <div class="w-full flex flex-col items-center h-full justify-center">
-                                                                        <img class=" text-white mr-2" src="{{ asset('assets/dashboard/Empty.png') }}">
-                                                                        <h1 class="text-2xl text-gray-400">
-                                                                            No Transaction Yet ! :)
-                                                                        </h1>
-                                                                    </div> -->
+                                                                                        <img class=" text-white mr-2" src="{{ asset('assets/dashboard/Empty.png') }}">
+                                                                                        <h1 class="text-2xl text-gray-400">
+                                                                                            No Transaction Yet ! :)
+                                                                                        </h1>
+                                                                                    </div> -->
 
                         <!-- Jika Transaction ada-->
 
@@ -194,7 +194,7 @@
                                         <div class="ml-2">
 
                                             <h1 class="font-bold text-md">Budget's Left</h1>
-                                            <h1 class="text-xl font-castoro">Rp 1.000.000</h1>
+                                            <h1 class="text-xl font-castoro">Rp{{ $Data['Budget'] }}</h1>
                                         </div>
                                     </div>
 
@@ -266,7 +266,7 @@
                 <div class="w-full h-full flex flex-col justify-around">
                     <div>
                         <h1 class="text-sm ">Current set budget</h1>
-                        <h1 class="text-3xl">Rp 500,000.00</h1>
+                        <h1 class="text-3xl">Rp{{$Data['Budget']}}</h1>
                     </div>
 
                     <form action="{{ route('budget.set') }}" method="POST" class="flex flex-col" id="form-budget">

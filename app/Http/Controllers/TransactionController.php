@@ -74,16 +74,20 @@ class TransactionController extends Controller
     public function setBudget(StoreBudgetReqeust $request)
     {
         $userId = auth()->user()->id;
-        $TransactionJoinTable =
-            DB::table('transaction_join_tables as tjt')
-            ->where('tjt.user_id', $userId)
-            ->join('balance__money__users as mbu', 'tjt.balance_id', '=', 'mbu.id')
-            ->select('mbu.budget_amount as budget_amount')
-            ->first();
+        try {
+            $Budget_user =
+                TransactionJoinTable::where('user_id', $userId)
+                ->get('balance_id')
+                ->first()->balance_id;
 
-        // update balance_amount
-        $TransactionJoinTable->budget_amount = $request->budget;
-        $TransactionJoinTable->save();
+            $BudgetAmount =
+                Balance_Money_User::where('id', $Budget_user)
+                ->first();
+            $BudgetAmount->budget_amount = $request->budget;
+            $BudgetAmount->save();
+        } catch (\Exception $e) {
+            return redirect(route('transaction.view'))->with('error', 'Please add transaction first!');
+        }
 
         return redirect(route('dashboard'))->with('success', 'Budget has been set!');
     }
