@@ -10,6 +10,11 @@ use Illuminate\Support\Facades\DB;
 
 class DashboardController extends Controller
 {
+    public function report()
+    {
+        return view('pages.report');
+    }
+
     private function getValueIsExpense($is_expense, $userId)
     {
         //get income or expense with query builder
