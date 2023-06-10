@@ -2,11 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StoreBudgetReqeust;
 use App\Http\Requests\TransactionRequest;
 use App\Models\Balance_Money_User;
 use App\Models\Transaction;
 use App\Models\TransactionJoinTable;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class TransactionController extends Controller
 {
@@ -47,7 +49,6 @@ class TransactionController extends Controller
         }
 
         // Check JoinTable for user_id
-        $user_id = auth()->user()->id;
         $TransactionJoinTable = TransactionJoinTable::where('user_id', $user_id)->first();
         if ($TransactionJoinTable == null) {
             $balanceCreate = Balance_Money_User::create([
@@ -68,11 +69,27 @@ class TransactionController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
+     * Store a newly created resource budget in storage.
      */
-    public function store(Request $request)
+    public function setBudget(StoreBudgetReqeust $request)
     {
-        //
+        $userId = auth()->user()->id;
+        try {
+            $Budget_user =
+                TransactionJoinTable::where('user_id', $userId)
+                ->get('balance_id')
+                ->first()->balance_id;
+
+            $BudgetAmount =
+                Balance_Money_User::where('id', $Budget_user)
+                ->first();
+            $BudgetAmount->budget_amount = $request->budget;
+            $BudgetAmount->save();
+        } catch (\Exception $e) {
+            return redirect(route('transaction.view'))->with('error', 'Please add transaction first!');
+        }
+
+        return redirect(route('dashboard'))->with('success', 'Budget has been set!');
     }
 
     /**

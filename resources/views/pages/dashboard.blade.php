@@ -62,8 +62,8 @@
                                     class="max-w-[20px] max-h-auto" src="{{ asset('assets/dashboard/Income.png') }}"></div>
                             <h1 class="ml-2 text-sm xl:text-md">Income</h1>
                         </div>
-                        <h1 class="flex flex-row items-center text-md xl:text-2xl font-castoro py-4 sm:py-0">
-                            Rp. {{ $Data['Income'] }}
+                        <h1 class="flex flex-row items-center text-2xl font-castoro">
+                            Rp {{ $Data['Income'] }}
                         </h1>
                         <h1 class="text-gray-400 text-xs">This Month's <span class="font-bold">Income</span></h1>
                     </div>
@@ -75,7 +75,7 @@
                                 <img class="max-w-[15px] max-h-auto" src="{{ asset('assets/dashboard/Expense.png') }}"></div>
                             <h1 class="ml-2 text-sm xl:text-md">Expense</h1>
                         </div>
-                        <h1 class="flex flex-row items-center text-md xl:text-2xl font-castoro py-4">Rp. {{ $Data['Expense'] }}</h1>
+                        <h1 class="flex flex-row items-center text-2xl font-castoro">Rp {{ $Data['Expense'] }}</h1>
                         <h1 class="text-gray-400 text-xs">This Month's <span class="font-bold">Expense</span></h1>
                     </div>
 
@@ -85,17 +85,17 @@
                             <h1>Wallet</h1>
                             <h1>Total Balance</h1>
                         </div>
-                        <div class="flex flex-row justify-between text-black font-bold placeholder:py-2 font-poppins">
-                            <h1 class="flex flex-row items-center text-xs md:text-sm lg:text-lg xl:text-2xl">
-                                <img class="w-[22px] h-[22px] text-white mr-2" src="{{ asset('assets/dashboard/Wallet.png') }}">
-                                {{ $Data['FirstName'] }}'s 
+                        <div class="flex flex-row justify-between text-black font-bold text-sm py-2 font-poppins">
+                            <h1 class="flex flex-row items-center text-2xl"><img class="w-[25px] h-[25px] text-white mr-2"
+                                    src="{{ asset('assets/dashboard/Wallet.png') }}">
+                                {{ $Data['FirstName'] }}'s
                                 Wallet
                             </h1>
-                            <h1 class="text-sm md:text-md lg:text-lg xl:text-2xl font-castoro">Rp. 100.000.000</h1>
+                            <h1 class="text-2xl font-castoro">Rp {{ $Data['TotalBalance'] }}</h1>
                         </div>
                         <div class="flex flex-row text-black font-bold text-sm py-4 font-poppins">
-                            <a href="#"
-                                class="text-xs xl:text-sm border-2 bg-fin-blue text-center text-white py-3 px-2 lg:px-6 rounded-md hover:border-fin-blue hover:bg-gray-100 hover:text-fin-blue duration-500 ease-in-out ">Add
+                            <a href="{{ route('transaction.view') }}"
+                                class="text-sm border-2 bg-fin-blue text-center text-white py-3 px-6 rounded-md hover:border-fin-blue hover:bg-gray-100 hover:text-fin-blue duration-500 ease-in-out ">Add
                                 Transaction</a>
                         </div>
                     </div>
@@ -104,7 +104,8 @@
                 <!-- Third Row -->
                 <div class="grid grid-cols-10 w-full gap-x-2 xl:gap-x-6 grid-rows-3 md:grid-rows-4 gap-y-2">
                     <!-- Transaction Container -->
-                    <div class="flex flex-col items-start bg-white drop-shadow-subs-card py-2 px-2 sm:px-6 md:px-3 xl:px-8 rounded-md w-full row-span-2 row-start-2 col-span-10 md:row-span-4 md:row-start-1 md:col-span-7">
+                    <div
+                        class="flex flex-col items-start col-span-7 bg-white drop-shadow-subs-card py-2 px-8 rounded-md w-full row-span-2">
                         <h1 class="text-2xl pt-2">Latest Transaction</h1>
                         <div class="w-[100%] py-2">
                             <hr class="h-[3px] border-0 w-[10%] bg-black">
@@ -113,11 +114,11 @@
                         <!-- Jika Transaction Kosong -->
 
                         <!-- <div class="w-full flex flex-col items-center h-full justify-center">
-                            <img class=" text-white mr-2" src="{{ asset('assets/dashboard/Empty.png') }}">
-                            <h1 class="text-2xl text-gray-400">
-                                No Transaction Yet ! :)
-                            </h1>
-                        </div> -->
+                                                                                        <img class=" text-white mr-2" src="{{ asset('assets/dashboard/Empty.png') }}">
+                                                                                        <h1 class="text-2xl text-gray-400">
+                                                                                            No Transaction Yet ! :)
+                                                                                        </h1>
+                                                                                    </div> -->
 
                         <!-- Jika Transaction ada-->
 
@@ -166,10 +167,12 @@
                             </div>
                         </div>
 
-                        <div class="flex flex-row w-full text-black font-bold text-sm py-4 font-poppins justify-center items-center">
+                        <div
+                            class="flex flex-row w-full text-black font-bold text-sm py-4 font-poppins justify-center items-center">
                             <a href="#" class="flex flex-row items-center gap-x-2">
                                 See More
-                                <img class="w-[15px] h-[12px] text-white mr-2" src="{{ asset('assets/dashboard/SeeMoreBlack.png') }}">
+                                <img class="w-[15px] h-[12px] text-white mr-2"
+                                    src="{{ asset('assets/dashboard/SeeMoreBlack.png') }}">
                             </a>
                         </div>
                     </div>
@@ -191,8 +194,8 @@
 
                                         <div class="ml-2">
 
-                                            <h1 class="font-bold text-xs md:text-md lg:text-lg">Budget's Left</h1>
-                                            <h1 class="sm:text-xs md:text-md lg:text-lg font-castoro">Rp. 1.000.000</h1>
+                                            <h1 class="font-bold text-md">Budget's Left</h1>
+                                            <h1 class="text-xl font-castoro">Rp{{ $Data['Budget'] }}</h1>
                                         </div>
                                     </div>
 
@@ -228,9 +231,8 @@
                                             src="{{ asset('assets/dashboard/Bill.png') }}">
                                     </div>
                                     <div>
-                                        <h1 class="text-xs md:text-sm xl:text-lg font-bold ml-2">Rp. 1.000.000</h1>
-                                        <h1 class="text-xs lg:text-sm
-                                         ml-2 text-gray-500">Food & Beverage</h1>
+                                        <h1 class="font-bold text-lg ml-2">Rp 1.000.000</h1>
+                                        <h1 class="text-md ml-2 text-gray-500">Food & Beverage</h1>
                                     </div>
                                 </div>
                             </div>
@@ -262,19 +264,18 @@
 
                 <h2 class="text-3xl font-bold mb-4 text-center text-fin-blue">Let's set your budget</h2>
 
-                <div class="w-full">
+                <div class="w-full h-full flex flex-col justify-around">
                     <div>
                         <h1 class="text-sm ">Current set budget</h1>
-                        <h1 class="text-3xl">Rp 500,000.00</h1>
+                        <h1 class="text-3xl">Rp{{$Data['Budget']}}</h1>
                     </div>
 
-                    <br>
-
-                    <div class="flex flex-col">
+                    <form action="{{ route('budget.set') }}" method="POST" class="flex flex-col" id="form-budget">
+                        @csrf
                         <label for="newbudget">Set new budget</label>
                         <input type="text" id="newbudget" name="budget" class="border rounded-md px-3 py-2 mb-2"
                             required />
-                    </div>
+                    </form>
                 </div>
 
                 <button type="submit" id="submitButton"
@@ -333,7 +334,9 @@
             });
 
             submitButton.addEventListener('click', (event) => {
-                formContainer.classList.add('hidden')
+                const form = document.getElementById('form-budget');
+                formContainer.classList.add('hidden');
+                form.submit();
             });
         </script>
 

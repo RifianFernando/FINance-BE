@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('balance__money__users', function (Blueprint $table) {
             $table->id();
             $table->decimal('balance_amount', 10, 2);
+            $table->decimal('budget_amount', 10, 2)->nullable();
             $table->timestamps();
         });
     }
