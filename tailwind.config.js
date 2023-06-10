@@ -75,7 +75,11 @@ module.exports = {
             },
             backgroundImage: {
                 'customer-center': "url(..assets/customer-center/pic.png')",
-            }
+            },
+            screens: {
+                'HP' : '500px',
+                'tablet': '640px'
+            },
         },
 
     },

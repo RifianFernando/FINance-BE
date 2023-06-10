@@ -41,19 +41,19 @@
 
     <div class="flex flex-row">
             <!-- Side Menu Desktop  -->
-            <div class="sticky max-w-[300px] hidden flex-col px-10 pt-16 h-screen bg-[#23273C] text-[#FAFAFA] md:flex justify-between left-0 top-0 font-poppins">
-                <div class="flex flex-col">
-                    <h3 class="text-2xl lg:text-4xl font-bold text-left">FINEance</h3>
+            <div class="sticky max-w-[300px] hidden flex-col px-8 lg:px-10 pt-16 h-screen bg-[#23273C] text-[#FAFAFA] md:flex justify-between left-0 top-0 font-poppins">
+                <div class="flex flex-col ">
+                    <h3 class="text-xl lg:text-4xl font-bold text-left text-[#FAFAFA]">FINEance</h3>
                     <ul class="mt-8 text-sm">
-                        <li class="pt-5 hover:scale-110 hover:pl-1"><a href="/dashboard" class="text-white no-underline">Dashboard</a></li>
-                        <li class="pt-5 hover:scale-110 hover:pl-1"><a href="/transaction" class="text-white no-underline">Transaction</a></li>
-                        <li class="pt-5 hover:scale-110 hover:pl-1"><a href="/report" class="text-white no-underline">Report</a></li>
-                        <li class="pt-5 hover:scale-110 hover:pl-1"><a href="/subscription" class="text-white no-underline">Subscription</a></li>
-                        <li class="pt-5 hover:scale-110 hover:pl-1"><a href="/customer-center" class="text-white no-underline">Customer Center</a></li>
+                        <li class="pt-5 hover:scale-110 hover:pl-1"><a href="/dashboard" class="text-[#FAFAFA] no-underline">Dashboard</a></li>
+                        <li class="pt-5 hover:scale-110 hover:pl-1"><a href="/transaction" class="text-[#FAFAFA] no-underline">Transaction</a></li>
+                        <li class="pt-5 hover:scale-110 hover:pl-1"><a href="/report" class="text-[#FAFAFA] no-underline">Report</a></li>
+                        <li class="pt-5 hover:scale-110 hover:pl-1"><a href="/subscription" class="text-[#FAFAFA] no-underline">Subscription</a></li>
+                        <li class="pt-5 hover:scale-110 hover:pl-1"><a href="/customer-center" class="text-[#FAFAFA] no-underline">Customer Center</a></li>
                     </ul>
                 </div>
                 <div class="mb-8 flex items-center">
-                    <img class="w-[25px] h-[25px] text-white" src="{{ asset('assets/navbar/Settings.png') }}" id="MobileIcon">
+                    <img class="w-[25px] h-[25px] text-[#FAFAFA]" src="{{ asset('assets/navbar/Settings.png') }}" id="MobileIcon">
                     <p class="mx-2">Option</p>
                 </div>
             </div>
@@ -65,13 +65,13 @@
                     <button><img class="w-[30px] h-[30px]" src="{{ asset('assets/navbar/Hamburger.png') }}" id="MobileIcon"></button>
                 </div>
                 <div class="hidden mt-10" onClick="ChangeNavStyle()" id="nav-container" >
-                    <h3 class="mt-10 text-4xl font-bold">FINEance</h3>
+                    <h3 class="mt-10 text-4xl font-bold text-[#FAFAFA]">FINEance</h3>
                     <ul class="mt-10 text-xl">
-                        <li class=""><a href="/dashboard" class="text-white no-underline">Dashboard</a></li>
-                        <li class="pt-8"><a href="/transaction" class="text-white no-underline">Transaction</a></li>
-                        <li class="pt-5"><a href="/report" class="text-white no-underline">Report</a></li>
-                        <li class="pt-5"><a href="/subscription" class="text-white no-underline">Subscription</a></li>
-                        <li class="pt-5"><a href="/customer-center" class="text-white no-underline">Customer Center</a></li>
+                        <li class=""><a href="/dashboard" class="text-[#FAFAFA] no-underline">Dashboard</a></li>
+                        <li class="pt-8"><a href="/transaction" class="text-[#FAFAFA] no-underline">Transaction</a></li>
+                        <li class="pt-5"><a href="/report" class="text-[#FAFAFA]no-underline">Report</a></li>
+                        <li class="pt-5"><a href="/subscription" class="text-[#FAFAFA] no-underline">Subscription</a></li>
+                        <li class="pt-5"><a href="/customer-center" class="text-[#FAFAFA] no-underline">Customer Center</a></li>
                     </ul>
                 </div>
             </div>
