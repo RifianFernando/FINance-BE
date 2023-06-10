@@ -105,7 +105,7 @@
                 <div class="grid grid-cols-10 w-full gap-x-2 xl:gap-x-6 grid-rows-3 md:grid-rows-4 gap-y-2">
                     <!-- Transaction Container -->
                     <div
-                        class="flex flex-col items-start col-span-7 bg-white drop-shadow-subs-card py-2 px-8 rounded-md w-full row-span-2">
+                        class="flex flex-col items-start bg-white drop-shadow-subs-card py-2 px-2 sm:px-6 md:px-3 xl:px-8 rounded-md w-full row-span-2 row-start-2 col-span-10 md:row-span-4 md:row-start-1 md:col-span-7">
                         <h1 class="text-2xl pt-2">Latest Transaction</h1>
                         <div class="w-[100%] py-2">
                             <hr class="h-[3px] border-0 w-[10%] bg-black">
@@ -224,15 +224,15 @@
                             <hr class="h-[3px] border-0 w-[20%] bg-black">
                         </div>
                         <div class="flex flex-col gap-y-3 py-2">
-                            <div class="flex flex-col w-full">
+                        <div class="flex flex-col w-full">
                                 <div class="flex flex-row py-2 rounded-md items-center">
-                                    <div class=" bg-fin-blue justify-center items-center p-3 rounded-full ">
+                                    <div class=" bg-fin-blue justify-center items-center p-3 rounded-full">
                                         <img class="max-w-[25px] max-h-[25px] text-white p-[3px]"
                                             src="{{ asset('assets/dashboard/Bill.png') }}">
                                     </div>
                                     <div>
-                                        <h1 class="font-bold text-lg ml-2">Rp 1.000.000</h1>
-                                        <h1 class="text-md ml-2 text-gray-500">Food & Beverage</h1>
+                                        <h1 class="text-xs md:text-sm xl:text-lg font-bold ml-2">Rp. 1.000.000</h1>
+                                        <h1 class="text-xs lg:text-sm ml-2 text-gray-500">Food & Beverage</h1>
                                     </div>
                                 </div>
                             </div>
