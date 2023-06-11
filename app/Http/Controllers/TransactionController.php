@@ -65,7 +65,7 @@ class TransactionController extends Controller
             'balance_id' => $balanceCreate->id
         ]);
 
-        return redirect()->route('transaction.view');
+        return redirect('/dashboard');
     }
 
     /**
