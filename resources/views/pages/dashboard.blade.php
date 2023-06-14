@@ -196,7 +196,10 @@
                                     </div>
 
                                     <button id="showFormButton"
-                                        class="text-xs lg:text-sm border-2 bg-fin-blue text-center text-white py-3 rounded-md hover:border-fin-blue hover:bg-gray-100 hover:text-fin-blue duration-500 ease-in-out">
+                                        class="text-xs lg:text-sm border-2
+                                        bg-fin-blue text-center text-white py-3
+                                        rounded-md hover:border-fin-blue hover:bg-gray-10
+                                        hover:text-fin-blue duration-500 ease-in-out">
                                         Set Budget
                                     </button>
 
@@ -215,7 +218,9 @@
 
                     <!-- Top Spending  -->
                     <div
-                        class=" bg-white drop-shadow-subs-card p-3 xl:p-4 rounded-md w-full flex flex-col row-span-1 row-start-1 col-span-5 md:col-span-3 md:row-start-3 md:row-span-2">
+                        class=" bg-white drop-shadow-subs-card p-3 xl:p-4
+                        rounded-md w-full flex flex-col row-span-1 row-start-1
+                        col-span-5 md:col-span-3 md:row-start-3 md:row-span-2">
                         <h1 class="text-sm sm:text-md lg:text-lg">Top Spending This Month</h1>
                         <div class="w-[100%] py-2">
                             <hr class="h-[3px] border-0 w-[20%] bg-black">
@@ -226,11 +231,12 @@
                                 <div class="flex flex-col w-full">
                                     <div class="flex flex-row py-2 rounded-md items-center">
                                         <div class=" bg-fin-blue justify-center items-center p-3 rounded-full">
-                                            <img class="max-w-[25px] max-h-[25px] text-white p-[3px]"
+                                            <img class="max-w-[25px] max-h-[25px] text-white p-[3px]" alt="Bill"
                                                 src="{{ asset('assets/dashboard/Bill.png') }}">
                                         </div>
                                         <div>
-                                            <h1 class="text-xs md:text-sm xl:text-lg font-bold ml-2">Rp{{ $item->amount }}
+                                            <h1 class="text-xs md:text-sm xl:text-lg font-bold ml-2">
+                                                Rp{{ $item->amount }}
                                             </h1>
                                             <h1 class="text-xs lg:text-sm ml-2 text-gray-500">{{ $item->category }}</h1>
                                         </div>
@@ -239,96 +245,107 @@
                             @endforeach
 
                         </div>
+
+                    @empty
+
+                        <div class="w-full flex flex-col items-center h-full justify-center">
+                            <img class=" text-white mr-2" src="{{ asset('assets/dashboard/Empty.png') }}">
+                            <h1 class="text-2xl text-gray-400">
+                                No Transaction Yet ! :)
+                            </h1>
+                        </div>
+
+                        @endforelse
+
                     </div>
                 </div>
 
-            </div>
-        </div>
+                <div id="formContainer" class="hidden fixed inset-0 flex items-center justify-center">
 
-        <div id="formContainer" class="hidden fixed inset-0 flex items-center justify-center">
+                    <div class="overlay fixed inset-0 bg-black/[0.5]"></div>
 
-            <div class="overlay fixed inset-0 bg-black/[0.5]"></div>
+                    <div
+                        class="flex flex-col justify-between items-center bg-darker-white p-8 rounded-md relative h-[50vh] w-[40vw]">
 
-            <div
-                class="flex flex-col justify-between items-center bg-darker-white p-8 rounded-md relative h-[50vh] w-[40vw]">
+                        <h2 class="text-3xl font-bold mb-4 text-center text-fin-blue">Let's set your budget</h2>
 
-                <h2 class="text-3xl font-bold mb-4 text-center text-fin-blue">Let's set your budget</h2>
+                        <div class="w-full h-full flex flex-col justify-around">
+                            <div>
+                                <h1 class="text-sm ">Current set budget</h1>
+                                <h1 class="text-3xl">Rp{{ $Data['Budget'] }}</h1>
+                            </div>
 
-                <div class="w-full h-full flex flex-col justify-around">
-                    <div>
-                        <h1 class="text-sm ">Current set budget</h1>
-                        <h1 class="text-3xl">Rp{{ $Data['Budget'] }}</h1>
+                            <form action="{{ route('budget.set') }}" method="POST" class="flex flex-col"
+                                id="form-budget">
+                                @csrf
+                                <label for="newbudget">Set new budget</label>
+                                <input type="text" id="newbudget" name="budget"
+                                    class="border rounded-md px-3 py-2 mb-2" required />
+                            </form>
+                        </div>
+
+                        <button type="submit" id="submitButton"
+                            class="bg-fin-blue border-2 text-white font-bold py-2 px-4 rounded-md hover:border-fin-blue hover:bg-gray-100 hover:text-fin-blue duration-500 ease-in-out">
+                            Submit
+                        </button>
+
+                        <button id="closeFormButton" class="absolute top-2 right-2 text-gray-600 hover:text-gray-800">
+                            <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M6 18L18 6M6 6l12 12">
+                                </path>
+                            </svg>
+                        </button>
+
                     </div>
-
-                    <form action="{{ route('budget.set') }}" method="POST" class="flex flex-col" id="form-budget">
-                        @csrf
-                        <label for="newbudget">Set new budget</label>
-                        <input type="text" id="newbudget" name="budget" class="border rounded-md px-3 py-2 mb-2"
-                            required />
-                    </form>
                 </div>
 
-                <button type="submit" id="submitButton"
-                    class="bg-fin-blue border-2 text-white font-bold py-2 px-4 rounded-md hover:border-fin-blue hover:bg-gray-100 hover:text-fin-blue duration-500 ease-in-out">
-                    Submit
-                </button>
+                <script>
+                    var Images = document.querySelectorAll('.ImageSlider img');
+                    var RadioBtns = document.querySelectorAll('.RadioList div');
+                    var currentIndex = 0;
 
-                <button id="closeFormButton" class="absolute top-2 right-2 text-gray-600 hover:text-gray-800">
-                    <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12">
-                        </path>
-                    </svg>
-                </button>
+                    function Slide() {
+                        Images[currentIndex].style.display = 'flex';
+                        RadioBtns[currentIndex].style.backgroundColor = '#23273C';
+                        setInterval(next, 3000);
+                    }
 
-            </div>
-        </div>
+                    function next() {
+                        Images[currentIndex].style.display = 'none';
+                        RadioBtns[currentIndex].style.backgroundColor = '#F7F7FA';
+                        currentIndex = (currentIndex + 1) % Images.length;
+                        Images[currentIndex].style.display = 'flex';
+                        RadioBtns[currentIndex].style.backgroundColor = '#23273C';
+                    }
 
-        <script>
-            var Images = document.querySelectorAll('.ImageSlider img');
-            var RadioBtns = document.querySelectorAll('.RadioList div');
-            var currentIndex = 0;
+                    window.onload = Slide();
 
-            function Slide() {
-                Images[currentIndex].style.display = 'flex';
-                RadioBtns[currentIndex].style.backgroundColor = '#23273C';
-                setInterval(next, 3000);
-            }
+                    const showFormButton = document.getElementById('showFormButton');
+                    const formContainer = document.getElementById('formContainer');
+                    const closeFormButton = document.getElementById('closeFormButton');
+                    const submitButton = document.getElementById('submitButton')
 
-            function next() {
-                Images[currentIndex].style.display = 'none';
-                RadioBtns[currentIndex].style.backgroundColor = '#F7F7FA';
-                currentIndex = (currentIndex + 1) % Images.length;
-                Images[currentIndex].style.display = 'flex';
-                RadioBtns[currentIndex].style.backgroundColor = '#23273C';
-            }
+                    showFormButton.addEventListener('click', () => {
+                        formContainer.classList.remove('hidden');
+                    });
 
-            window.onload = Slide();
+                    closeFormButton.addEventListener('click', () => {
+                        formContainer.classList.add('hidden');
+                    });
 
-            const showFormButton = document.getElementById('showFormButton');
-            const formContainer = document.getElementById('formContainer');
-            const closeFormButton = document.getElementById('closeFormButton');
-            const submitButton = document.getElementById('submitButton')
+                    formContainer.addEventListener('click', (event) => {
+                        if (event.target === formContainer) {
+                            formContainer.classList.add('hidden');
+                        }
+                    });
 
-            showFormButton.addEventListener('click', () => {
-                formContainer.classList.remove('hidden');
-            });
-
-            closeFormButton.addEventListener('click', () => {
-                formContainer.classList.add('hidden');
-            });
-
-            formContainer.addEventListener('click', (event) => {
-                if (event.target === formContainer) {
-                    formContainer.classList.add('hidden');
-                }
-            });
-
-            submitButton.addEventListener('click', (event) => {
-                const form = document.getElementById('form-budget');
-                formContainer.classList.add('hidden');
-                form.submit();
-            });
-        </script>
+                    submitButton.addEventListener('click', (event) => {
+                        const form = document.getElementById('form-budget');
+                        formContainer.classList.add('hidden');
+                        form.submit();
+                    });
+                </script>
 
     </body>
 @endsection
