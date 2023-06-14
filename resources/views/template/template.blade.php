@@ -115,15 +115,15 @@
 
         <div class='lg:flex grid grid-cols-2 lg:grid-cols-4 col-span-0 md:col-span-4 justify-between md:gap-x-4 mt-6 col-span-2'>
             <div class=''>
-                <h4 class='font-bold text-left text-lg'>Navigates</h4>
+                <h4 class='font-bold text-left text-lg'>Navigate</h4>
                 <ul class="">
-                    <li class="text-left test-xs">Dashboard</li>
-                    <li class="text-left test-xs">Transaction</li>
-                    <li class="text-left test-xs">Report</li>
-                    <li class="text-left test-xs">Subscription</li>
-                    <li class="text-left test-xs">Customer Center</li>
+                    <li class="text-left test-xs"><a href="/dashboard" class="text-white no-underline">Dashboard</a></li>
+                    <li class="text-left test-xs"><a href="/transaction" class="text-white no-underline">Transaction</a></li>
+                    <li class="text-left test-xs"><a href="/report" class="text-white no-underline">Report</a></li>
+                    <li class="text-left test-xs"><a href="/subscription" class="text-white no-underline">Subscription</a></li>
+                    <li class="text-left test-xs"><a href="/customer-center" class="text-white no-underline">Customer Center</a></li>
                 </ul>
-            </div>
+            </div>            
 
             <div class=''>
                 <h4 class='font-bold text-left text-lg'>About Us</h4>
