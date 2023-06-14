@@ -29,83 +29,83 @@
                     <ul class="text-[20px] pt-4 flex flex-col gap-y-4 text-gray-500">
                         <li class="flex items-center">
                             <img class="w-[25px] h-[25px] bg-gray-200 rounded-md" src="{{ asset('assets/subscription/Check.png') }}" id="MobileIcon">
-                            <p class="pl-4">Fitur 1</p>
+                            <p class="pl-4">Transaction Tracking</p>
                         </li>
                         <li class="flex items-center">
                             <img class="w-[25px] h-[25px] bg-gray-200 rounded-md" src="{{ asset('assets/subscription/Check.png') }}" id="MobileIcon">
-                            <p class="pl-4">Fitur 1</p>
+                            <p class="pl-4">Transaction Report</p>
                         </li>
                         <li class="flex items-center">
                             <img class="w-[25px] h-[25px]" src="{{ asset('assets/subscription/Close.png') }}" id="MobileIcon">
-                            <p class="pl-4">Fitur 1</p>
+                            <p class="pl-4">Ad-free</p>
                         </li>
                         <li class="flex items-center">
                             <img class="w-[25px] h-[25px]" src="{{ asset('assets/subscription/Close.png') }}" id="MobileIcon">
-                            <p class="pl-4">Fitur 1</p>
+                            <p class="pl-4">Budgeting</p>
                         </li>
                         <li class="flex items-center">
                             <img class="w-[25px] h-[25px]" src="{{ asset('assets/subscription/Close.png') }}" id="MobileIcon">
-                            <p class="pl-4">Fitur 1</p>
+                            <p class="pl-4">Reminder</p>
                         </li>
                     </ul>
                 </div>
 
                 <div class="flex flex-col w-[300px] h-auto rounded-[10px] bg-white drop-shadow-subs-card px-10 md:px-8 py-6 hover:bg-gray-100 hover:scale-110 duration-500 ease-in-out">
                     <h1 class=" text-subs-brown text-left text-2xl font-bold">PREMIUM</h1>
-                    <h1 class="text-[48px] flex items-end h-1/6 font-bold">$5 <span class="text-sm text-gray-500 ml-2">/ month</span></h1>
+                    <h1 class="text-[48px] flex items-end h-1/6 font-bold">$2 <span class="text-sm text-gray-500 ml-2">/ month</span></h1>
                     <p class="text-sm text-gray-500 mt-2">Financial plan with more ease of use</p>
                     <a href="#" class="text-xl border-2 bg-fin-blue  text-center text-white py-2 my-4 rounded-md hover:border-fin-blue hover:bg-gray-100 hover:text-fin-blue duration-500 ease-in-out">SIGN UP NOW</a>
                     <p class="text-md text-gray-500 font-bold">Features:</p>
                     <ul class="text-[20px] pt-4 flex flex-col gap-y-4 text-gray-500">
                         <li class="flex items-center">
                             <img class="w-[25px] h-[25px] bg-gray-200 rounded-md" src="{{ asset('assets/subscription/Check.png') }}" id="MobileIcon">
-                            <p class="pl-4">Fitur 1</p>
+                            <p class="pl-4">Transaction Tracking</p>
                         </li>
                         <li class="flex items-center">
                             <img class="w-[25px] h-[25px] bg-gray-200 rounded-md" src="{{ asset('assets/subscription/Check.png') }}" id="MobileIcon">
-                            <p class="pl-4">Fitur 1</p>
+                            <p class="pl-4">Transaction Report</p>
                         </li>
                         <li class="flex items-center">
                             <img class="w-[25px] h-[25px] bg-gray-200 rounded-md" src="{{ asset('assets/subscription/Check.png') }}" id="MobileIcon">
-                            <p class="pl-4">Fitur 1</p>
+                            <p class="pl-4">Ad-free</p>
                         </li>
                         <li class="flex items-center">
                             <img class="w-[25px] h-[25px]" src="{{ asset('assets/subscription/Close.png') }}" id="MobileIcon">
-                            <p class="pl-4">Fitur 1</p>
+                            <p class="pl-4">Budgeting</p>
                         </li>
                         <li class="flex items-center">
                             <img class="w-[25px] h-[25px]" src="{{ asset('assets/subscription/Close.png') }}" id="MobileIcon">
-                            <p class="pl-4">Fitur 1</p>
+                            <p class="pl-4">Reminder</p>
                         </li>
                     </ul>
                 </div>
 
                 <div class="flex flex-col w-[300px] h-auto rounded-[10px] bg-white drop-shadow-subs-card px-10 md:px-8 py-6 hover:bg-gray-100 hover:scale-110 duration-500 ease-in-out">
                     <h1 class=" text-subs-brown text-left text-2xl font-bold">PROFESSIONAL</h1>
-                    <h1 class="text-[48px] flex items-end h-1/6 font-bold">$10 <span class="text-sm text-gray-500 ml-2">/ month</span></h1>
+                    <h1 class="text-[48px] flex items-end h-1/6 font-bold">$5 <span class="text-sm text-gray-500 ml-2">/ month</span></h1>
                     <p class="text-sm text-gray-500 mt-2">Complete package of financial plan</p>
                     <a href="#" class="text-xl border-2 bg-fin-blue  text-center text-white py-2 my-4 rounded-md hover:border-fin-blue hover:bg-gray-100 hover:text-fin-blue duration-500 ease-in-out">SIGN UP NOW</a>
                     <p class="text-md text-gray-500 font-bold">Features:</p>
                     <ul class="text-[20px] pt-4 flex flex-col gap-y-4 text-gray-500">
                         <li class="flex items-center">
                             <img class="w-[25px] h-[25px] bg-gray-200 rounded-md" src="{{ asset('assets/subscription/Check.png') }}" id="MobileIcon">
-                            <p class="pl-4">Fitur 1</p>
+                            <p class="pl-4">Transaction Tracking</p>
                         </li>
                         <li class="flex items-center">
                             <img class="w-[25px] h-[25px] bg-gray-200 rounded-md" src="{{ asset('assets/subscription/Check.png') }}" id="MobileIcon">
-                            <p class="pl-4">Fitur 1</p>
+                            <p class="pl-4">Transaction Report</p>
                         </li>
                         <li class="flex items-center">
                             <img class="w-[25px] h-[25px] bg-gray-200 rounded-md" src="{{ asset('assets/subscription/Check.png') }}" id="MobileIcon">
-                            <p class="pl-4">Fitur 1</p>
+                            <p class="pl-4">Ad-free</p>
                         </li>
                         <li class="flex items-center">
                             <img class="w-[25px] h-[25px] bg-gray-200 rounded-md" src="{{ asset('assets/subscription/Check.png') }}" id="MobileIcon">
-                            <p class="pl-4">Fitur 1</p>
+                            <p class="pl-4">Budgeting</p>
                         </li>
                         <li class="flex items-center">
                             <img class="w-[25px] h-[25px] bg-gray-200 rounded-md" src="{{ asset('assets/subscription/Check.png') }}" id="MobileIcon">
-                            <p class="pl-4">Fitur 1</p>
+                            <p class="pl-4">Reminder</p>
                         </li>
                     </ul>
                 </div>

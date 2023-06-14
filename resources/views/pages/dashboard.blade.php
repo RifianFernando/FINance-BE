@@ -203,7 +203,7 @@
                                     <p class="text-xs text-gray-500 py-2">
                                         <Span class="font-bold">Reminder :</Span>
                                         Spend no more than
-                                        <Span class="sm:text-sm md:text-md font-castoro font-bold">Rp 100.000</Span>
+                                        <Span class="sm:text-sm md:text-md font-castoro font-bold">Rp {{ $Data['BudgetLeft']}}</Span>
                                         each day so you can keep on budget for this month
                                     </p>
 
