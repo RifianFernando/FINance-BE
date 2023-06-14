@@ -211,42 +211,55 @@
                             </div>
                         </div>
                     </div>
-
+                    
                     <!-- Top Spending  -->
-                    <div
-                        class=" bg-white drop-shadow-subs-card p-3 xl:p-4 rounded-md w-full flex flex-col row-span-1 row-start-1 col-span-5 md:col-span-3 md:row-start-3 md:row-span-2">
-                        <h1 class="text-sm sm:text-md lg:text-lg">Top Spending This Month</h1>
-                        <div class="w-[100%] py-2">
-                            <hr class="h-[3px] border-0 w-[20%] bg-black">
-                        </div>
-                        <div class="flex flex-col gap-y-3 py-2">
-                            <div class="flex flex-col w-full">
-                                <div class="flex flex-row py-2 rounded-md items-center">
-                                    <div class=" bg-fin-blue justify-center items-center p-3 rounded-full">
-                                        <img class="max-w-[25px] max-h-[25px] text-white p-[3px]"
-                                            src="{{ asset('assets/dashboard/Bill.png') }}">
+
+                    @forelse($Data['LargestTransaction'] as $Largest)
+                        <div
+                            class=" bg-white drop-shadow-subs-card p-3 xl:p-4 rounded-md w-full flex flex-col row-span-1 row-start-1 col-span-5 md:col-span-3 md:row-start-3 md:row-span-2">
+                                <h1 class="text-sm sm:text-md lg:text-lg">Top Spending This Month</h1>
+                                <div class="w-[100%] py-2">
+                                    <hr class="h-[3px] border-0 w-[20%] bg-black">
+                                </div>
+                                <div class="flex flex-col gap-y-3 py-2">
+                                    <div class="flex flex-col w-full">
+                                        <div class="flex flex-row py-2 rounded-md items-center">
+                                            <div class=" bg-fin-blue justify-center items-center p-3 rounded-full">
+                                                <img class="max-w-[25px] max-h-[25px] text-white p-[3px]"
+                                                    src="{{ asset('assets/dashboard/Bill.png') }}">
+                                            </div>
+                                            <div>
+                                                <h1 class="text-xs md:text-sm xl:text-lg font-bold ml-2">Rp. 1.000.000</h1>
+                                                <h1 class="text-xs lg:text-sm ml-2 text-gray-500">Food & Beverage</h1>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div>
-                                        <h1 class="text-xs md:text-sm xl:text-lg font-bold ml-2">Rp. 1.000.000</h1>
-                                        <h1 class="text-xs lg:text-sm ml-2 text-gray-500">Food & Beverage</h1>
+                                    <div class="flex flex-col w-full">
+                                        <div class="flex flex-row py-2 rounded-md items-center">
+                                            <div class=" bg-fin-blue justify-center items-center p-3 rounded-full">
+                                                <img class="max-w-[25px] max-h-[25px] text-white p-[3px]"
+                                                    src="{{ asset('assets/dashboard/Bill.png') }}">
+                                            </div>
+                                            <div>
+                                                <h1 class="text-xs md:text-sm xl:text-lg font-bold ml-2">Rp. 1.000.000</h1>
+                                                <h1 class="text-xs lg:text-sm ml-2 text-gray-500">Food & Beverage</h1>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="flex flex-col w-full">
-                                <div class="flex flex-row py-2 rounded-md items-center">
-                                    <div class=" bg-fin-blue justify-center items-center p-3 rounded-full">
-                                        <img class="max-w-[25px] max-h-[25px] text-white p-[3px]"
-                                            src="{{ asset('assets/dashboard/Bill.png') }}">
-                                    </div>
-                                    <div>
-                                        <h1 class="text-xs md:text-sm xl:text-lg font-bold ml-2">Rp. 1.000.000</h1>
-                                        <h1 class="text-xs lg:text-sm ml-2 text-gray-500">Food & Beverage</h1>
-                                    </div>
-                                </div>
-                            </div>
                         </div>
-                    </div>
-                </div>
+
+                    @empty
+
+                        <div class="w-full flex flex-col items-center h-full justify-center">
+                            <img class=" text-white mr-2" src="{{ asset('assets/dashboard/Empty.png') }}">
+                            <h1 class="text-2xl text-gray-400">
+                                No Transaction Yet ! :)
+                            </h1>
+                        </div>
+
+                    @endforelse
 
             </div>
         </div>
