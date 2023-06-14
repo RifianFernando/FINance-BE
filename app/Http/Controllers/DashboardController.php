@@ -71,6 +71,7 @@ class DashboardController extends Controller
             ->join('transactions AS t', 't.id', '=', 'transaction_join_tables.transaction_id')
             ->select('t.*')
             ->limit(9)
+            ->orderBy('t.date', 'desc')
             ->get();
 
         return $data;
