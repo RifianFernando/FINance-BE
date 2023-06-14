@@ -22,7 +22,6 @@
             <div class="flex flex-col py-4 w-full px-1 lg:px-8 gap-y-2 lg:gap-y-5">
                 <!-- First Row -->
                 <div class="grid grid-cols-10 w-full gap-x-2 xl:gap-x-6 grid-rows-3 sm:grid-rows-1 gap-y-2">
-
                     <!-- Balance -->
                     <div class="flex flex-row items-center w-full bg-fin-blue rounded-md drop-shadow-subs-card overflow-hidden row-span-1 col-span-10 sm:col-span-6">
                         <div class="px-4 py-6 lg:px-8 lg:py-8 bg-gray-500 rounded-md ">
@@ -193,8 +192,7 @@
                                         </div>
 
                                         <div class="ml-2">
-
-                                            <h1 class="font-bold text-md">Budget's Left</h1>
+                                            <h1 class="font-bold text-xs md:text-md">Budget's Left</h1>
                                             <h1 class="text-xl font-castoro">Rp{{ $Data['Budget'] }}</h1>
                                         </div>
                                     </div>
@@ -301,7 +299,7 @@
             function Slide() {
                 Images[currentIndex].style.display = 'flex';
                 RadioBtns[currentIndex].style.backgroundColor = '#23273C';
-                setInterval(next, 1000);
+                setInterval(next, 3000);
             }
 
             function next() {
