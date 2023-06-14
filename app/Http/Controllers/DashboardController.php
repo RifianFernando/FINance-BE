@@ -64,6 +64,18 @@ class DashboardController extends Controller
         return $data;
     }
 
+    private function getLatestTransaction($userId)
+    {
+        //get latest transaction with query builder
+        $data =  TransactionJoinTable::where('user_id', $userId)
+            ->join('transactions AS t', 't.id', '=', 'transaction_join_tables.transaction_id')
+            ->select('t.*')
+            ->limit(9)
+            ->get();
+
+        return $data;
+    }
+
     public function index()
     {
         //get user
@@ -87,13 +99,18 @@ class DashboardController extends Controller
 
         //remaining days of months
         $RemainingDays = intval(date('t') - date('j'));
+        
+        // get latest transaction
+        $LatestTransaction = $this->getLatestTransaction($user->id);
+
         $Data = [
             'FirstName' => $FirstName,
             'Income' => $Income,
             'Expense' => $Expense,
             'TotalBalance' => $TotalBalance,
             'Budget' => $Budget,
-            'BudgetLeft' => floor($Budget / $RemainingDays)
+            'BudgetLeft' => floor($Budget / $RemainingDays),
+            'LatestTransaction' => $LatestTransaction,
         ];
 
         return view('pages.dashboard', [
