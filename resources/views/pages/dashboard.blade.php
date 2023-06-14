@@ -203,7 +203,8 @@
                                     <p class="text-xs text-gray-500 py-2">
                                         <Span class="font-bold">Reminder :</Span>
                                         Spend no more than
-                                        <Span class="sm:text-sm md:text-md font-castoro font-bold">Rp {{ $Data['BudgetLeft']}}</Span>
+                                        <Span class="sm:text-sm md:text-md font-castoro font-bold">Rp
+                                            {{ $Data['BudgetLeft'] }}</Span>
                                         each day so you can keep on budget for this month
                                     </p>
 
@@ -220,30 +221,23 @@
                             <hr class="h-[3px] border-0 w-[20%] bg-black">
                         </div>
                         <div class="flex flex-col gap-y-3 py-2">
-                            <div class="flex flex-col w-full">
-                                <div class="flex flex-row py-2 rounded-md items-center">
-                                    <div class=" bg-fin-blue justify-center items-center p-3 rounded-full">
-                                        <img class="max-w-[25px] max-h-[25px] text-white p-[3px]"
-                                            src="{{ asset('assets/dashboard/Bill.png') }}">
-                                    </div>
-                                    <div>
-                                        <h1 class="text-xs md:text-sm xl:text-lg font-bold ml-2">Rp. 1.000.000</h1>
-                                        <h1 class="text-xs lg:text-sm ml-2 text-gray-500">Food & Beverage</h1>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="flex flex-col w-full">
-                                <div class="flex flex-row py-2 rounded-md items-center">
-                                    <div class=" bg-fin-blue justify-center items-center p-3 rounded-full">
-                                        <img class="max-w-[25px] max-h-[25px] text-white p-[3px]"
-                                            src="{{ asset('assets/dashboard/Bill.png') }}">
-                                    </div>
-                                    <div>
-                                        <h1 class="text-xs md:text-sm xl:text-lg font-bold ml-2">Rp. 1.000.000</h1>
-                                        <h1 class="text-xs lg:text-sm ml-2 text-gray-500">Food & Beverage</h1>
+
+                            @foreach ($Data['LargestTransaction'] as $item)
+                                <div class="flex flex-col w-full">
+                                    <div class="flex flex-row py-2 rounded-md items-center">
+                                        <div class=" bg-fin-blue justify-center items-center p-3 rounded-full">
+                                            <img class="max-w-[25px] max-h-[25px] text-white p-[3px]"
+                                                src="{{ asset('assets/dashboard/Bill.png') }}">
+                                        </div>
+                                        <div>
+                                            <h1 class="text-xs md:text-sm xl:text-lg font-bold ml-2">Rp{{ $item->amount }}
+                                            </h1>
+                                            <h1 class="text-xs lg:text-sm ml-2 text-gray-500">{{ $item->category }}</h1>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
+                            @endforeach
+
                         </div>
                     </div>
                 </div>

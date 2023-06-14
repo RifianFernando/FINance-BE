@@ -70,8 +70,21 @@ class DashboardController extends Controller
         $data =  TransactionJoinTable::where('user_id', $userId)
             ->join('transactions AS t', 't.id', '=', 'transaction_join_tables.transaction_id')
             ->select('t.*')
-            ->limit(9)
+            ->limit(3)
             ->orderBy('t.date', 'desc')
+            ->get();
+
+        return $data;
+    }
+
+    private function getLargestTransaction($userId)
+    {
+        $data =  TransactionJoinTable::where('user_id', $userId)
+            ->join('transactions AS t', 't.id', '=', 'transaction_join_tables.transaction_id')
+            ->where('t.is_expense', true)
+            ->select('t.*')
+            ->orderBy('t.amount', 'desc')
+            ->limit(9)
             ->get();
 
         return $data;
@@ -100,9 +113,12 @@ class DashboardController extends Controller
 
         //remaining days of months
         $RemainingDays = intval(date('t') - date('j'));
-        
+
         // get latest transaction
         $LatestTransaction = $this->getLatestTransaction($user->id);
+
+        //get largest transaction
+        $LargestTransaction = $this->getLargestTransaction($user->id);
 
         $Data = [
             'FirstName' => $FirstName,
@@ -112,6 +128,7 @@ class DashboardController extends Controller
             'Budget' => $Budget,
             'BudgetLeft' => floor($Budget / $RemainingDays),
             'LatestTransaction' => $LatestTransaction,
+            'LargestTransaction' => $LargestTransaction,
         ];
 
         return view('pages.dashboard', [
