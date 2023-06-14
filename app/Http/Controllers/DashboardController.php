@@ -64,6 +64,18 @@ class DashboardController extends Controller
         return $data;
     }
 
+    private function getLatestTransaction($userId)
+    {
+        //get latest transaction with query builder
+        $data =  TransactionJoinTable::where('user_id', $userId)
+            ->join('transactions AS t', 't.id', '=', 'transaction_join_tables.transaction_id')
+            ->select('t.*')
+            ->limit(9)
+            ->get();
+
+        return $data;
+    }
+
     public function index()
     {
         //get user
@@ -85,12 +97,16 @@ class DashboardController extends Controller
         //get budget
         $Budget = $this->getBudget($user->id);
 
+        // get latest transaction
+        $LatestTransaction = $this->getLatestTransaction($user->id);
+
         $Data = [
             'FirstName' => $FirstName,
             'Income' => $Income,
             'Expense' => $Expense,
             'TotalBalance' => $TotalBalance,
             'Budget' => $Budget,
+            'LatestTransaction' => $LatestTransaction,
         ];
 
         return view('pages.dashboard', [

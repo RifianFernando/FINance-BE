@@ -24,21 +24,25 @@
                 <div class="grid grid-cols-10 w-full gap-x-2 xl:gap-x-6 grid-rows-3 sm:grid-rows-1 gap-y-2">
 
                     <!-- Balance -->
-                    <div class="flex flex-row items-center w-full bg-fin-blue rounded-md drop-shadow-subs-card overflow-hidden row-span-1 col-span-10 sm:col-span-6">
+                    <div
+                        class="flex flex-row items-center w-full bg-fin-blue rounded-md drop-shadow-subs-card overflow-hidden row-span-1 col-span-10 sm:col-span-6">
                         <div class="px-4 py-6 lg:px-8 lg:py-8 bg-gray-500 rounded-md ">
-                            <img src="{{ asset('assets/customer-center/pic.png') }}" class="rounded-full w-[80px] h-[80px] lg:w-[120px] lg:h-[120px]">
+                            <img src="{{ asset('assets/customer-center/pic.png') }}"
+                                class="rounded-full w-[80px] h-[80px] lg:w-[120px] lg:h-[120px]">
                         </div>
                         <div class="flex flex-col justify-between gap-y-3 text-white max-w-[550px] px-4">
                             <h1 class="text-lg xl:text-2xl">Welcome,
                                 {{ $Data['FirstName'] }}
                             </h1>
-                            <p class="text-xs lg:text-md xl:text-lg">Your financial state is in <span>Good Condition</span>, keep it up</p>
+                            <p class="text-xs lg:text-md xl:text-lg">Your financial state is in <span>Good Condition</span>,
+                                keep it up</p>
                         </div>
                     </div>
 
 
                     <!-- News Image Slider-->
-                    <div class="flex bg-white drop-shadow-subs-card rounded-md overflow-hidden row-span-2 col-span-10 sm:col-span-4 sm:row-span-1">
+                    <div
+                        class="flex bg-white drop-shadow-subs-card rounded-md overflow-hidden row-span-2 col-span-10 sm:col-span-4 sm:row-span-1">
                         <div class="ImageSlider flex flex-row">
                             <img class="w-full h-full fixed" src="{{ asset('assets/dashboard/Dummy2.jpeg') }}">
                             <img class="w-full h-full fixed" src="{{ asset('assets/dashboard/Dummy1.jpeg') }}">
@@ -56,7 +60,8 @@
                 <div class="grid grid-cols-12 w-full gap-x-2 xl:gap-x-6 gap-y-4 sm:gap-y-2">
 
                     <!-- Income  -->
-                    <div class="grid col-span-6 sm:col-span-3 bg-white drop-shadow-subs-card py-3 px-3 lg:px-6 rounded-md sm:py-1">
+                    <div
+                        class="grid col-span-6 sm:col-span-3 bg-white drop-shadow-subs-card py-3 px-3 lg:px-6 rounded-md sm:py-1">
                         <div class="flex flex-row items-center text-gray-500 text-lg gap-y-2">
                             <div class="py-3 px-2 bg-fin-blue flex justify-center items-center rounded-full "><img
                                     class="max-w-[20px] max-h-auto" src="{{ asset('assets/dashboard/Income.png') }}"></div>
@@ -69,10 +74,12 @@
                     </div>
 
                     <!-- Expense  -->
-                    <div class="grid col-span-6 sm:col-span-3 bg-white drop-shadow-subs-card py-3 px-3 lg:px-6 rounded-md sm:py-1">
+                    <div
+                        class="grid col-span-6 sm:col-span-3 bg-white drop-shadow-subs-card py-3 px-3 lg:px-6 rounded-md sm:py-1">
                         <div class="flex flex-row items-center text-gray-500 text-lg gap-y-2">
                             <div class="py-3 px-2 bg-fin-blue flex justify-center items-center rounded-full">
-                                <img class="max-w-[15px] max-h-auto" src="{{ asset('assets/dashboard/Expense.png') }}"></div>
+                                <img class="max-w-[15px] max-h-auto" src="{{ asset('assets/dashboard/Expense.png') }}">
+                            </div>
                             <h1 class="ml-2 text-sm xl:text-md">Expense</h1>
                         </div>
                         <h1 class="flex flex-row items-center text-2xl font-castoro">Rp {{ $Data['Expense'] }}</h1>
@@ -80,7 +87,8 @@
                     </div>
 
                     <!-- Wallet  -->
-                    <div class="grid col-span-12 sm:col-span-6 bg-white drop-shadow-subs-card py-2 px-4 lg:px-10 rounded-md">
+                    <div
+                        class="grid col-span-12 sm:col-span-6 bg-white drop-shadow-subs-card py-2 px-4 lg:px-10 rounded-md">
                         <div class="flex flex-row justify-between text-gray-400 text-sm lg:text-md py-1">
                             <h1>Wallet</h1>
                             <h1>Total Balance</h1>
@@ -112,60 +120,49 @@
                         </div>
 
                         <!-- Jika Transaction Kosong -->
+                        @forelse($Data['LatestTransaction'] as $Latest)
+                            <!-- Jika Transaction ada-->
 
-                        <!-- <div class="w-full flex flex-col items-center h-full justify-center">
-                                                                                        <img class=" text-white mr-2" src="{{ asset('assets/dashboard/Empty.png') }}">
-                                                                                        <h1 class="text-2xl text-gray-400">
-                                                                                            No Transaction Yet ! :)
-                                                                                        </h1>
-                                                                                    </div> -->
+                            <div class="flex flex-col w-full gap-y-2 lg:gap-y-2">
+                                <div class="grid grid-cols-5 py-3 gap-x-2 border-b-2 border-gray-300">
+                                    @php
+                                        $date = date_create($Latest->date);
+                                        $date = date_format($date, 'd-m-Y');
+                                    @endphp
+                                    <h1 class="col-span-1 font-bold text-[9px] sm:text-xs xl:text-[16px]">
+                                        {{ $date }}
+                                    </h1>
+                                    <h1 class="col-span-2 text-[10px] sm:text-sm lg:text-md">
+                                        {{ $Latest->description }}
+                                    </h1>
+                                    </h1>
+                                    <h1 class="col-span-1 font-bold text-[10px] sm:text-sm lg:text-sm">
+                                        {{ $Latest->category }}
+                                    </h1>
+                                    @if ($Latest->is_expense == true)
+                                        <h1
+                                            class="col-span-1 font-bold text-[8px] sm:text-xs
+                                        lg:text-md xl:text-[14px] text-red-600">
+                                            - Rp{{ $Latest->amount }}
+                                        </h1>
+                                    @else
+                                        <h1
+                                            class="col-span-1 font-bold text-[8px] sm:text-xs
+                                        lg:text-md xl:text-[14px] text-green-600">
+                                            + Rp{{ $Latest->amount }}
+                                        </h1>
+                                    @endif
+                                </div>
+                            </div>
+                        @empty
 
-                        <!-- Jika Transaction ada-->
-
-                        <div class="flex flex-col w-full gap-y-2 lg:gap-y-2">
-                        <div class="grid grid-cols-5 py-3 gap-x-2 border-b-2 border-gray-300">
-                                <h1 class="col-span-1 font-bold text-[9px] sm:text-xs xl:text-[16px]">17-08-1945</h1>
-                                <h1 class="col-span-2 text-[10px] sm:text-sm lg:text-md">Beliin Rifian Starbucks Expresso </h1>
-                                <h1 class="col-span-1 font-bold text-[10px] sm:text-sm lg:text-sm">Food & Beverage</h1>
-                                <h1 class="col-span-1 font-bold text-[8px] sm:text-xs lg:text-md xl:text-[14px] text-red-600">- Rp 200.000</h1>
+                            <div class="w-full flex flex-col items-center h-full justify-center">
+                                <img class=" text-white mr-2" src="{{ asset('assets/dashboard/Empty.png') }}">
+                                <h1 class="text-2xl text-gray-400">
+                                    No Transaction Yet ! :)
+                                </h1>
                             </div>
-                            <div class="grid grid-cols-5 py-3 gap-x-2 border-b-2 border-gray-300">
-                                <h1 class="col-span-1 font-bold text-[9px] sm:text-xs xl:text-[16px]">17-08-1945</h1>
-                                <h1 class="col-span-2 text-[10px] sm:text-sm lg:text-md">Beliin Rifian Starbucks Expresso </h1>
-                                <h1 class="col-span-1 font-bold text-[10px] sm:text-sm lg:text-sm">Food & Beverage</h1>
-                                <h1 class="col-span-1 font-bold text-[8px] sm:text-xs lg:text-md xl:text-[14px] text-red-600">- Rp 200.000</h1>
-                            </div>
-                            <div class="grid grid-cols-5 py-3 gap-x-2 border-b-2 border-gray-300">
-                                <h1 class="col-span-1 font-bold text-[9px] sm:text-xs xl:text-[16px]">17-08-1945</h1>
-                                <h1 class="col-span-2 text-[10px] sm:text-sm lg:text-md">Beliin Rifian Starbucks Expresso </h1>
-                                <h1 class="col-span-1 font-bold text-[10px] sm:text-sm lg:text-sm">Food & Beverage</h1>
-                                <h1 class="col-span-1 font-bold text-[8px] sm:text-xs lg:text-md xl:text-[14px] text-red-600">- Rp 200.000</h1>
-                            </div>
-                            <div class="grid grid-cols-5 py-3 gap-x-2 border-b-2 border-gray-300">
-                                <h1 class="col-span-1 font-bold text-[9px] sm:text-xs xl:text-[16px]">17-08-1945</h1>
-                                <h1 class="col-span-2 text-[10px] sm:text-sm lg:text-md">Beliin Rifian Starbucks Expresso </h1>
-                                <h1 class="col-span-1 font-bold text-[10px] sm:text-sm lg:text-sm">Food & Beverage</h1>
-                                <h1 class="col-span-1 font-bold text-[8px] sm:text-xs lg:text-md xl:text-[14px] text-red-600">- Rp 200.000</h1>
-                            </div>
-                            <div class="grid grid-cols-5 py-3 gap-x-2 border-b-2 border-gray-300">
-                                <h1 class="col-span-1 font-bold text-[9px] sm:text-xs xl:text-[16px]">17-08-1945</h1>
-                                <h1 class="col-span-2 text-[10px] sm:text-sm lg:text-md">Beliin Rifian Starbucks Expresso </h1>
-                                <h1 class="col-span-1 font-bold text-[10px] sm:text-sm lg:text-sm">Food & Beverage</h1>
-                                <h1 class="col-span-1 font-bold text-[8px] sm:text-xs lg:text-md xl:text-[14px] text-red-600">- Rp 200.000</h1>
-                            </div>
-                            <div class="grid grid-cols-5 py-3 gap-x-2 border-b-2 border-gray-300">
-                                <h1 class="col-span-1 font-bold text-[9px] sm:text-xs xl:text-[16px]">17-08-1945</h1>
-                                <h1 class="col-span-2 text-[10px] sm:text-sm lg:text-md">Beliin Rifian Starbucks Expresso </h1>
-                                <h1 class="col-span-1 font-bold text-[10px] sm:text-sm lg:text-sm">Food & Beverage</h1>
-                                <h1 class="col-span-1 font-bold text-[8px] sm:text-xs lg:text-md xl:text-[14px] text-red-600">- Rp 200.000</h1>
-                            </div>
-                            <div class="grid grid-cols-5 py-3 gap-x-2 border-b-2 border-gray-300">
-                                <h1 class="col-span-1 font-bold text-[9px] sm:text-xs xl:text-[16px]">17-08-1945</h1>
-                                <h1 class="col-span-2 text-[10px] sm:text-sm lg:text-md">Beliin Rifian Starbucks Expresso </h1>
-                                <h1 class="col-span-1 font-bold text-[10px] sm:text-sm lg:text-sm">Food & Beverage</h1>
-                                <h1 class="col-span-1 font-bold text-[8px] sm:text-xs lg:text-md xl:text-[14px] text-red-600">- Rp 200.000</h1>
-                            </div>
-                        </div>
+                        @endforelse
 
                         <div
                             class="flex flex-row w-full text-black font-bold text-sm py-4 font-poppins justify-center items-center">
@@ -178,7 +175,8 @@
                     </div>
 
                     <!-- Budget  -->
-                    <div class=" bg-white drop-shadow-subs-card p-3 xl:p-4 rounded-md w-full flex flex-col row-span-1 row-start-1 col-span-5 md:col-span-3 md:row-start-1 md:row-span-2">
+                    <div
+                        class=" bg-white drop-shadow-subs-card p-3 xl:p-4 rounded-md w-full flex flex-col row-span-1 row-start-1 col-span-5 md:col-span-3 md:row-start-1 md:row-span-2">
                         <h1 class="text-sm sm:text-md lg:text-lg">This Month's Budget</h1>
                         <div class="w-[100%] py-2">
                             <hr class="h-[3px] border-0 w-[20%] bg-black">
@@ -224,7 +222,7 @@
                             <hr class="h-[3px] border-0 w-[20%] bg-black">
                         </div>
                         <div class="flex flex-col gap-y-3 py-2">
-                        <div class="flex flex-col w-full">
+                            <div class="flex flex-col w-full">
                                 <div class="flex flex-row py-2 rounded-md items-center">
                                     <div class=" bg-fin-blue justify-center items-center p-3 rounded-full">
                                         <img class="max-w-[25px] max-h-[25px] text-white p-[3px]"
@@ -267,7 +265,7 @@
                 <div class="w-full h-full flex flex-col justify-around">
                     <div>
                         <h1 class="text-sm ">Current set budget</h1>
-                        <h1 class="text-3xl">Rp{{$Data['Budget']}}</h1>
+                        <h1 class="text-3xl">Rp{{ $Data['Budget'] }}</h1>
                     </div>
 
                     <form action="{{ route('budget.set') }}" method="POST" class="flex flex-col" id="form-budget">
