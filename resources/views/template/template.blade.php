@@ -115,33 +115,33 @@
 
         <div class='lg:flex grid grid-cols-2 lg:grid-cols-4 col-span-0 md:col-span-4 justify-between md:gap-x-4 mt-6 col-span-2'>
             <div class=''>
-                <h4 class='font-bold text-left text-lg'>Resources</h4>
-                <ul>
-                    <li class='text-left test-xs'>Help Center</li>
-                    <li class='text-left test-xs'>Affiliate</li>
-                    <li class='text-left test-xs'>Products Review</li>
-                    <li class='text-left test-xs'>Services</li>
+                <h4 class='font-bold text-left text-lg'>Navigates</h4>
+                <ul class="">
+                    <li class="text-left test-xs">Dashboard</li>
+                    <li class="text-left test-xs">Transaction</li>
+                    <li class="text-left test-xs">Report</li>
+                    <li class="text-left test-xs">Subscription</li>
+                    <li class="text-left test-xs">Customer Center</li>
                 </ul>
             </div>
 
             <div class=''>
-                <h4 class='font-bold text-left text-lg'>Resources</h4>
+                <h4 class='font-bold text-left text-lg'>About Us</h4>
                 <ul>
-                    <li class='text-left test-xs'>Help Center</li>
-                    <li class='text-left test-xs'>Affiliate</li>
-                    <li class='text-left test-xs'>Products Review</li>
-                    <li class='text-left test-xs'>Services</li>
+                    <li class='text-left test-xs'>Meet the Team</li>
+                    <li class='text-left test-xs'>FAQ</li>
+                    <li class='text-left test-xs'>Careers</li>
+                    <li class='text-left test-xs'>Blog</li>
                 </ul>
             </div>
 
             <div>
-                <h4 class='font-bold text-left mt-4 lg:mt-0'>Navigates</h4>
+                <h4 class='font-bold text-left mt-4 lg:mt-0'>Other</h4>
                 <ul class="">
-                    <li class="text-left test-xs">Home</li>
-                    <li class="text-left test-xs">About</li>
-                    <li class="text-left test-xs">Contact</li>
-                    <li class="text-left test-xs">Sign Up</li>
-                    <li class="text-left test-xs">Login</li>
+                    <li class="text-left test-xs">Promos</li>
+                    <li class="text-left test-xs">Planning</li>
+                    <li class="text-left test-xs">Billing</li>
+                    <li class="text-left test-xs">Gift Cards</li>
                 </ul>
             </div>
 
