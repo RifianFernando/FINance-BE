@@ -85,12 +85,15 @@ class DashboardController extends Controller
         //get budget
         $Budget = $this->getBudget($user->id);
 
+        //remaining days of months
+        $RemainingDays = intval(date('t') - date('j'));
         $Data = [
             'FirstName' => $FirstName,
             'Income' => $Income,
             'Expense' => $Expense,
             'TotalBalance' => $TotalBalance,
             'Budget' => $Budget,
+            'BudgetLeft' => floor($Budget / $RemainingDays)
         ];
 
         return view('pages.dashboard', [
