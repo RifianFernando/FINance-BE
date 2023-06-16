@@ -235,7 +235,7 @@
                                         </div>
                                         <div>
                                             <h1 class="text-xs md:text-sm xl:text-lg font-bold ml-2">
-                                                Rp{{ number_format($item->amount, 2, '.', ',') }}
+                                                Rp {{ number_format($item->amount, 2, '.', ',') }}
                                             </h1>
                                             <h1 class="text-xs lg:text-sm ml-2 text-gray-500">{{ $item->category }}</h1>
                                         </div>
