@@ -101,7 +101,7 @@
         </div>
     </div>
 
-    <div class='grid max-w-full mx-auto py-16 px-10 gap-8 gap-y-10 md:grid-cols-5 bg-[#383A40] text-[#EDEDF3] lg:gap-y-0 font-poppins'>
+    <div class='grid w-full mx-auto py-16 px-10 gap-8 gap-y-10 md:grid-cols-5 bg-[#383A40] text-[#EDEDF3] lg:gap-y-0 font-poppins'>
         <div class='col-span-1'>
             <h1 class='Brand w-full text-3xl font-bold font-play text-left'>FINEance</h1>
             <p class='py-4 text-xs text-left md:text-sm '></p>

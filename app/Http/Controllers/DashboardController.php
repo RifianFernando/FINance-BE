@@ -70,7 +70,7 @@ class DashboardController extends Controller
         $data =  TransactionJoinTable::where('user_id', $userId)
             ->join('transactions AS t', 't.id', '=', 'transaction_join_tables.transaction_id')
             ->select('t.*')
-            ->limit(3)
+            ->limit(9)
             ->orderBy('t.date', 'desc')
             ->get();
 
@@ -84,7 +84,7 @@ class DashboardController extends Controller
             ->where('t.is_expense', true)
             ->select('t.*')
             ->orderBy('t.amount', 'desc')
-            ->limit(9)
+            ->limit(2)
             ->get();
 
         return $data;

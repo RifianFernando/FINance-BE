@@ -225,9 +225,8 @@
                         <div class="w-[100%] py-2">
                             <hr class="h-[3px] border-0 w-[20%] bg-black">
                         </div>
-                        <div class="flex flex-col gap-y-3 py-2">
-
-                            @forelse ($Data['LargestTransaction'] as $item)
+                        @forelse ($Data['LargestTransaction'] as $item)
+                            <div class="flex flex-col gap-y-3 py-2">
                                 <div class="flex flex-col w-full">
                                     <div class="flex flex-row py-2 rounded-md items-center">
                                         <div class=" bg-fin-blue justify-center items-center p-3 rounded-full">
@@ -242,18 +241,14 @@
                                         </div>
                                     </div>
                                 </div>
-                            @endforeach
-
-                        </div>
-
-                    @empty
-
-                        <div class="w-full flex flex-col items-center h-full justify-center">
-                            <img class=" text-white mr-2" src="{{ asset('assets/dashboard/Empty.png') }}">
-                            <h1 class="text-2xl text-gray-400">
-                                No Transaction Yet ! :)
-                            </h1>
-                        </div>
+                            </div>
+                        @empty
+                            <div class="w-full flex flex-col items-center h-full justify-center">
+                                <img class=" text-white mr-2" src="{{ asset('assets/dashboard/Empty.png') }}">
+                                <h1 class="text-2xl text-gray-400">
+                                    No Transaction Yet ! :)
+                                </h1>
+                            </div>
                         @endforelse
 
                     </div>
