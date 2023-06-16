@@ -80,7 +80,10 @@
                 <button><img class="w-[30px] h-[30px]" src="{{ asset('assets/navbar/Hamburger.png') }}" id="MobileIcon"></button>
             </div>
             <div class="hidden mt-10" onClick="ChangeNavStyle()" id="nav-container" >
-                <h3 class="mt-10 text-4xl font-bold">FINEance</h3>
+                <h3 class="mt-10 text-4xl font-bold text-white">FINEance</h3>
+                <div class="w-[100%] flex flex-col py-2 gap-y-3 justify-center items-center">
+                    <hr class="h-[2px] border-0 w-[15%] bg-white">
+                </div>
                 <ul class="mt-10 text-xl">
                     <li class=""><a href="/dashboard" class="text-white no-underline">Dashboard</a></li>
                     <li class="pt-8"><a href="/transaction" class="text-white no-underline">Transaction</a></li>
@@ -128,10 +131,9 @@
             <div class=''>
                 <h4 class='font-bold text-left text-lg'>About Us</h4>
                 <ul>
-                    <li class='text-left test-xs hover:scale-110'>Meet the Team</li>
+                    <li class='text-left test-xs hover:scale-110'><a href="/team" class="text-white no-underline">Meet The Team</a></li>
                     <li class='text-left test-xs hover:scale-110'>FAQ</li>
-                    <li class='text-left test-xs hover:scale-110'>Careers</li>
-                    <li class='text-left test-xs hover:scale-110'>Blog</li>
+                    <li class='text-left test-xs hover:scale-110'>Newsletter</li>
                 </ul>
             </div>
 

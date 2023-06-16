@@ -40,8 +40,7 @@
 
 
                     <!-- News Image Slider-->
-                    <div
-                        class="flex bg-white drop-shadow-subs-card rounded-md overflow-hidden row-span-2 col-span-10 sm:col-span-4 sm:row-span-1">
+                    <div class="flex bg-white drop-shadow-subs-card rounded-md overflow-hidden row-span-2 col-span-10 sm:col-span-4 sm:row-span-1">
                         <div class="ImageSlider flex flex-row">
                             <img class="w-full h-full fixed" src="{{ asset('assets/dashboard/Dummy2.jpeg') }}">
                             <img class="w-full h-full fixed" src="{{ asset('assets/dashboard/Dummy1.jpeg') }}">
