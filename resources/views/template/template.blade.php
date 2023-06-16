@@ -152,7 +152,7 @@
                 </div>
 
                 <div className=" bg-gray-500 col-span-2">
-                    <input type="email" name="" id="" placeholder="Fill Your Email!" class="text-xs md:text-lg w-4/5 text-left outline-none focus:bg-slate-200 bg-white rounded-md flex py-2"/>
+                    <input type="email" name="" id="" placeholder="Fill Your Email!" class="text-xs md:text-lg w-4/5 text-left outline-none focus:bg-slate-200 bg-white rounded-md flex py-2 text-gray-500"/>
                     <button class=" bg-gray-800 text-sm text-white hover:scale-110 ease-linear duration-250 rounded-md py-2 sm:text-md md:text-xl md:p-3 my-3 px-6 md:py-2 md:px-0 md:w-[120px] duration-300">
                         Submit
                     <button>
