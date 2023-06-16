@@ -67,7 +67,7 @@
                             <h1 class="ml-2 text-sm xl:text-md">Income</h1>
                         </div>
                         <h1 class="flex flex-row items-center text-2xl font-castoro">
-                            Rp {{ $Data['Income'] }}
+                            Rp {{ number_format($Data['Income'], 2, '.', ',') }}
                         </h1>
                         <h1 class="text-gray-400 text-xs">This Month's <span class="font-bold">Income</span></h1>
                     </div>
@@ -81,7 +81,7 @@
                             </div>
                             <h1 class="ml-2 text-sm xl:text-md">Expense</h1>
                         </div>
-                        <h1 class="flex flex-row items-center text-2xl font-castoro">Rp {{ $Data['Expense'] }}</h1>
+                        <h1 class="flex flex-row items-center text-2xl font-castoro">Rp {{ number_format($Data['Expense'], 2, '.', ',') }}</h1>
                         <h1 class="text-gray-400 text-xs">This Month's <span class="font-bold">Expense</span></h1>
                     </div>
 
@@ -98,7 +98,7 @@
                                 {{ $Data['FirstName'] }}'s
                                 Wallet
                             </h1>
-                            <h1 class="text-2xl font-castoro">Rp {{ $Data['TotalBalance'] }}</h1>
+                            <h1 class="text-2xl font-castoro">Rp {{ number_format($Data['TotalBalance'], 2, '.', ',') }}</h1>
                         </div>
                         <div class="flex flex-row text-black font-bold text-sm py-4 font-poppins">
                             <a href="{{ route('transaction.view') }}"
@@ -142,13 +142,13 @@
                                         <h1
                                             class="col-span-1 font-bold text-[8px] sm:text-xs
                                         lg:text-md xl:text-[14px] text-red-600">
-                                            - Rp{{ $Latest->amount }}
+                                            - Rp{{ number_format($Latest->amount, 2, '.', ',') }}
                                         </h1>
                                     @else
                                         <h1
                                             class="col-span-1 font-bold text-[8px] sm:text-xs
                                         lg:text-md xl:text-[14px] text-green-600">
-                                            + Rp{{ $Latest->amount }}
+                                            + Rp{{ number_format($Latest->amount, 2, '.', ',') }}
                                         </h1>
                                     @endif
                                 </div>
@@ -191,7 +191,7 @@
 
                                         <div class="ml-2">
                                             <h1 class="font-bold text-xs md:text-md">Budget's Left</h1>
-                                            <h1 class="text-xl font-castoro">Rp{{ $Data['Budget'] }}</h1>
+                                            <h1 class="text-xl font-castoro">Rp{{ number_format($Data['Budget'],2, '.', ',') }}</h1>
                                         </div>
                                     </div>
 
@@ -207,7 +207,7 @@
                                         <Span class="font-bold">Reminder :</Span>
                                         Spend no more than
                                         <Span class="sm:text-sm md:text-md font-castoro font-bold">Rp
-                                            {{ $Data['BudgetLeft'] }}</Span>
+                                            {{ number_format($Data['BudgetLeft'], 2, '.', ',') }}</Span>
                                         each day so you can keep on budget for this month
                                     </p>
 
@@ -235,7 +235,7 @@
                                         </div>
                                         <div>
                                             <h1 class="text-xs md:text-sm xl:text-lg font-bold ml-2">
-                                                Rp{{ $item->amount }}
+                                                Rp{{ number_format($item->amount, 2, '.', ',') }}
                                             </h1>
                                             <h1 class="text-xs lg:text-sm ml-2 text-gray-500">{{ $item->category }}</h1>
                                         </div>
