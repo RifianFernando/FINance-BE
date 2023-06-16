@@ -101,7 +101,7 @@
         </div>
     </div>
 
-    <div class='grid max-w-full mx-auto py-16 px-10 gap-8 gap-y-10 md:grid-cols-5 bg-[#383A40] text-[#EDEDF3] lg:gap-y-0 font-poppins'>
+    <div class='grid w-full mx-auto py-16 px-10 gap-8 gap-y-10 md:grid-cols-5 bg-[#383A40] text-[#EDEDF3] lg:gap-y-0 font-poppins'>
         <div class='col-span-1'>
             <h1 class='Brand w-full text-3xl font-bold font-play text-left'>FINEance</h1>
             <p class='py-4 text-xs text-left md:text-sm '></p>
@@ -115,15 +115,15 @@
 
         <div class='lg:flex grid grid-cols-2 lg:grid-cols-4 col-span-0 md:col-span-4 justify-between md:gap-x-4 mt-6 col-span-2'>
             <div class=''>
-                <h4 class='font-bold text-left text-lg'>Navigates</h4>
+                <h4 class='font-bold text-left text-lg'>Navigate</h4>
                 <ul class="">
-                    <li class="text-left test-xs">Dashboard</li>
-                    <li class="text-left test-xs">Transaction</li>
-                    <li class="text-left test-xs">Report</li>
-                    <li class="text-left test-xs">Subscription</li>
-                    <li class="text-left test-xs">Customer Center</li>
+                    <li class="text-left test-xs"><a href="/dashboard" class="text-white no-underline">Dashboard</a></li>
+                    <li class="text-left test-xs"><a href="/transaction" class="text-white no-underline">Transaction</a></li>
+                    <li class="text-left test-xs"><a href="/report" class="text-white no-underline">Report</a></li>
+                    <li class="text-left test-xs"><a href="/subscription" class="text-white no-underline">Subscription</a></li>
+                    <li class="text-left test-xs"><a href="/customer-center" class="text-white no-underline">Customer Center</a></li>
                 </ul>
-            </div>
+            </div>            
 
             <div class=''>
                 <h4 class='font-bold text-left text-lg'>About Us</h4>
