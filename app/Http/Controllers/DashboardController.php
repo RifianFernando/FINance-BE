@@ -81,9 +81,11 @@ class DashboardController extends Controller
     {
         $data =  TransactionJoinTable::where('user_id', $userId)
             ->join('transactions AS t', 't.id', '=', 'transaction_join_tables.transaction_id')
+            // where is expense true and count by category
             ->where('t.is_expense', true)
-            ->select('t.*')
-            ->orderBy('t.amount', 'desc')
+            ->select('t.category', DB::raw('SUM(t.amount) as amount'))
+            ->groupBy('t.category')
+            ->orderBy('amount', 'desc')
             ->limit(2)
             ->get();
 
