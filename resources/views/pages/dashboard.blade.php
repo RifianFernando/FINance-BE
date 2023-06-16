@@ -66,7 +66,7 @@
                                     class="max-w-[20px] max-h-auto" src="{{ asset('assets/dashboard/Income.png') }}"></div>
                             <h1 class="ml-2 text-sm xl:text-md">Income</h1>
                         </div>
-                        <h1 class="flex flex-row items-center text-2xl font-castoro">
+                        <h1 class="flex flex-row items-center  text-md lg:text-lg xl:text-2xl font-castoro">
                             Rp {{ number_format($Data['Income'], 2, '.', ',') }}
                         </h1>
                         <h1 class="text-gray-400 text-xs">This Month's <span class="font-bold">Income</span></h1>
@@ -81,7 +81,7 @@
                             </div>
                             <h1 class="ml-2 text-sm xl:text-md">Expense</h1>
                         </div>
-                        <h1 class="flex flex-row items-center text-2xl font-castoro">Rp {{ number_format($Data['Expense'], 2, '.', ',') }}</h1>
+                        <h1 class="flex flex-row items-center text-md lg:text-lg xl:text-2xl font-castoro">Rp {{ number_format($Data['Expense'], 2, '.', ',') }}</h1>
                         <h1 class="text-gray-400 text-xs">This Month's <span class="font-bold">Expense</span></h1>
                     </div>
 
@@ -93,7 +93,7 @@
                             <h1>Total Balance</h1>
                         </div>
                         <div class="flex flex-row justify-between text-black font-bold text-sm py-2 font-poppins">
-                            <h1 class="flex flex-row items-center text-2xl"><img class="w-[25px] h-[25px] text-white mr-2"
+                            <h1 class="flex flex-row items-center text-xs md:text-sm lg:text-lg xl:text-2xl"><img class="w-[25px] h-[25px] text-white mr-2"
                                     src="{{ asset('assets/dashboard/Wallet.png') }}">
                                 {{ $Data['FirstName'] }}'s
                                 Wallet
@@ -176,7 +176,7 @@
                     <!-- Budget  -->
                     <div
                         class=" bg-white drop-shadow-subs-card p-3 xl:p-4 rounded-md w-full flex flex-col row-span-1 row-start-1 col-span-5 md:col-span-3 md:row-start-1 md:row-span-2">
-                        <h1 class="text-sm sm:text-md lg:text-lg">This Month's Budget</h1>
+                        <h1 class="text-xs md:text-md lg:text-lg xl:text-xl">This Month's Budget</h1>
                         <div class="w-[100%] py-2">
                             <hr class="h-[3px] border-0 w-[20%] bg-black">
                         </div>
@@ -185,13 +185,13 @@
                                 <div class="flex flex-col w-full gap-y-2">
                                     <div class="flex flex-row rounded-md py-2 items-center">
                                         <div class=" bg-fin-blue flex justify-center items-center rounded-full px-1 py-2">
-                                            <img class="max-w-[40px] max-h-[60px] p-1"
+                                            <img class="max-w-[20px] max-h-[30px] md:max-w-[40px] md:max-h-[60px] md:p-1"
                                                 src="{{ asset('assets/dashboard/Budget.png') }}">
                                         </div>
 
                                         <div class="ml-2">
-                                            <h1 class="font-bold text-xs md:text-md">Budget's Left</h1>
-                                            <h1 class="text-xl font-castoro">Rp{{ number_format($Data['Budget'],2, '.', ',') }}</h1>
+                                            <h1 class="font-bold text-xs md:text-md lg:text-lg">Budget's Left</h1>
+                                            <h1 class="text-md lg:text-lg xl:text-xl font-castoro">Rp{{ number_format($Data['Budget'],2, '.', ',') }}</h1>
                                         </div>
                                     </div>
 
@@ -221,7 +221,7 @@
                         class=" bg-white drop-shadow-subs-card p-3 xl:p-4
                         rounded-md w-full flex flex-col row-span-1 row-start-1
                         col-span-5 md:col-span-3 md:row-start-3 md:row-span-2">
-                        <h1 class="text-sm sm:text-md lg:text-lg">Top Spending This Month</h1>
+                        <h1 class="text-xs md:text-md lg:text-lg xl:text-xl">Top Spending This Month</h1>
                         <div class="w-[100%] py-2">
                             <hr class="h-[3px] border-0 w-[20%] bg-black">
                         </div>
@@ -245,7 +245,7 @@
                         @empty
                             <div class="w-full flex flex-col items-center h-full justify-center">
                                 <img class=" text-white mr-2" src="{{ asset('assets/dashboard/Empty.png') }}">
-                                <h1 class="text-2xl text-gray-400">
+                                <h1 class="text-xs md:text-md lg:text-lg xl:text-2xl text-gray-400">
                                     No Transaction Yet ! :)
                                 </h1>
                             </div>

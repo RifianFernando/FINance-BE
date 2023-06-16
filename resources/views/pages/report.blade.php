@@ -76,7 +76,7 @@
                                 <h1 class="font-poppins text-xl">Income Report Overview</h1>
                             </div>
                             <div class="w-[100%] py-4 flex justify-center">
-                                <hr class="h-[3px] border-0 w-[10%] bg-black">
+                                <hr class="h-[3px] border-0 w-[50px] bg-black">
                             </div>
                         </div>
                         <div class="flex flex-row py-3">
@@ -138,7 +138,7 @@
                                 <h1 class="font-poppins text-xl">Expense Report Overview</h1>
                             </div>
                             <div class="w-[100%] py-4 flex justify-center">
-                                <hr class="h-[3px] border-0 w-[10%] bg-black">
+                                <hr class="h-[3px] border-0 w-[50px] bg-black">
                             </div>
                         </div>
                         <div class="flex flex-row py-3">
@@ -198,6 +198,7 @@
                                 type: 'doughnut',
                                 data: <?php echo json_encode($data); ?>,
                                 options: {
+                                    animation: false,
                                     cutout: 90,
                                     radius: '70%', 
                                     scales: {
