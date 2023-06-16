@@ -259,7 +259,7 @@
                     <div class="overlay fixed inset-0 bg-black/[0.5]"></div>
 
                     <div
-                        class="flex flex-col justify-between items-center bg-darker-white p-8 rounded-md relative h-[50vh] w-[40vw]">
+                        class="flex flex-col justify-between items-center bg-darker-white p-8 rounded-md relative h-[50vh] w-[70vw] md:w-[40vw]">
 
                         <h2 class="text-3xl font-bold mb-4 text-center text-fin-blue">Let's set your budget</h2>
 
