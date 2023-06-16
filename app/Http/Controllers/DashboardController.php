@@ -80,11 +80,12 @@ class DashboardController extends Controller
 
     private function getLargestTransaction($userId)
     {
-        $data =  TransactionJoinTable::where('user_id', $userId)
+        $data = TransactionJoinTable::where('user_id', $userId)
             ->join('transactions AS t', 't.id', '=', 'transaction_join_tables.transaction_id')
             ->where('t.is_expense', true)
-            ->select('t.*')
-            ->orderBy('t.amount', 'desc')
+            ->select('t.category', DB::raw('SUM(t.amount) as total_amount'))
+            ->groupBy('t.category')
+            ->orderBy('total_amount', 'desc')
             ->limit(2)
             ->get();
 
