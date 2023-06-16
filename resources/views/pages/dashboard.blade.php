@@ -254,7 +254,7 @@
                     </div>
                 </div>
 
-                <div id="formContainer" class="hidden fixed inset-0 flex items-center justify-center">
+                <div id="formContainer" class="hidden fixed inset-0 items-center justify-center">
 
                     <div class="overlay fixed inset-0 bg-black/[0.5]"></div>
 
@@ -322,21 +322,25 @@
 
                     showFormButton.addEventListener('click', () => {
                         formContainer.classList.remove('hidden');
+                        formContainer.classList.add('flex');
                     });
 
                     closeFormButton.addEventListener('click', () => {
                         formContainer.classList.add('hidden');
+                        formContainer.classList.remove('flex')
                     });
 
                     formContainer.addEventListener('click', (event) => {
                         if (event.target === formContainer) {
                             formContainer.classList.add('hidden');
+                            formContainer.classList.remove('flex');
                         }
                     });
 
                     submitButton.addEventListener('click', (event) => {
                         const form = document.getElementById('form-budget');
                         formContainer.classList.add('hidden');
+                        formContainer.classList.remove('flex')
                         form.submit();
                     });
                 </script>
