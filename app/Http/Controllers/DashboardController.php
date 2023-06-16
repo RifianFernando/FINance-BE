@@ -72,6 +72,7 @@ class DashboardController extends Controller
             ->select('t.*')
             ->limit(9)
             ->orderBy('t.date', 'desc')
+            ->orderBy('t.created_at', 'desc')
             ->get();
 
         return $data;
