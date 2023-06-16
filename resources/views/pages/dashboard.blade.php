@@ -227,7 +227,7 @@
                         </div>
                         <div class="flex flex-col gap-y-3 py-2">
 
-                            @foreach ($Data['LargestTransaction'] as $item)
+                            @forelse ($Data['LargestTransaction'] as $item)
                                 <div class="flex flex-col w-full">
                                     <div class="flex flex-row py-2 rounded-md items-center">
                                         <div class=" bg-fin-blue justify-center items-center p-3 rounded-full">
@@ -254,7 +254,6 @@
                                 No Transaction Yet ! :)
                             </h1>
                         </div>
-
                         @endforelse
 
                     </div>
