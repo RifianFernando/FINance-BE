@@ -293,7 +293,8 @@
 
                     </div>
                 </div>
-
+            </div>
+        </div>
                 <script>
                     var Images = document.querySelectorAll('.ImageSlider img');
                     var RadioBtns = document.querySelectorAll('.RadioList div');
@@ -344,6 +345,6 @@
                         form.submit();
                     });
                 </script>
-
+            
     </body>
 @endsection

@@ -109,14 +109,91 @@
                         </li>
                     </ul>
                 </div>
+                
+            <!-- Payment -->
+                <div id="formContainer" class="fixed inset-0 flex items-center justify-center">
 
+                    <div class="overlay fixed inset-0 bg-black/[0.5]"></div>
+
+                    <div class="flex flex-col justify-between items-center bg-darker-white rounded-md relative h-[80vh] md:h-[60vh] w-[80vw] xl:w-[40vw] overflow-hidden">
+
+                        <div class="w-full bg-fin-blue py-3 px-8">
+                            <h2 class="text-3xl font-bold text-center text-white">Payment Method</h2>
+                        </div>
+                        
+                        <div class="w-full h-full flex flex-col justify-around px-6">
+                            <div>
+                                <h1 class="text-lg font-bold py-2 ">Payment method</h1>
+                                <div class="flex flex-col items-center justify-center drop-shadow-subs-card bg-white w-[40%] sm:w-[30%] md:w-[18%] py-1 px-6 rounded-md border-2 border-gray-400">
+                                    <img src="{{ asset('assets/subscription/Credit.png') }}" class="max-w-[45px] h-auto" alt="">
+                                    <h1 class="font-bold font-poppins pt-2 text-gray-600">Credit</h1>
+                                </div>
+                            </div>
+
+                            <form action="{{ route('budget.set') }}" method="POST" class="flex flex-col"
+                                id="form-budget">
+                                @csrf
+                                <label for="newbudget" class="text-lg font-bold py-1">Fill your payment information</label>
+                                <div class="flex flex-col md:flex-row  py-2 gap-x-10">
+                                    <div class="flex flex-col gap-y-2  w-full">
+                                        <label for="newbudget" class="px-2">Card Holder Name</label>
+                                        <input type="text" id="newbudget" name="budget" class="border rounded-md px-3 py-2 mb-2 " required />
+                                    </div>
+                                    <div class="flex flex-col gap-y-2  w-full">
+                                        <label for="newbudget" class="px-2">CVV</label>
+                                        <input type="text" id="newbudget" name="budget" class="border rounded-md px-3 py-2 mb-2" required />
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+
+                        <button type="submit" id="submitButton"
+                            class="bg-fin-blue border-2 text-white font-bold py-2 px-4 rounded-md hover:border-fin-blue hover:bg-gray-100 hover:text-fin-blue duration-500 ease-in-out mb-4">
+                            Submit
+                        </button>
+
+                        <button id="closeFormButton" class="absolute top-2 right-2 text-white hover:text-gray-300">
+                            <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M6 18L18 6M6 6l12 12">
+                                </path>
+                            </svg>
+                        </button>
+
+                    </div>
+                </div>
             </div>
-
         </div>
-
         
-        <script src="">
+        <script>
+                    const showFormButton = document.getElementById('showFormButton');
+                    const formContainer = document.getElementById('formContainer');
+                    const closeFormButton = document.getElementById('closeFormButton');
+                    const submitButton = document.getElementById('submitButton')
 
+                    showFormButton.addEventListener('click', () => {
+                        formContainer.classList.remove('hidden');
+                        formContainer.classList.add('flex');
+                    });
+
+                    closeFormButton.addEventListener('click', () => {
+                        formContainer.classList.add('hidden');
+                        formContainer.classList.remove('flex')
+                    });
+
+                    formContainer.addEventListener('click', (event) => {
+                        if (event.target === formContainer) {
+                            formContainer.classList.add('hidden');
+                            formContainer.classList.remove('flex');
+                        }
+                    });
+
+                    submitButton.addEventListener('click', (event) => {
+                        const form = document.getElementById('form-budget');
+                        formContainer.classList.add('hidden');
+                        formContainer.classList.remove('flex')
+                        form.submit();
+                    });
         </script>
     </body>
 @endsection

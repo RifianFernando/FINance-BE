@@ -106,10 +106,10 @@
             <h1 class='Brand w-full text-3xl font-bold font-play text-left'>FINEance</h1>
             <p class='py-4 text-xs text-left md:text-sm '></p>
             <div class='flex flex-row md:max-w-[50%] justify-between mt-4'>
-                <img class="w-[30px] h-[30px]" src="{{ asset('assets/footer/Facebook.png') }}">
-                <img class="w-[30px] h-[30px]" src="{{ asset('assets/footer/Instagram.png') }}">
-                <img class="w-[30px] h-[30px]" src="{{ asset('assets/footer/Twitter.png') }}">
-                <img class="w-[30px] h-[30px]" src="{{ asset('assets/footer/Youtube.png') }}">
+                <img class="w-[30px] h-[30px] hover:scale-110" src="{{ asset('assets/footer/Facebook.png') }}">
+                <img class="w-[30px] h-[30px] hover:scale-110" src="{{ asset('assets/footer/Instagram.png') }}">
+                <img class="w-[30px] h-[30px] hover:scale-110" src="{{ asset('assets/footer/Twitter.png') }}">
+                <img class="w-[30px] h-[30px] hover:scale-110" src="{{ asset('assets/footer/Youtube.png') }}">
             </div>
         </div>
 
@@ -117,31 +117,31 @@
             <div class=''>
                 <h4 class='font-bold text-left text-lg'>Navigate</h4>
                 <ul class="">
-                    <li class="text-left test-xs"><a href="/dashboard" class="text-white no-underline">Dashboard</a></li>
-                    <li class="text-left test-xs"><a href="/transaction" class="text-white no-underline">Transaction</a></li>
-                    <li class="text-left test-xs"><a href="/report" class="text-white no-underline">Report</a></li>
-                    <li class="text-left test-xs"><a href="/subscription" class="text-white no-underline">Subscription</a></li>
-                    <li class="text-left test-xs"><a href="/customer-center" class="text-white no-underline">Customer Center</a></li>
+                    <li class="text-left test-xs hover:scale-110"><a href="/dashboard" class="text-white no-underline">Dashboard</a></li>
+                    <li class="text-left test-xs hover:scale-110"><a href="/transaction" class="text-white no-underline">Transaction</a></li>
+                    <li class="text-left test-xs hover:scale-110"><a href="/report" class="text-white no-underline">Report</a></li>
+                    <li class="text-left test-xs hover:scale-110"><a href="/subscription" class="text-white no-underline">Subscription</a></li>
+                    <li class="text-left test-xs hover:scale-110"><a href="/customer-center" class="text-white no-underline">Customer Center</a></li>
                 </ul>
             </div>            
 
             <div class=''>
                 <h4 class='font-bold text-left text-lg'>About Us</h4>
                 <ul>
-                    <li class='text-left test-xs'>Meet the Team</li>
-                    <li class='text-left test-xs'>FAQ</li>
-                    <li class='text-left test-xs'>Careers</li>
-                    <li class='text-left test-xs'>Blog</li>
+                    <li class='text-left test-xs hover:scale-110'>Meet the Team</li>
+                    <li class='text-left test-xs hover:scale-110'>FAQ</li>
+                    <li class='text-left test-xs hover:scale-110'>Careers</li>
+                    <li class='text-left test-xs hover:scale-110'>Blog</li>
                 </ul>
             </div>
 
             <div>
-                <h4 class='font-bold text-left mt-4 lg:mt-0'>Other</h4>
+                <h4 class='font-bold text-left mt-4 lg:mt-0 text-lg'>Other</h4>
                 <ul class="">
-                    <li class="text-left test-xs">Promos</li>
-                    <li class="text-left test-xs">Planning</li>
-                    <li class="text-left test-xs">Billing</li>
-                    <li class="text-left test-xs">Gift Cards</li>
+                    <li class="text-left test-xs hover:scale-110">Promos</li>
+                    <li class="text-left test-xs hover:scale-110">Planning</li>
+                    <li class="text-left test-xs hover:scale-110">Billing</li>
+                    <li class="text-left test-xs hover:scale-110">Gift Cards</li>
                 </ul>
             </div>
 
