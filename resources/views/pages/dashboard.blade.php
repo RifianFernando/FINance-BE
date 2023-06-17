@@ -283,7 +283,7 @@
                         <div class="w-full h-full flex flex-col justify-around">
                             <div>
                                 <h1 class="text-sm ">Current set budget</h1>
-                                <h1 class="text-3xl">Rp {{ $Data['Budget'] }}</h1>
+                                <h1 class="text-3xl">Rp {{ number_format($Data['SetBudget'], 2, '.', ',') }}</h1>
                             </div>
 
                             <form action="{{ route('budget.set') }}" method="POST" class="flex flex-col"

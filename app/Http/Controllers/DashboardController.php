@@ -104,6 +104,9 @@ class DashboardController extends Controller
 
         //get budget
         $Budget = $this->getBudget($user->id) - $Expense;
+        
+        //get set budget
+        $SetBudget = $this->getBudget($user->id);
 
         //remaining days of months
         $RemainingDays = intval(date('t') - date('j'));
@@ -123,6 +126,7 @@ class DashboardController extends Controller
             'BudgetLeft' => floor($Budget / $RemainingDays),
             'LatestTransaction' => $LatestTransaction,
             'LargestTransaction' => $LargestTransaction,
+            'SetBudget' => $SetBudget,
         ];
 
         return $Data;
