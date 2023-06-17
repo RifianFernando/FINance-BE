@@ -33,8 +33,13 @@
                             <h1 class="text-lg xl:text-2xl">Welcome,
                                 {{ $Data['FirstName'] }}
                             </h1>
-                            <p class="text-xs lg:text-md xl:text-lg">Your financial state is in <span>Good Condition</span>,
-                                keep it up</p>
+                            @if ($Data['Budget'] < 0)
+                                <p class="text-xs lg:text-md xl:text-lg">Your financial state is in <span>Bad Condition</span>,
+                                    you have exceeded this month's budget</p>
+                            @else
+                                <p class="text-xs lg:text-md xl:text-lg">Your financial state is in <span>Good Condition</span>,
+                                    keep it up</p>
+                            @endif
                         </div>
                     </div>
 
@@ -190,7 +195,11 @@
 
                                         <div class="ml-2">
                                             <h1 class="font-bold text-xs md:text-md lg:text-lg">Budget's Left</h1>
-                                            <h1 class="text-md lg:text-lg xl:text-xl font-castoro">Rp{{ number_format($Data['Budget'],2, '.', ',') }}</h1>
+                                            @if ($Data['Budget'] < 0)
+                                                <h1 class="text-md lg:text-lg xl:text-xl font-castoro">Rp 0</h1>
+                                            @else
+                                                <h1 class="text-md lg:text-lg xl:text-xl font-castoro">Rp {{ number_format($Data['Budget'],2, '.', ',') }}</h1>
+                                            @endif
                                         </div>
                                     </div>
 
@@ -202,13 +211,22 @@
                                         Set Budget
                                     </button>
 
-                                    <p class="text-xs text-gray-500 py-2">
-                                        <Span class="font-bold">Reminder :</Span>
-                                        Spend no more than
-                                        <Span class="sm:text-sm md:text-md font-castoro font-bold">Rp
-                                            {{ number_format($Data['BudgetLeft'], 2, '.', ',') }}</Span>
-                                        each day so you can keep on budget for this month
-                                    </p>
+                                    @if ($Data['Budget'] < 0)
+                                        <p class="text-xs text-gray-500 py-2">
+                                            <Span class="font-bold">Reminder :</Span>
+                                                You have exceeded the set budget by
+                                                <Span class="sm:text-sm md:text-md font-castoro font-bold">Rp
+                                                    {{ number_format(abs($Data['Budget']), 2, '.', ',') }}</Span>
+                                        </p>
+                                    @else
+                                        <p class="text-xs text-gray-500 py-2">
+                                            <Span class="font-bold">Reminder :</Span>
+                                                Spend no more than
+                                                <Span class="sm:text-sm md:text-md font-castoro font-bold">Rp
+                                                    {{ number_format($Data['BudgetLeft'], 2, '.', ',') }}</Span>
+                                                each day so you can keep on budget for this month
+                                        </p>
+                                    @endif
 
                                 </div>
                             </div>
@@ -265,7 +283,7 @@
                         <div class="w-full h-full flex flex-col justify-around">
                             <div>
                                 <h1 class="text-sm ">Current set budget</h1>
-                                <h1 class="text-3xl">Rp{{ $Data['Budget'] }}</h1>
+                                <h1 class="text-3xl">Rp {{ $Data['Budget'] }}</h1>
                             </div>
 
                             <form action="{{ route('budget.set') }}" method="POST" class="flex flex-col"
