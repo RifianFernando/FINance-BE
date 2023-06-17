@@ -47,5 +47,8 @@ Route::get('/customer-center', function () {
 Route::get('/team', function () {
     return view('pages.team');
 });
+Route::get('/blog', function () {
+    return view('pages.blog');
+});
 
 require __DIR__ . '/auth.php';

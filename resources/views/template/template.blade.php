@@ -133,7 +133,7 @@
                 <ul>
                     <li class='text-left test-xs hover:scale-110'><a href="/team" class="text-white no-underline">Meet The Team</a></li>
                     <li class='text-left test-xs hover:scale-110'>FAQ</li>
-                    <li class='text-left test-xs hover:scale-110'>Newsletter</li>
+                    <li class='text-left test-xs hover:scale-110'><a href="/blog" class="text-white no-underline">blog</a></li>
                 </ul>
             </div>
 
