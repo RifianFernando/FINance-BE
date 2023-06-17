@@ -122,10 +122,14 @@
         <h1 class='Brand w-full text-3xl font-bold font-play text-left'>FINEance</h1>
         <p class='py-4 text-xs text-left md:text-sm '></p>
         <div class='flex flex-row md:max-w-[50%] justify-between mt-4'>
-            <img class="w-[30px] h-[30px] hover:scale-110" src="{{ asset('assets/footer/Facebook.png') }}">
-            <img class="w-[30px] h-[30px] hover:scale-110" src="{{ asset('assets/footer/Instagram.png') }}">
-            <img class="w-[30px] h-[30px] hover:scale-110" src="{{ asset('assets/footer/Twitter.png') }}">
-            <img class="w-[30px] h-[30px] hover:scale-110" src="{{ asset('assets/footer/Youtube.png') }}">
+            <img class="w-[30px] h-[30px] hover:scale-110" src="{{ asset('assets/footer/Facebook.png') }}"
+                alt="img">
+            <img class="w-[30px] h-[30px] hover:scale-110" src="{{ asset('assets/footer/Instagram.png') }}"
+                alt="img">
+            <img class="w-[30px] h-[30px] hover:scale-110" src="{{ asset('assets/footer/Twitter.png') }}"
+                alt="img">
+            <img class="w-[30px] h-[30px] hover:scale-110" src="{{ asset('assets/footer/Youtube.png') }}"
+                alt="img">
         </div>
     </div>
 
