@@ -29,7 +29,7 @@
                             <h1 class="ml-2 text-sm xl:text-md">Income</h1>
                         </div>
                         <h1 class="flex flex-row items-center text-2xl font-castoro">
-                            Rp 100.000
+                            Rp {{ number_format($Data['Income'], 2, '.', ',') }}
                         </h1>
                         <h1 class="text-gray-400 text-xs">This Month's <span class="font-bold">Income</span></h1>
                     </div>
@@ -41,7 +41,7 @@
                                 <img class="max-w-[15px] max-h-auto" src="{{ asset('assets/dashboard/Expense.png') }}"></div>
                             <h1 class="ml-2 text-sm xl:text-md">Expense</h1>
                         </div>
-                        <h1 class="flex flex-row items-center text-2xl font-castoro">Rp 100.000</h1>
+                        <h1 class="flex flex-row items-center text-2xl font-castoro">Rp {{ number_format($Data['Expense'], 2, '.', ',') }}</h1>
                         <h1 class="text-gray-400 text-xs">This Month's <span class="font-bold">Expense</span></h1>
                     </div>
 
@@ -57,7 +57,7 @@
                                 Rifian's
                                 Wallet
                             </h1>
-                            <h1 class="text-2xl font-castoro">Rp 1.000.000</h1>
+                            <h1 class="text-2xl font-castoro">Rp {{ number_format($Data['TotalBalance'], 2, '.', ',') }}</h1>
                         </div>
                         <div class="flex flex-row text-black font-bold text-sm py-4 font-poppins">
                             <a href="{{ route('transaction.view') }}"
@@ -117,7 +117,7 @@
                                 data: <?php echo json_encode($data); ?>,
                                 options: {
                                     cutout: 90,
-                                    radius: '70%', 
+                                    radius: '70%',
                                     scales: {
                                         x: {
                                             display: false // Show the x-axis
@@ -200,7 +200,7 @@
                                 options: {
                                     animation: false,
                                     cutout: 90,
-                                    radius: '70%', 
+                                    radius: '70%',
                                     scales: {
                                         x: {
                                             display: false // Show the x-axis
@@ -214,7 +214,7 @@
                             </script>
                         </div>
                     </div>
-                   
+
                 </div>
 
             <!-- Third Row -->
@@ -228,10 +228,10 @@
                                 <hr class="h-[3px] border-0 w-[10%] bg-black">
                             </div>
                         </div>
-                    
+
                         <div>
                             <canvas id="TransactionReportChart"></canvas>
-                            
+
                             <script>
                             // PHP code to generate chart data
                             <?php
@@ -272,10 +272,10 @@
                         </div>
                 </div>
             </div>
-            
+
             </div>
-    
-        
+
+
         </div>
 
 
