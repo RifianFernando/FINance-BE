@@ -133,17 +133,15 @@
                 <ul>
                     <li class='text-left test-xs hover:scale-110'><a href="/team" class="text-white no-underline">Meet The Team</a></li>
                     <li class='text-left test-xs hover:scale-110'><a href="/faq" class="text-white no-underline">FAQ</a></li>
-                    <li class='text-left test-xs hover:scale-110'><a href="/blog" class="text-white no-underline">blog</a></li>
+                    <li class='text-left test-xs hover:scale-110'><a href="/blog" class="text-white no-underline">Blog</a></li>
                 </ul>
             </div>
 
             <div>
                 <h4 class='font-bold text-left mt-4 lg:mt-0 text-lg'>Other</h4>
                 <ul class="">
-                    <li class="text-left test-xs hover:scale-110">Promos</li>
-                    <li class="text-left test-xs hover:scale-110">Planning</li>
-                    <li class="text-left test-xs hover:scale-110">Billing</li>
-                    <li class="text-left test-xs hover:scale-110">Gift Cards</li>
+                    <li class="text-left test-xs hover:scale-110"><a href="/promo" class="text-white no-underline">Promo</a></li>
+                    <li class="text-left test-xs hover:scale-110"><a href="/terms" class="text-white no-underline">Terms And Policy</a></li>
                 </ul>
             </div>
 
