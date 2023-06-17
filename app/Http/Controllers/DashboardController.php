@@ -103,7 +103,7 @@ class DashboardController extends Controller
         $TotalBalance = $this->getTotalBalance($user->id);
 
         //get budget
-        $Budget = $this->getBudget($user->id);
+        $Budget = $this->getBudget($user->id) - $Expense;
 
         //remaining days of months
         $RemainingDays = intval(date('t') - date('j'));
