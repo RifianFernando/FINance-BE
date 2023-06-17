@@ -10,11 +10,6 @@ use Illuminate\Support\Facades\DB;
 
 class DashboardController extends Controller
 {
-    public function report()
-    {
-        return view('pages.report');
-    }
-
     private function getValueIsExpense($is_expense, $userId)
     {
         //get income or expense with query builder
@@ -92,11 +87,8 @@ class DashboardController extends Controller
         return $data;
     }
 
-    public function index()
+    private function UserData($user)
     {
-        //get user
-        $user = auth()->user();
-
         //get first name
         $UserName = $user->name;
         $FirstName = explode(' ', trim($UserName))[0];
@@ -133,7 +125,32 @@ class DashboardController extends Controller
             'LargestTransaction' => $LargestTransaction,
         ];
 
+        return $Data;
+    }
+
+    public function index()
+    {
+        //get user
+        $user = auth()->user();
+
+        //get data
+        $Data = $this->UserData($user);
+
+
         return view('pages.dashboard', [
+            'Data' => $Data,
+        ]);
+    }
+
+    public function reportIndex()
+    {
+        //get user
+        $user = auth()->user();
+
+        //get data
+        $Data = $this->UserData($user);
+
+        return view('pages.report', [
             'Data' => $Data,
         ]);
     }
