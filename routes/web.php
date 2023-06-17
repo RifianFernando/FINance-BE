@@ -50,5 +50,8 @@ Route::get('/team', function () {
 Route::get('/blog', function () {
     return view('pages.blog');
 });
+Route::get('/faq', function () {
+    return view('pages.faq');
+});
 
 require __DIR__ . '/auth.php';

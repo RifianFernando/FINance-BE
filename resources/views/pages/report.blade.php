@@ -101,9 +101,9 @@
                                 'datasets' => [
                                     [
                                     'label' => 'Sales',
-                                    'data' => [120, 180, 150, 200, 220],
+                                    'data' => [120, 180],
                                     'backgroundColor' => 'rgba(75, 192, 192, 0.2)',
-                                    'backgroundColor' => ['#04263A', '#C1DEF0','#B5D1E3', '#C0E2F6', '#316787'],
+                                    'backgroundColor' => ['#04263A', '#C1DEF0'],
                                     'borderWidth' => 1
                                     ]
                                 ]
@@ -183,9 +183,9 @@
                                 'datasets' => [
                                     [
                                     'label' => 'Sales',
-                                    'data' => [120, 180, 150, 200, 220],
+                                    'data' => [120, 180, 150],
                                     'backgroundColor' => 'rgba(75, 192, 192, 0.2)',
-                                    'backgroundColor' => ['#04263A', '#C1DEF0','#B5D1E3', '#C0E2F6', '#316787'],
+                                    'backgroundColor' => ['#04263A', '#C1DEF0','#B5D1E3'],
                                     'borderWidth' => 1
                                     ]
                                 ]

@@ -30,7 +30,7 @@
                     <div class="flex flex-col">
                         <h1 class="text-3xl font-bold font-castoro">Lorem Ipsum</h1>
                         <h4>05/06/2023</h4>
-                        <p class="max-w-[600px] py-5 text-xs lg:text-md">
+                        <p class="max-w-[500px] py-5 text-xs md:text-md">
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.  
                         </p>
                     </div>
@@ -40,7 +40,7 @@
                     <div class="flex flex-col">
                         <h1 class="text-3xl font-bold font-castoro">Lorem Ipsum</h1>
                         <h4>05/06/2023</h4>
-                        <p class="max-w-[600px] py-5 text-xs lg:text-md">
+                        <p class="max-w-[500px] py-5 text-xs md:text-md">
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.  
                         </p>
                     </div>
@@ -50,7 +50,7 @@
                     <div class="flex flex-col">
                         <h1 class="text-3xl font-bold font-castoro">Lorem Ipsum</h1>
                         <h4>05/06/2023</h4>
-                        <p class="max-w-[600px] py-5 text-xs lg:text-md">
+                        <p class="max-w-[500px] py-5 text-xs md:text-md">
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.  
                         </p>
                     </div>

@@ -132,7 +132,7 @@
                 <h4 class='font-bold text-left text-lg'>About Us</h4>
                 <ul>
                     <li class='text-left test-xs hover:scale-110'><a href="/team" class="text-white no-underline">Meet The Team</a></li>
-                    <li class='text-left test-xs hover:scale-110'>FAQ</li>
+                    <li class='text-left test-xs hover:scale-110'><a href="/faq" class="text-white no-underline">FAQ</a></li>
                     <li class='text-left test-xs hover:scale-110'><a href="/blog" class="text-white no-underline">blog</a></li>
                 </ul>
             </div>
