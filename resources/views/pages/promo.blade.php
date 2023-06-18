@@ -13,7 +13,7 @@
                 <img src="{{ asset('assets/promo/LeftDecor.png') }}" alt="" class="absolute top-0 left-0 w-[20%]">
             </div>
             <div class="w-full">
-                <div class="w-full flex flex-col items-center justify-between px-4 sm:px-10  gap-y-16 py-20">
+                <div class="w-full flex flex-col items-center justify-between px-4 sm:px-10 gap-y-16 py-20">
                     <div class="font-poppins text-sm lg:text-lg max-w-[700px] text-center text-fin-blue border-2 px-8 border-gray-400 py-10 md:px-16">
                         <h1 class="font-castoro text-7xl">Promo Students</h1>
                         <div class="w-[100%] py-4 flex flex-col gap-y-4 justify-center items-center">
