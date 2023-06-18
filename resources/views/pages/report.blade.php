@@ -52,7 +52,7 @@
                             <h1 class="flex flex-row items-center text-md  font-castoro">
                                 Rp {{ number_format($Data['Income'], 2, '.', ',') }}
                             </h1>
-                            <h1 class="text-gray-400 text-xs">This Month's <span class="font-bold">Income</span></h1>
+                            <h1 class="text-gray-400 text-[11px]">This Month's <span class="font-bold">Income</span></h1>
                         </div>
 
                         <!-- Expense  -->
@@ -66,17 +66,17 @@
                             </div>
                             <h1 class="flex flex-row items-center text-md font-castoro">Rp
                                 {{ number_format($Data['Expense'], 2, '.', ',') }}</h1>
-                            <h1 class="text-gray-400 text-xs">This Month's <span class="font-bold">Expense</span></h1>
+                            <h1 class="text-gray-400 text-[11px]">This Month's <span class="font-bold">Expense</span></h1>
                         </div>
 
 
                     </div>
 
                     <!-- Second Row -->
-                    <div class=" grid grid-cols-MUATLAH1 grid-rows-MUATLAH2 gap-x-5 justify-center col-span-2 gap-y-5">
+                    <div class=" grid grid-rows-[300px_300px_400px]  grid-cols-[minmax(350px,1fr)] sm:grid-cols-MUATLAH1 sm:grid-rows-MUATLAH2 gap-x-5 justify-center col-span-2 gap-y-5 px-10 sm:px-0">
                         <!-- Income Overview Chart -->
                         <div
-                            class=" border-gray-500 border-1 border-solid bg-white drop-shadow-subs-card rounded-md col-span-1 p-5">
+                            class="w-full border-gray-500 border-1 border-solid bg-white drop-shadow-subs-card rounded-md col-span-1 p-5">
                             <div class="flex justify-center flex-col w-full">
                                 <div class="flex justify-center">
                                     <h1 class="font-poppins text-lg">Income Report Overview</h1>
@@ -112,8 +112,8 @@
                                         type: 'doughnut',
                                         data: <?php echo json_encode($IncomeData); ?>,
                                         options: {
-                                            cutout:50,
-                                            radius: '100%',
+                                            cutout:45,
+                                            radius: '90%',
                                             plugins: {
                                                 legend: {
                                                     position: 'right',
@@ -134,7 +134,7 @@
                         </div>
                         <!-- Expense Overview Chart -->
                         <div
-                            class=" border-gray-500 border-1 border-solid  bg-white drop-shadow-subs-card rounded-md col-span-1 p-5">
+                            class="w-full border-gray-500 border-1 border-solid  bg-white drop-shadow-subs-card rounded-md col-span-1 p-5">
                             <div class="flex justify-center flex-col w-full">
                                 <div class="flex justify-center">
                                     <h1 class="font-poppins text-lg">Expense Report Overview</h1>
@@ -143,9 +143,9 @@
                                     <hr class="h-[3px] border-0 w-[50px] bg-black">
                                 </div>
                             </div>
-                            <div class="flex flex-row py-3 justify-center items-center w-full">
-                                <div class="mt-[-90px]">
-                                    <canvas id="ExpenseChart" class="p-2"></canvas>
+                            <div class="flex flex-row py-3 justify-center items-center">
+                                <div class="mt-[-75px]">
+                                    <canvas id="ExpenseChart"></canvas>
                                 </div>
                                 
                                 <script>
@@ -168,10 +168,8 @@
                                         type: 'doughnut',
                                         data: <?php echo json_encode($ExpenseData); ?>,
                                         options: {
-                                            responsive: true,
-                                            maintainAspectRatio: false,
-                                            cutout:50,
-                                            radius: '100%',
+                                            cutout:45,
+                                            radius: '90%',
                                             plugins: {
                                                 legend: {
                                                     position: 'right',
@@ -190,7 +188,8 @@
                                 </script>
                             </div>
                         </div>
-                        <div class="w-full bg-slate-50 drop-shadow-subs-card px-4 py-2 col-span-2">
+                        <!-- transaction report chart -->
+                        <div class="w-full bg-slate-50 drop-shadow-subs-card px-20 py-2 col-span-1 sm:col-span-2">
                             <div class="flex justify-center flex-col w-full">
                                 <div class="flex justify-center">
                                     <h1 class="font-poppins text-xl">Transaction Report Overview</h1>
@@ -200,7 +199,7 @@
                                 </div>
                             </div>
 
-                            <div class="flex flex-row py-3 justify-center items-center w-full">
+                            <div class="flex py-3 justify-center items-center">
                                 <canvas id="TransactionReportChart"></canvas>
 
                                 <script>

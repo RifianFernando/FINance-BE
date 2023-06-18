@@ -73,7 +73,7 @@
                         <h1 class="flex flex-row items-center  text-md lg:text-lg xl:text-2xl font-castoro">
                             Rp {{ number_format($Data['Income'], 2, '.', ',') }}
                         </h1>
-                        <h1 class="text-gray-400 text-xs">This Month's <span class="font-bold">Income</span></h1>
+                        <h1 class="text-gray-400 text-[11px]">This Month's <span class="font-bold">Income</span></h1>
                     </div>
 
                     <!-- Expense  -->
@@ -86,7 +86,7 @@
                             <h1 class="ml-2 text-sm xl:text-md">Expense</h1>
                         </div>
                         <h1 class="flex flex-row items-center text-md lg:text-lg xl:text-2xl font-castoro">Rp {{ number_format($Data['Expense'], 2, '.', ',') }}</h1>
-                        <h1 class="text-gray-400 text-xs">This Month's <span class="font-bold">Expense</span></h1>
+                        <h1 class="text-gray-400 text-[11px]">This Month's <span class="font-bold">Expense</span></h1>
                     </div>
 
                     <!-- Wallet  -->
@@ -132,26 +132,26 @@
                                         $date = date_create($Latest->date);
                                         $date = date_format($date, 'd-m-Y');
                                     @endphp
-                                    <h1 class="col-span-1 font-bold text-[9px] sm:text-xs xl:text-[16px]">
+                                    <h1 class="col-span-1 font-bold text-[9px] sm:text-xs xl:text-[14px]">
                                         {{ $date }}
                                     </h1>
-                                    <h1 class="col-span-2 text-[10px] sm:text-sm lg:text-md">
+                                    <h1 class="col-span-2 text-[10px] sm:text-sm lg:text-sm">
                                         {{ $Latest->description }}
                                     </h1>
                                     </h1>
-                                    <h1 class="col-span-1 font-bold text-[10px] sm:text-sm lg:text-sm">
+                                    <h1 class="col-span-1 font-bold text-[8px] sm:text-[9px] lg:text-sm">
                                         {{ $Latest->category }}
                                     </h1>
                                     @if ($Latest->is_expense == true)
                                         <h1
-                                            class="col-span-1 font-bold text-[8px] sm:text-xs
-                                        lg:text-md xl:text-[14px] text-red-600">
+                                            class="col-span-1 font-bold text-[8px] sm:text-[9px]
+                                        lg:text-sm xl:text-[13px] text-red-600">
                                             - Rp{{ number_format($Latest->amount, 2, '.', ',') }}
                                         </h1>
                                     @else
                                         <h1
-                                            class="col-span-1 font-bold text-[8px] sm:text-xs
-                                        lg:text-md xl:text-[14px] text-green-600">
+                                            class="col-span-1 font-bold text-[8px] sm:text-[9px]
+                                        lg:text-sm xl:text-[13px] text-green-600">
                                             + Rp{{ number_format($Latest->amount, 2, '.', ',') }}
                                         </h1>
                                     @endif
