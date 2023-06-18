@@ -93,12 +93,12 @@
                             // PHP code to generate chart data
                             <?php
                                 // Generate sample data
-                                $data = [
-                                'labels' => ['Label 1', 'Label 2'],
+                                $IncomeData = [
+                                'labels' => $Data['MonthIncomeCategory'],
                                 'datasets' => [
                                     [
 
-                                    'data' => [120, 180],
+                                    'data' => $Data['MonthIncomeAmount'],
                                     'backgroundColor' => 'rgba(75, 192, 192, 0.2)',
                                     'backgroundColor' => ['#04263A', '#C1DEF0'],
                                     'borderWidth' => 1
@@ -111,7 +111,7 @@
                             var ctx = document.getElementById('IncomeChart').getContext('2d');
                             var myChart = new Chart(ctx, {
                                 type: 'doughnut',
-                                data: <?php echo json_encode($data); ?>,
+                                data: <?php echo json_encode($IncomeData); ?>,
                                 options: {
                                     cutout: 90,
                                     radius: '70%',
@@ -181,12 +181,11 @@
                             // PHP code to generate chart data
                             <?php
                                 // Generate sample data
-                                $data = [
-                                'labels' => ['Label 1', 'Label 2', 'Label 3'],
+                                $ExpenseData = [
+                                'labels' => $Data['MonthExpenseCategory'],
                                 'datasets' => [
                                     [
-                                    'label' => 'Sales',
-                                    'data' => [120, 180, 150],
+                                    'data' => $Data['MonthExpenseAmount'],
                                     'backgroundColor' => 'rgba(75, 192, 192, 0.2)',
                                     'backgroundColor' => ['#04263A', '#C1DEF0','#B5D1E3'],
                                     'borderWidth' => 1
@@ -199,7 +198,7 @@
                             var ctx = document.getElementById('ExpenseChart').getContext('2d');
                             var myChart = new Chart(ctx, {
                                 type: 'doughnut',
-                                data: <?php echo json_encode($data); ?>,
+                                data: <?php echo json_encode($ExpenseData); ?>,
                                 options: {
                                     cutout: 90,
                                     radius: '70%',
