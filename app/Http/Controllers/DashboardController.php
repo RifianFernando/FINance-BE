@@ -230,30 +230,64 @@ class DashboardController extends Controller
         ]);
     }
 
-    public function reportIndex()
+    private function getWeekIncomeAndExpense($is_expense, $weekNumber)
     {
         //get user
-        $user = auth()->user();
+        $currentMonth = Carbon::now()->month; // Get the current month
+        $startOfMonth = Carbon::now()->startOfMonth(); // Get the start of the current month
+        $startOfWeek = $startOfMonth->copy()->startOfWeek(); // Get the start of the first week of the month
+        // Calculate the start and end dates of the specified week
+        $startOfWeek->addWeeks($weekNumber - 1);
+        $endOfWeek = $startOfWeek->copy()->endOfWeek();
+        $user = auth()->user()->id;
+        $data = TransactionJoinTable::where('user_id', $user)
+            ->join('transactions AS t', 't.id', '=', 'transaction_join_tables.transaction_id')
+            ->where('t.is_expense', $is_expense)
+            ->whereMonth('t.date', '=', $currentMonth)
+            ->whereDate('t.date', '>=', $startOfWeek)
+            ->whereDate('t.date', '<=', $endOfWeek)
+            ->select(DB::raw('SUM(t.amount) as amount'))
+            ->get('amount');
 
-        //get data
+        $data = $data->ToArray();
+        if ($data[0]['amount'] == null) {
+            $data[0]['amount'] = 0;
+        }
+        return $data[0]['amount'];
+    }
+
+    public function reportIndex()
+    {
+        $user = auth()->user();
         $Data = $this->UserData($user);
 
-        // get all income
-        $IncomeReport =
-            TransactionJoinTable::where('user_id', $user->id)
-            ->join('transactions AS t', 't.id', '=', 'transaction_join_tables.transaction_id')
-            ->where('t.is_expense', false)
-            ->select('t.*')
-            ->get();
-        if (empty($IncomeReport)) {
-            $IncomeReport = null;
-        } else {
-            $IncomeReport = $IncomeReport->toArray();
-        }
+
+        $dataExpenseWeek1 = $this->getWeekIncomeAndExpense(true, 1);
+        $dataIncomeWeek2 = $this->getWeekIncomeAndExpense(false, 1);
+        $DataWeek1 = $dataIncomeWeek2 - $dataExpenseWeek1;
+
+        $dataExpenseWeek2 = $this->getWeekIncomeAndExpense(true, 2);
+        $dataIncomeWeek2 = $this->getWeekIncomeAndExpense(false, 2);
+        $DataWeek2 = $dataIncomeWeek2 - $dataExpenseWeek2;
+
+        $dataExpenseWeek3 = $this->getWeekIncomeAndExpense(true, 3);
+        $dataIncomeWeek3 = $this->getWeekIncomeAndExpense(false, 3);
+        $DataWeek3 = $dataIncomeWeek3 - $dataExpenseWeek3;
+
+        $dataExpenseWeek4 = $this->getWeekIncomeAndExpense(true, 4);
+        $dataIncomeWeek4 = $this->getWeekIncomeAndExpense(false, 4);
+        $DataWeek4 = $dataIncomeWeek4 - $dataExpenseWeek4;
+
+        $WeekTransaction = [
+            'week1' => $DataWeek1,
+            'week2' => $DataWeek2,
+            'week3' => $DataWeek3,
+            'week4' => $DataWeek4
+        ];
 
         return view('pages.report', [
             'Data' => $Data,
-            'IncomeReport' => $IncomeReport,
+            'WeekTransaction' => $WeekTransaction
         ]);
     }
 }

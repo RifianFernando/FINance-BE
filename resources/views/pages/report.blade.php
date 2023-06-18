@@ -19,7 +19,7 @@
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 mt-4 p-4 gap-y-5 w-full">
-            <!-- First Row -->
+                <!-- First Row -->
                 <div class="grid grid-cols-6 gap-x-2 xl:gap-x-2 gap-y-4 sm:gap-y-2 col-span-1 ">
                     <!-- Wallet  -->
                     <div class="grid col-span-12 sm:col-span-6 bg-white drop-shadow-subs-card py-2 px-4 lg:px-8 rounded-md">
@@ -27,8 +27,10 @@
                             <h1>Wallet</h1>
                             <h1>Total Balance</h1>
                         </div>
-                        <div class="flex flex-row justify-between items-center text-black font-bold text-sm py-2 font-poppins">
-                            <h1 class="flex flex-row items-center justify-center text-2xl"><img class="w-[25px] h-[25px] text-white mr-2"
+                        <div
+                            class="flex flex-row justify-between items-center text-black font-bold text-sm py-2 font-poppins">
+                            <h1 class="flex flex-row items-center justify-center text-2xl"><img
+                                    class="w-[25px] h-[25px] text-white mr-2"
                                     src="{{ asset('assets/dashboard/Wallet.png') }}">
                                 Rifian's
                                 Wallet
@@ -70,9 +72,9 @@
 
                 <!-- Second Row -->
                 <div class=" flex grid- gap-x-2 justify-center col-span-1">
-                     <!-- Income Overview Chart -->
-                     <div class=" border-gray-500 border-1 border-solid bg-white drop-shadow-subs-card rounded-md">
-                     <div class="flex justify-center flex-col w-full">
+                    <!-- Income Overview Chart -->
+                    <div class=" border-gray-500 border-1 border-solid bg-white drop-shadow-subs-card rounded-md">
+                        <div class="flex justify-center flex-col w-full">
                             <div class="flex justify-center">
                                 <h1 class="font-poppins text-xl">Income Report Overview</h1>
                             </div>
@@ -85,15 +87,15 @@
                                 <canvas id="IncomeChart" class=""></canvas>
                             </div>
                             <!-- <div class="flex flex-col gap-y-4 justify-center mt-[-50px]">
-                                        <div class="text-xs">
-                                            <h1 class="font-bold">Salary</h1>
-                                            <p >Rp 100.000</p>
-                                        </div>
-                                        <div class="text-xs">
-                                            <h1 class="font-bold">Other Income</h1>
-                                            <p>Rp 100.000</p>
-                                        </div>
-                                    </div> -->
+                                                                <div class="text-xs">
+                                                                    <h1 class="font-bold">Salary</h1>
+                                                                    <p >Rp 100.000</p>
+                                                                </div>
+                                                                <div class="text-xs">
+                                                                    <h1 class="font-bold">Other Income</h1>
+                                                                    <p>Rp 100.000</p>
+                                                                </div>
+                                                            </div> -->
                             <script>
                                 // PHP code to generate chart data
                                 <?php
@@ -137,7 +139,7 @@
                             </script>
                         </div>
                     </div>
-                     <!-- Expense Overview Chart -->
+                    <!-- Expense Overview Chart -->
                     <div class=" border-gray-500 border-1 border-solid  bg-white drop-shadow-subs-card rounded-md">
                         <div class="flex justify-center flex-col w-full">
                             <div class="flex justify-center">
@@ -152,35 +154,35 @@
                                 <canvas id="ExpenseChart" class=""></canvas>
                             </div>
                             <!-- <div class="grid grid-cols-2 gap-x-6 py-3">
-                                        <div class="text-xs">
-                                            <h1 class="font-bold">Food & Beverage</h1>
-                                            <p >Rp 100.000</p>
-                                        </div>
-                                        <div class="text-xs">
-                                            <h1 class="font-bold">Transportation</h1>
-                                            <p>Rp 100.000</p>
-                                        </div>
-                                        <div class="text-xs">
-                                            <h1 class="font-bold">House Bill</h1>
-                                            <p>Rp 100.000</p>
-                                        </div>
-                                        <div class="text-xs">
-                                            <h1 class="font-bold">Medical</h1>
-                                            <p>Rp 100.000</p>
-                                        </div>
-                                        <div class="text-xs">
-                                            <h1 class="font-bold">Education</h1>
-                                            <p>Rp 100.000</p>
-                                        </div>
-                                        <div class="text-xs">
-                                            <h1 class="font-bold">Gifts & Donation</h1>
-                                            <p>Rp 100.000</p>
-                                        </div>
-                                        <div class="text-xs">
-                                            <h1 class="font-bold">Fund Money</h1>
-                                            <p>Rp 100.000</p>
-                                        </div>
-                                    </div> -->
+                                                                <div class="text-xs">
+                                                                    <h1 class="font-bold">Food & Beverage</h1>
+                                                                    <p >Rp 100.000</p>
+                                                                </div>
+                                                                <div class="text-xs">
+                                                                    <h1 class="font-bold">Transportation</h1>
+                                                                    <p>Rp 100.000</p>
+                                                                </div>
+                                                                <div class="text-xs">
+                                                                    <h1 class="font-bold">House Bill</h1>
+                                                                    <p>Rp 100.000</p>
+                                                                </div>
+                                                                <div class="text-xs">
+                                                                    <h1 class="font-bold">Medical</h1>
+                                                                    <p>Rp 100.000</p>
+                                                                </div>
+                                                                <div class="text-xs">
+                                                                    <h1 class="font-bold">Education</h1>
+                                                                    <p>Rp 100.000</p>
+                                                                </div>
+                                                                <div class="text-xs">
+                                                                    <h1 class="font-bold">Gifts & Donation</h1>
+                                                                    <p>Rp 100.000</p>
+                                                                </div>
+                                                                <div class="text-xs">
+                                                                    <h1 class="font-bold">Fund Money</h1>
+                                                                    <p>Rp 100.000</p>
+                                                                </div>
+                                                            </div> -->
                             <script>
                                 // PHP code to generate chart data
                                 <?php
@@ -251,8 +253,10 @@
                                     'labels' => ['Week 1', 'Week 2', 'Week 3', 'Week 4'],
                                     'datasets' => [
                                         [
-                                            'label' => 'Sales',
-                                            'data' => [120, 180, 150, 200, 220],
+                                            'label' => '',
+                                            'data' => [
+                                                $WeekTransaction['week1'], $WeekTransaction['week2'], $WeekTransaction['week3'], $WeekTransaction['week4']
+                                            ],
                                             'backgroundColor' => '#316787',
                                             'borderColor' => '#C0E2F6',
                                             'borderWidth' => 1,
