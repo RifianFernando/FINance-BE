@@ -10,11 +10,6 @@ use Illuminate\Support\Facades\DB;
 
 class DashboardController extends Controller
 {
-    public function report()
-    {
-        return view('pages.report');
-    }
-
     private function getValueIsExpense($is_expense, $userId)
     {
         //get income or expense with query builder
@@ -72,6 +67,7 @@ class DashboardController extends Controller
             ->select('t.*')
             ->limit(9)
             ->orderBy('t.date', 'desc')
+            ->orderBy('t.created_at', 'desc')
             ->get();
 
         return $data;
@@ -79,24 +75,21 @@ class DashboardController extends Controller
 
     private function getLargestTransaction($userId)
     {
-        $data =  TransactionJoinTable::where('user_id', $userId)
+        $data = TransactionJoinTable::where('user_id', $userId)
             ->join('transactions AS t', 't.id', '=', 'transaction_join_tables.transaction_id')
             // where is expense true and count by category
             ->where('t.is_expense', true)
-            ->select('t.category', DB::raw('SUM(t.amount) as amount'))
+            ->select('t.category', DB::raw('SUM(t.amount) as total_amount'))
             ->groupBy('t.category')
-            ->orderBy('amount', 'desc')
+            ->orderBy('total_amount', 'desc')
             ->limit(2)
             ->get();
 
         return $data;
     }
 
-    public function index()
+    private function UserData($user)
     {
-        //get user
-        $user = auth()->user();
-
         //get first name
         $UserName = $user->name;
         $FirstName = explode(' ', trim($UserName))[0];
@@ -111,7 +104,10 @@ class DashboardController extends Controller
         $TotalBalance = $this->getTotalBalance($user->id);
 
         //get budget
-        $Budget = $this->getBudget($user->id);
+        $Budget = $this->getBudget($user->id) - $Expense;
+
+        //get set budget
+        $SetBudget = $this->getBudget($user->id);
 
         //remaining days of months
         $RemainingDays = intval(date('t') - date('j'));
@@ -131,9 +127,35 @@ class DashboardController extends Controller
             'BudgetLeft' => floor($Budget / $RemainingDays),
             'LatestTransaction' => $LatestTransaction,
             'LargestTransaction' => $LargestTransaction,
+            'SetBudget' => $SetBudget,
         ];
 
+        return $Data;
+    }
+
+    public function index()
+    {
+        //get user
+        $user = auth()->user();
+
+        //get data
+        $Data = $this->UserData($user);
+
+
         return view('pages.dashboard', [
+            'Data' => $Data,
+        ]);
+    }
+
+    public function reportIndex()
+    {
+        //get user
+        $user = auth()->user();
+
+        //get data
+        $Data = $this->UserData($user);
+
+        return view('pages.report', [
             'Data' => $Data,
         ]);
     }

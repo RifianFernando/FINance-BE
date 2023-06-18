@@ -31,7 +31,7 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/transaction', [TransactionController::class, 'index'])->name('transaction.view');
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
     Route::post('/transaction', [TransactionController::class, 'create'])->name('transaction.create');
-    Route::get('/report', [DashboardController::class, 'report'])->name('report');
+    Route::get('/report', [DashboardController::class, 'reportIndex'])->name('report');
     Route::post('/budget/add', [
         TransactionController::class, 'setBudget'
     ])->name('budget.set');
@@ -43,6 +43,21 @@ Route::get('/subscription', function () {
 
 Route::get('/customer-center', function () {
     return view('pages.customer-center');
+});
+Route::get('/team', function () {
+    return view('pages.team');
+});
+Route::get('/blog', function () {
+    return view('pages.blog');
+});
+Route::get('/faq', function () {
+    return view('pages.faq');
+});
+Route::get('/promo', function () {
+    return view('pages.promo');
+});
+Route::get('/terms', function () {
+    return view('pages.terms');
 });
 
 require __DIR__ . '/auth.php';

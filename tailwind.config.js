@@ -49,7 +49,8 @@ module.exports = {
                 ],
 
                 'castoro': ['Castoro', 'serif'],
-                'poppins': ['Poppins', 'sans-serif']
+                'poppins': ['Poppins', 'sans-serif'],
+                'play': ['Playfair Display', 'serif']
             },
             colors: {
                 // contoh custom color

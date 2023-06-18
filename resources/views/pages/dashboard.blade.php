@@ -33,15 +33,19 @@
                             <h1 class="text-lg xl:text-2xl">Welcome,
                                 {{ $Data['FirstName'] }}
                             </h1>
-                            <p class="text-xs lg:text-md xl:text-lg">Your financial state is in <span>Good Condition</span>,
-                                keep it up</p>
+                            @if ($Data['Budget'] < 0)
+                                <p class="text-xs lg:text-md xl:text-lg">Your financial state is in <span>Bad Condition</span>,
+                                    you have exceeded this month's budget</p>
+                            @else
+                                <p class="text-xs lg:text-md xl:text-lg">Your financial state is in <span>Good Condition</span>,
+                                    keep it up</p>
+                            @endif
                         </div>
                     </div>
 
 
                     <!-- News Image Slider-->
-                    <div
-                        class="flex bg-white drop-shadow-subs-card rounded-md overflow-hidden row-span-2 col-span-10 sm:col-span-4 sm:row-span-1">
+                    <div class="flex bg-white drop-shadow-subs-card rounded-md overflow-hidden row-span-2 col-span-10 sm:col-span-4 sm:row-span-1">
                         <div class="ImageSlider flex flex-row">
                             <img class="w-full h-full fixed" src="{{ asset('assets/dashboard/Dummy2.jpeg') }}">
                             <img class="w-full h-full fixed" src="{{ asset('assets/dashboard/Dummy1.jpeg') }}">
@@ -66,8 +70,8 @@
                                     class="max-w-[20px] max-h-auto" src="{{ asset('assets/dashboard/Income.png') }}"></div>
                             <h1 class="ml-2 text-sm xl:text-md">Income</h1>
                         </div>
-                        <h1 class="flex flex-row items-center text-2xl font-castoro">
-                            Rp {{ $Data['Income'] }}
+                        <h1 class="flex flex-row items-center  text-md lg:text-lg xl:text-2xl font-castoro">
+                            Rp {{ number_format($Data['Income'], 2, '.', ',') }}
                         </h1>
                         <h1 class="text-gray-400 text-xs">This Month's <span class="font-bold">Income</span></h1>
                     </div>
@@ -81,7 +85,7 @@
                             </div>
                             <h1 class="ml-2 text-sm xl:text-md">Expense</h1>
                         </div>
-                        <h1 class="flex flex-row items-center text-2xl font-castoro">Rp {{ $Data['Expense'] }}</h1>
+                        <h1 class="flex flex-row items-center text-md lg:text-lg xl:text-2xl font-castoro">Rp {{ number_format($Data['Expense'], 2, '.', ',') }}</h1>
                         <h1 class="text-gray-400 text-xs">This Month's <span class="font-bold">Expense</span></h1>
                     </div>
 
@@ -93,12 +97,12 @@
                             <h1>Total Balance</h1>
                         </div>
                         <div class="flex flex-row justify-between text-black font-bold text-sm py-2 font-poppins">
-                            <h1 class="flex flex-row items-center text-2xl"><img class="w-[25px] h-[25px] text-white mr-2"
+                            <h1 class="flex flex-row items-center text-xs md:text-sm lg:text-lg xl:text-2xl"><img class="w-[25px] h-[25px] text-white mr-2"
                                     src="{{ asset('assets/dashboard/Wallet.png') }}">
                                 {{ $Data['FirstName'] }}'s
                                 Wallet
                             </h1>
-                            <h1 class="text-2xl font-castoro">Rp {{ $Data['TotalBalance'] }}</h1>
+                            <h1 class="text-2xl font-castoro">Rp {{ number_format($Data['TotalBalance'], 2, '.', ',') }}</h1>
                         </div>
                         <div class="flex flex-row text-black font-bold text-sm py-4 font-poppins">
                             <a href="{{ route('transaction.view') }}"
@@ -142,13 +146,13 @@
                                         <h1
                                             class="col-span-1 font-bold text-[8px] sm:text-xs
                                         lg:text-md xl:text-[14px] text-red-600">
-                                            - Rp{{ $Latest->amount }}
+                                            - Rp{{ number_format($Latest->amount, 2, '.', ',') }}
                                         </h1>
                                     @else
                                         <h1
                                             class="col-span-1 font-bold text-[8px] sm:text-xs
                                         lg:text-md xl:text-[14px] text-green-600">
-                                            + Rp{{ $Latest->amount }}
+                                            + Rp{{ number_format($Latest->amount, 2, '.', ',') }}
                                         </h1>
                                     @endif
                                 </div>
@@ -176,7 +180,7 @@
                     <!-- Budget  -->
                     <div
                         class=" bg-white drop-shadow-subs-card p-3 xl:p-4 rounded-md w-full flex flex-col row-span-1 row-start-1 col-span-5 md:col-span-3 md:row-start-1 md:row-span-2">
-                        <h1 class="text-sm sm:text-md lg:text-lg">This Month's Budget</h1>
+                        <h1 class="text-xs md:text-md lg:text-lg xl:text-xl">This Month's Budget</h1>
                         <div class="w-[100%] py-2">
                             <hr class="h-[3px] border-0 w-[20%] bg-black">
                         </div>
@@ -185,13 +189,17 @@
                                 <div class="flex flex-col w-full gap-y-2">
                                     <div class="flex flex-row rounded-md py-2 items-center">
                                         <div class=" bg-fin-blue flex justify-center items-center rounded-full px-1 py-2">
-                                            <img class="max-w-[40px] max-h-[60px] p-1"
+                                            <img class="max-w-[20px] max-h-[30px] md:max-w-[40px] md:max-h-[60px] md:p-1"
                                                 src="{{ asset('assets/dashboard/Budget.png') }}">
                                         </div>
 
                                         <div class="ml-2">
-                                            <h1 class="font-bold text-xs md:text-md">Budget's Left</h1>
-                                            <h1 class="text-xl font-castoro">Rp{{ $Data['Budget'] }}</h1>
+                                            <h1 class="font-bold text-xs md:text-md lg:text-lg">Budget's Left</h1>
+                                            @if ($Data['Budget'] < 0)
+                                                <h1 class="text-md lg:text-lg xl:text-xl font-castoro">Rp 0</h1>
+                                            @else
+                                                <h1 class="text-md lg:text-lg xl:text-xl font-castoro">Rp {{ number_format($Data['Budget'],2, '.', ',') }}</h1>
+                                            @endif
                                         </div>
                                     </div>
 
@@ -203,13 +211,22 @@
                                         Set Budget
                                     </button>
 
-                                    <p class="text-xs text-gray-500 py-2">
-                                        <Span class="font-bold">Reminder :</Span>
-                                        Spend no more than
-                                        <Span class="sm:text-sm md:text-md font-castoro font-bold">Rp
-                                            {{ $Data['BudgetLeft'] }}</Span>
-                                        each day so you can keep on budget for this month
-                                    </p>
+                                    @if ($Data['Budget'] < 0)
+                                        <p class="text-xs text-gray-500 py-2">
+                                            <Span class="font-bold">Reminder :</Span>
+                                                You have exceeded the set budget by
+                                                <Span class="sm:text-sm md:text-md font-castoro font-bold">Rp
+                                                    {{ number_format(abs($Data['Budget']), 2, '.', ',') }}</Span>
+                                        </p>
+                                    @else
+                                        <p class="text-xs text-gray-500 py-2">
+                                            <Span class="font-bold">Reminder :</Span>
+                                                Spend no more than
+                                                <Span class="sm:text-sm md:text-md font-castoro font-bold">Rp
+                                                    {{ number_format($Data['BudgetLeft'], 2, '.', ',') }}</Span>
+                                                each day so you can keep on budget for this month
+                                        </p>
+                                    @endif
 
                                 </div>
                             </div>
@@ -221,7 +238,7 @@
                         class=" bg-white drop-shadow-subs-card p-3 xl:p-4
                         rounded-md w-full flex flex-col row-span-1 row-start-1
                         col-span-5 md:col-span-3 md:row-start-3 md:row-span-2">
-                        <h1 class="text-sm sm:text-md lg:text-lg">Top Spending This Month</h1>
+                        <h1 class="text-xs md:text-md lg:text-lg xl:text-xl">Top Spending This Month</h1>
                         <div class="w-[100%] py-2">
                             <hr class="h-[3px] border-0 w-[20%] bg-black">
                         </div>
@@ -235,7 +252,7 @@
                                         </div>
                                         <div>
                                             <h1 class="text-xs md:text-sm xl:text-lg font-bold ml-2">
-                                                Rp{{ $item->amount }}
+                                                Rp {{ number_format($item->total_amount, 2, '.', ',') }}
                                             </h1>
                                             <h1 class="text-xs lg:text-sm ml-2 text-gray-500">{{ $item->category }}</h1>
                                         </div>
@@ -245,7 +262,7 @@
                         @empty
                             <div class="w-full flex flex-col items-center h-full justify-center">
                                 <img class=" text-white mr-2" src="{{ asset('assets/dashboard/Empty.png') }}">
-                                <h1 class="text-2xl text-gray-400">
+                                <h1 class="text-xs md:text-md lg:text-lg xl:text-2xl text-gray-400">
                                     No Transaction Yet ! :)
                                 </h1>
                             </div>
@@ -254,7 +271,7 @@
                     </div>
                 </div>
 
-                <div id="formContainer" class="hidden fixed inset-0 flex items-center justify-center">
+                <div id="formContainer" class="hidden fixed inset-0 items-center justify-center">
 
                     <div class="overlay fixed inset-0 bg-black/[0.5]"></div>
 
@@ -266,7 +283,7 @@
                         <div class="w-full h-full flex flex-col justify-around">
                             <div>
                                 <h1 class="text-sm ">Current set budget</h1>
-                                <h1 class="text-3xl">Rp{{ $Data['Budget'] }}</h1>
+                                <h1 class="text-3xl">Rp {{ number_format($Data['SetBudget'], 2, '.', ',') }}</h1>
                             </div>
 
                             <form action="{{ route('budget.set') }}" method="POST" class="flex flex-col"
@@ -293,7 +310,8 @@
 
                     </div>
                 </div>
-
+            </div>
+        </div>
                 <script>
                     var Images = document.querySelectorAll('.ImageSlider img');
                     var RadioBtns = document.querySelectorAll('.RadioList div');
@@ -322,24 +340,28 @@
 
                     showFormButton.addEventListener('click', () => {
                         formContainer.classList.remove('hidden');
+                        formContainer.classList.add('flex');
                     });
 
                     closeFormButton.addEventListener('click', () => {
                         formContainer.classList.add('hidden');
+                        formContainer.classList.remove('flex')
                     });
 
                     formContainer.addEventListener('click', (event) => {
                         if (event.target === formContainer) {
                             formContainer.classList.add('hidden');
+                            formContainer.classList.remove('flex');
                         }
                     });
 
                     submitButton.addEventListener('click', (event) => {
                         const form = document.getElementById('form-budget');
                         formContainer.classList.add('hidden');
+                        formContainer.classList.remove('flex')
                         form.submit();
                     });
                 </script>
-
+            
     </body>
 @endsection

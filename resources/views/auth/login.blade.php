@@ -98,13 +98,18 @@
                 <div class="container">
                     <div class="row">
                         <div
-                            class="col-6 d-lg-flex d-none h-100 my-auto pe-0 position-absolute top-0 start-0 text-center justify-content-center flex-column">
+                            class="col-6 d-lg-flex
+                            p-0 d-none h-100 my-auto position-absolute top-0 start-0 text-center justify-content-center flex-column">
                             <div class="position-relative bg-gradient-primary h-100 m-3 px-7 border-radius-lg d-flex flex-column justify-content-center"
                                 style="background-image: url('{{ asset('assets/register/illustration-signup.jpg') }}'); background-size: cover;">
                             </div>
                         </div>
                         <div class="col-xl-4 col-lg-5 col-md-7 d-flex flex-column ms-auto me-auto ms-lg-auto me-lg-5">
                             <div class="card card-plain">
+                                <a href="/"
+                                    class="card-header flex justify-center text-2xl font-semibold text-gray-900 dark:text-dark">
+                                    FINEance
+                                </a>
                                 <div class="card-header">
                                     <h4 class="font-weight-bolder">Sign In</h4>
                                     <p class="mb-0">Enter your email and password to login</p>
@@ -139,8 +144,8 @@
                                 <div class="card-footer text-center pt-0 px-lg-2 px-1">
                                     <p class="mb-2 text-sm mx-auto">
                                         Create new account?
-                                        <a href="{{ route('register') }}"
-                                            class="text-gradient font-weight-bold" style="background-color: #23273C;">Register</a>
+                                        <a href="{{ route('register') }}" class="text-gradient font-weight-bold"
+                                            style="background-color: #23273C;">Register</a>
                                     </p>
                                 </div>
                             </div>
