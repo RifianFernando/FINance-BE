@@ -81,6 +81,12 @@ module.exports = {
                 'HP' : '500px',
                 'tablet': '640px'
             },
+            gridTemplateColumns: {
+                'MUATLAH1' : "repeat(2, minmax(200px, 450px));"
+            },
+            gridTemplateRows: {
+                'MUATLAH2' : "minmax(200px, 280px), minmax(200px, 1fr);"
+            },
         },
 
     },
