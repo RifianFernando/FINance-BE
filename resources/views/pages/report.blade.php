@@ -133,7 +133,7 @@
                         </div>
                     </div>
                      <!-- Expense Overview Chart -->
-                    <div class=" border-gray-500 border-1 border-solid  bg-white drop-shadow-subs-card rounded-md col-span-1">
+                    <div class=" border-gray-500 border-1 border-solid  bg-white drop-shadow-subs-card rounded-md col-span-1 relative">
                         <div class="flex justify-center flex-col w-full py-4">
                             <div class="flex justify-center ">
                                 <h1 class="font-poppins text-lg">Expense Report Overview</h1>
@@ -201,6 +201,11 @@
                                     plugins: {
                                         legend: {
                                             position:'bottom',
+                                            labels: {
+                                                font: {
+                                                    size: 8 // Adjust the font size of the legend labels
+                                                }
+                                            }
                                         }
                                     },
                                     scales: {
