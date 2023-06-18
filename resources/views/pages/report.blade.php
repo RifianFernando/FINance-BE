@@ -68,9 +68,9 @@
                 <div class=" grid grid-cols-4 gap-x-5 justify-center col-span-2 ">
                      <!-- Income Overview Chart -->
                     <div class=" border-gray-500 border-1 border-solid bg-white drop-shadow-subs-card rounded-md col-span-1">
-                        <div class="flex justify-center flex-col w-full">
+                        <div class="flex justify-center flex-col w-full py-4">
                             <div class="flex justify-center">
-                                <h1 class="font-poppins text-xl">Income Report Overview</h1>
+                                <h1 class="font-poppins text-lg">Income Report Overview</h1>
                             </div>
                             <div class="w-[100%] py-4 flex justify-center">
                                 <hr class="h-[3px] border-0 w-[50px] bg-black">
@@ -134,16 +134,16 @@
                     </div>
                      <!-- Expense Overview Chart -->
                     <div class=" border-gray-500 border-1 border-solid  bg-white drop-shadow-subs-card rounded-md col-span-1">
-                        <div class="flex justify-center flex-col w-full">
-                            <div class="flex justify-center">
-                                <h1 class="font-poppins text-xl">Expense Report Overview</h1>
+                        <div class="flex justify-center flex-col w-full py-4">
+                            <div class="flex justify-center ">
+                                <h1 class="font-poppins text-lg">Expense Report Overview</h1>
                             </div>
                             <div class="w-[100%] py-4 flex justify-center">
                                 <hr class="h-[3px] border-0 w-[50px] bg-black">
                             </div>
                         </div>
                         <div class="flex flex-row py-3">
-                            <div class="mt-[-35px]">
+                            <div class="mt-[-20%]">
                                 <canvas id="ExpenseChart" class=""></canvas>
                             </div>
                             <!-- <div class="grid grid-cols-2 gap-x-6 py-3">

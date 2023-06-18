@@ -50,7 +50,7 @@
                                     <select name="category" id="categoryDropdown"
                                         class="w-full border-gray-300 border-0 border-b-2 outline-none">
                                         <option value="" disabled selected>Select a category</option>
-                                        <option value="expense" disabled>Expenese</option>
+                                        <option value="expense" disabled>Expense</option>
                                         <option value="Food & Beverage">Food & Beverage</option>
                                         <option value="Transportation">Transportation</option>
                                         <option value="House Bill">House Bill</option>
