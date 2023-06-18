@@ -64,164 +64,163 @@
                         
                     </div>
 
-                    <!-- Second Row -->
-                    <div class=" flex grid- gap-x-2 justify-center col-span-1">
-                        <!-- Income Overview Chart -->
-                        <div class=" border-gray-500 border-1 border-solid bg-white drop-shadow-subs-card rounded-md">
+                <!-- Second Row -->
+                <div class=" flex grid- gap-x-2 justify-center col-span-1">
+                     <!-- Income Overview Chart -->
+                     <div class=" border-gray-500 border-1 border-solid bg-white drop-shadow-subs-card rounded-md">
+                     <div class="flex justify-center flex-col w-full">
+                            <div class="flex justify-center">
+                                <h1 class="font-poppins text-xl">Income Report Overview</h1>
+                            </div>
+                            <div class="w-[100%] py-4 flex justify-center">
+                                <hr class="h-[3px] border-0 w-[50px] bg-black">
+                            </div>
+                        </div>
+                        <div class="flex flex-row py-3">
+                            <div class="mt-[-35px]">
+                                <canvas id="IncomeChart" class=""></canvas>
+                            </div>
+                            <!-- <div class="flex flex-col gap-y-4 justify-center mt-[-50px]">
+                                <div class="text-xs">
+                                    <h1 class="font-bold">Salary</h1>
+                                    <p >Rp 100.000</p>
+                                </div>
+                                <div class="text-xs">
+                                    <h1 class="font-bold">Other Income</h1>
+                                    <p>Rp 100.000</p>
+                                </div>
+                            </div> -->
+                            <script>
+                            // PHP code to generate chart data
+                            <?php
+                                // Generate sample data
+                                $IncomeData = [
+                                'labels' => $Data['MonthIncomeCategory'],
+                                'datasets' => [
+                                    [
+
+                                    'data' => $Data['MonthIncomeAmount'],
+                                    'backgroundColor' => 'rgba(75, 192, 192, 0.2)',
+                                    'backgroundColor' => ['#04263A', '#C1DEF0'],
+                                    'borderWidth' => 1
+                                    ]
+                                ]
+                                ];
+                            ?>
+
+                            // JavaScript code to create the chart
+                            var ctx = document.getElementById('IncomeChart').getContext('2d');
+                            var myChart = new Chart(ctx, {
+                                type: 'doughnut',
+                                data: <?php echo json_encode($IncomeData); ?>,
+                                options: {
+                                    cutout: 90,
+                                    radius: '70%',
+                                    plugins: {
+                                        legend: {
+                                            position:'bottom',
+                                        }
+                                    },
+                                    scales: {
+                                        x: {
+                                            display: false // Show the x-axis
+                                        },
+                                        y: {
+                                            display: false // Hide the y-axis
+                                        }
+                                    },
+                                }
+                            });
+                            </script>
+                        </div>
+                    </div>
+                     <!-- Expense Overview Chart -->
+                    <div class=" border-gray-500 border-1 border-solid  bg-white drop-shadow-subs-card rounded-md">
                         <div class="flex justify-center flex-col w-full">
-                                <div class="flex justify-center">
-                                    <h1 class="font-poppins text-xl">Income Report Overview</h1>
-                                </div>
-                                <div class="w-[100%] py-4 flex justify-center">
-                                    <hr class="h-[3px] border-0 w-[50px] bg-black">
-                                </div>
+                            <div class="flex justify-center">
+                                <h1 class="font-poppins text-xl">Expense Report Overview</h1>
                             </div>
-                            <div class="flex flex-row py-3">
-                                <div class="mt-[-35px]">
-                                    <canvas id="IncomeChart" class=""></canvas>
-                                </div>
-                                <!-- <div class="flex flex-col gap-y-4 justify-center mt-[-50px]">
-                                    <div class="text-xs">
-                                        <h1 class="font-bold">Salary</h1>
-                                        <p >Rp 100.000</p>
-                                    </div>
-                                    <div class="text-xs">
-                                        <h1 class="font-bold">Other Income</h1>
-                                        <p>Rp 100.000</p>
-                                    </div>
-                                </div> -->
-                                <script>
-                                // PHP code to generate chart data
-                                <?php
-                                    // Generate sample data
-                                    $data = [
-                                    'labels' => ['Label 1', 'Label 2'],
-                                    'datasets' => [
-                                        [
-
-                                        'data' => [120, 180],
-                                        'backgroundColor' => 'rgba(75, 192, 192, 0.2)',
-                                        'backgroundColor' => ['#04263A', '#C1DEF0'],
-                                        'borderWidth' => 1
-                                        ]
-                                    ]
-                                    ];
-                                ?>
-
-                                // JavaScript code to create the chart
-                                var ctx = document.getElementById('IncomeChart').getContext('2d');
-                                var myChart = new Chart(ctx, {
-                                    type: 'doughnut',
-                                    data: <?php echo json_encode($data); ?>,
-                                    options: {
-                                        cutout: 90,
-                                        radius: '70%',
-                                        plugins: {
-                                            legend: {
-                                                position:'bottom',
-                                            }
-                                        },
-                                        scales: {
-                                            x: {
-                                                display: false // Show the x-axis
-                                            },
-                                            y: {
-                                                display: false // Hide the y-axis
-                                            }
-                                        },
-                                    }
-                                });
-                                </script>
+                            <div class="w-[100%] py-4 flex justify-center">
+                                <hr class="h-[3px] border-0 w-[50px] bg-black">
                             </div>
                         </div>
-                        <!-- Expense Overview Chart -->
-                        <div class=" border-gray-500 border-1 border-solid  bg-white drop-shadow-subs-card rounded-md">
-                            <div class="flex justify-center flex-col w-full">
-                                <div class="flex justify-center">
-                                    <h1 class="font-poppins text-xl">Expense Report Overview</h1>
-                                </div>
-                                <div class="w-[100%] py-4 flex justify-center">
-                                    <hr class="h-[3px] border-0 w-[50px] bg-black">
-                                </div>
+                        <div class="flex flex-row py-3">
+                            <div class="mt-[-35px]">
+                                <canvas id="ExpenseChart" class=""></canvas>
                             </div>
-                            <div class="flex flex-row py-3">
-                                <div class="mt-[-35px]">
-                                    <canvas id="ExpenseChart" class=""></canvas>
+                            <!-- <div class="grid grid-cols-2 gap-x-6 py-3">
+                                <div class="text-xs">
+                                    <h1 class="font-bold">Food & Beverage</h1>
+                                    <p >Rp 100.000</p>
                                 </div>
-                                <!-- <div class="grid grid-cols-2 gap-x-6 py-3">
-                                    <div class="text-xs">
-                                        <h1 class="font-bold">Food & Beverage</h1>
-                                        <p >Rp 100.000</p>
-                                    </div>
-                                    <div class="text-xs">
-                                        <h1 class="font-bold">Transportation</h1>
-                                        <p>Rp 100.000</p>
-                                    </div>
-                                    <div class="text-xs">
-                                        <h1 class="font-bold">House Bill</h1>
-                                        <p>Rp 100.000</p>
-                                    </div>
-                                    <div class="text-xs">
-                                        <h1 class="font-bold">Medical</h1>
-                                        <p>Rp 100.000</p>
-                                    </div>
-                                    <div class="text-xs">
-                                        <h1 class="font-bold">Education</h1>
-                                        <p>Rp 100.000</p>
-                                    </div>
-                                    <div class="text-xs">
-                                        <h1 class="font-bold">Gifts & Donation</h1>
-                                        <p>Rp 100.000</p>
-                                    </div>
-                                    <div class="text-xs">
-                                        <h1 class="font-bold">Fund Money</h1>
-                                        <p>Rp 100.000</p>
-                                    </div>
-                                </div> -->
-                                <script>
-                                // PHP code to generate chart data
-                                <?php
-                                    // Generate sample data
-                                    $data = [
-                                    'labels' => ['Label 1', 'Label 2', 'Label 3'],
-                                    'datasets' => [
-                                        [
-                                        'label' => 'Sales',
-                                        'data' => [120, 180, 150],
-                                        'backgroundColor' => 'rgba(75, 192, 192, 0.2)',
-                                        'backgroundColor' => ['#04263A', '#C1DEF0','#B5D1E3'],
-                                        'borderWidth' => 1
-                                        ]
+                                <div class="text-xs">
+                                    <h1 class="font-bold">Transportation</h1>
+                                    <p>Rp 100.000</p>
+                                </div>
+                                <div class="text-xs">
+                                    <h1 class="font-bold">House Bill</h1>
+                                    <p>Rp 100.000</p>
+                                </div>
+                                <div class="text-xs">
+                                    <h1 class="font-bold">Medical</h1>
+                                    <p>Rp 100.000</p>
+                                </div>
+                                <div class="text-xs">
+                                    <h1 class="font-bold">Education</h1>
+                                    <p>Rp 100.000</p>
+                                </div>
+                                <div class="text-xs">
+                                    <h1 class="font-bold">Gifts & Donation</h1>
+                                    <p>Rp 100.000</p>
+                                </div>
+                                <div class="text-xs">
+                                    <h1 class="font-bold">Fund Money</h1>
+                                    <p>Rp 100.000</p>
+                                </div>
+                            </div> -->
+                            <script>
+                            // PHP code to generate chart data
+                            <?php
+                                // Generate sample data
+                                $ExpenseData = [
+                                'labels' => $Data['MonthExpenseCategory'],
+                                'datasets' => [
+                                    [
+                                    'data' => $Data['MonthExpenseAmount'],
+                                    'backgroundColor' => 'rgba(75, 192, 192, 0.2)',
+                                    'backgroundColor' => ['#04263A', '#C1DEF0','#B5D1E3'],
+                                    'borderWidth' => 1
                                     ]
-                                    ];
-                                ?>
+                                ]
+                                ];
+                            ?>
 
-                                // JavaScript code to create the chart
-                                var ctx = document.getElementById('ExpenseChart').getContext('2d');
-                                var myChart = new Chart(ctx, {
-                                    type: 'doughnut',
-                                    data: <?php echo json_encode($data); ?>,
-                                    options: {
-                                        cutout: 90,
-                                        radius: '70%',
-                                        plugins: {
-                                            legend: {
-                                                position:'bottom',
-                                            }
+                            // JavaScript code to create the chart
+                            var ctx = document.getElementById('ExpenseChart').getContext('2d');
+                            var myChart = new Chart(ctx, {
+                                type: 'doughnut',
+                                data: <?php echo json_encode($ExpenseData); ?>,
+                                options: {
+                                    cutout: 90,
+                                    radius: '70%',
+                                    plugins: {
+                                        legend: {
+                                            position:'bottom',
+                                        }
+                                    },
+                                    scales: {
+                                        x: {
+                                            display: false // Show the x-axis
                                         },
-                                        scales: {
-                                            x: {
-                                                display: false // Show the x-axis
-                                            },
-                                            y: {
-                                                display: false // Hide the y-axis
-                                            }
-                                        },
-                                    }
-                                });
-                                </script>
-                            </div>
+                                        y: {
+                                            display: false // Hide the y-axis
+                                        }
+                                    },
+                                }
+                            });
+                            </script>
                         </div>
+                    </div>
 
                     </div>
 

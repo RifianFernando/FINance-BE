@@ -75,13 +75,80 @@ class DashboardController extends Controller
 
     private function getLargestTransaction($userId)
     {
+        $currentMonth = Carbon::now()->format('m');
+
         $data = TransactionJoinTable::where('user_id', $userId)
             ->join('transactions AS t', 't.id', '=', 'transaction_join_tables.transaction_id')
             ->where('t.is_expense', true)
+            ->whereMonth('t.date', '=', $currentMonth)
             ->select('t.category', DB::raw('SUM(t.amount) as total_amount'))
             ->groupBy('t.category')
             ->orderBy('total_amount', 'desc')
             ->limit(2)
+            ->get();
+
+        return $data;
+    }
+
+    private function getMonthsIncomeAmount($userId)
+    {
+        $currentMonth = Carbon::now()->format('m');
+
+        $data = TransactionJoinTable::where('user_id', $userId)
+            ->join('transactions AS t', 't.id', '=', 'transaction_join_tables.transaction_id')
+            ->where('t.is_expense', false)
+            ->whereMonth('t.date', '=', $currentMonth)
+            ->select(DB::raw('SUM(t.amount) as total_amount'))
+            ->groupBy('t.category')
+            ->orderBy('total_amount', 'desc')
+            ->get();
+
+        return $data;
+    }
+
+    private function getMonthsExpenseAmount($userId)
+    {
+        $currentMonth = Carbon::now()->format('m');
+
+        $data = TransactionJoinTable::where('user_id', $userId)
+            ->join('transactions AS t', 't.id', '=', 'transaction_join_tables.transaction_id')
+            ->where('t.is_expense', true)
+            ->whereMonth('t.date', '=', $currentMonth)
+            ->select(DB::raw('SUM(t.amount) as total_amount'))
+            ->groupBy('t.category')
+            ->orderBy('total_amount', 'desc')
+            ->get();
+
+        return $data;
+    }
+
+    private function getMonthsIncomeCategory($userId)
+    {
+        $currentMonth = Carbon::now()->format('m');
+
+        $data = TransactionJoinTable::where('user_id', $userId)
+            ->join('transactions AS t', 't.id', '=', 'transaction_join_tables.transaction_id')
+            ->where('t.is_expense', false)
+            ->whereMonth('t.date', '=', $currentMonth)
+            ->select('t.category')
+            ->groupBy('t.category')
+            ->orderByRaw('SUM(t.amount) DESC')
+            ->get();
+
+        return $data;
+    }
+
+    private function getMonthsExpenseCategory($userId)
+    {
+        $currentMonth = Carbon::now()->format('m');
+
+        $data = TransactionJoinTable::where('user_id', $userId)
+            ->join('transactions AS t', 't.id', '=', 'transaction_join_tables.transaction_id')
+            ->where('t.is_expense', true)
+            ->whereMonth('t.date', '=', $currentMonth)
+            ->select('t.category')
+            ->groupBy('t.category')
+            ->orderByRaw('SUM(t.amount) DESC')
             ->get();
 
         return $data;
@@ -117,6 +184,18 @@ class DashboardController extends Controller
         //get largest transaction
         $LargestTransaction = $this->getLargestTransaction($user->id);
 
+        //get this month's Income Amount
+        $getMonthsIncomeAmount = $this->getMonthsIncomeAmount($user->id);
+
+        //get this month's Income Amount
+        $getMonthsExpenseAmount = $this->getMonthsExpenseAmount($user->id);
+
+        //get this month's Income Category
+        $getMonthsIncomeCategory = $this->getMonthsIncomeCategory($user->id);
+
+        //get this month's Income Category
+        $getMonthsExpenseCategory = $this->getMonthsExpenseCategory($user->id);
+
         $Data = [
             'FirstName' => $FirstName,
             'Income' => $Income,
@@ -127,6 +206,10 @@ class DashboardController extends Controller
             'LatestTransaction' => $LatestTransaction,
             'LargestTransaction' => $LargestTransaction,
             'SetBudget' => $SetBudget,
+            'MonthIncomeAmount' => $getMonthsIncomeAmount->pluck('total_amount')->ToArray(),
+            'MonthIncomeCategory' => $getMonthsIncomeCategory->pluck('category')->ToArray(),
+            'MonthExpenseAmount' => $getMonthsExpenseAmount->pluck('total_amount')->ToArray(),
+            'MonthExpenseCategory' => $getMonthsExpenseCategory->pluck('category')->ToArray(),
         ];
 
         return $Data;
