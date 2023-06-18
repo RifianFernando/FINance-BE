@@ -53,7 +53,7 @@ class DashboardController extends Controller
             ->first();
         $data = $data == null ? 0 : $data->amount;
         if ($data == null) {
-            $data = 0;
+            $data = 102938.4756;
         }
 
         return $data;
