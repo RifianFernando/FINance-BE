@@ -193,14 +193,20 @@
                                                 src="{{ asset('assets/dashboard/Budget.png') }}">
                                         </div>
 
-                                        <div class="ml-2">
-                                            <h1 class="font-bold text-xs md:text-md lg:text-lg">Budget's Left</h1>
-                                            @if ($Data['Budget'] < 0)
-                                                <h1 class="text-md lg:text-lg xl:text-xl font-castoro">Rp 0</h1>
-                                            @else
-                                                <h1 class="text-md lg:text-lg xl:text-xl font-castoro">Rp {{ number_format($Data['Budget'],2, '.', ',') }}</h1>
-                                            @endif
-                                        </div>
+                                        @if($Data['Budget'] == 102938.4756)
+                                            <div class="ml-2">
+                                                <h1 class="font-bold text-xs md:text-md lg:text-lg">You have yet to set your budget</h1>
+                                            </div>
+                                        @else
+                                            <div class="ml-2">
+                                                <h1 class="font-bold text-xs md:text-md lg:text-lg">Budget's Left</h1>
+                                                @if ($Data['Budget'] < 0)
+                                                    <h1 class="text-md lg:text-lg xl:text-xl font-castoro">Rp 0</h1>
+                                                @else
+                                                    <h1 class="text-md lg:text-lg xl:text-xl font-castoro">Rp {{ number_format($Data['Budget'],2, '.', ',') }}</h1>
+                                                @endif
+                                            </div>
+                                        @endif
                                     </div>
 
                                     <button id="showFormButton"
@@ -211,7 +217,12 @@
                                         Set Budget
                                     </button>
 
-                                    @if ($Data['Budget'] < 0)
+                                    @if ($Data['Budget'] == 102938.4756)
+                                        <p class="text-xs text-gray-500 py-2">
+                                            <Span class="font-bold">Reminder :</Span>
+                                                Let's set your budget now
+                                        </p>
+                                    @elseif ($Data['Budget'] < 0)
                                         <p class="text-xs text-gray-500 py-2">
                                             <Span class="font-bold">Reminder :</Span>
                                                 You have exceeded the set budget by
@@ -283,7 +294,11 @@
                         <div class="w-full h-full flex flex-col justify-around">
                             <div>
                                 <h1 class="text-sm ">Current set budget</h1>
-                                <h1 class="text-3xl">Rp {{ number_format($Data['SetBudget'], 2, '.', ',') }}</h1>
+                                @if($Data['Budget'] == 102938.4756)
+                                    <h1 class="text-3xl">No Budget</h1>
+                                @else
+                                    <h1 class="text-3xl">Rp {{ number_format($Data['SetBudget'], 2, '.', ',') }}</h1>
+                                @endif
                             </div>
 
                             <form action="{{ route('budget.set') }}" method="POST" class="flex flex-col"
