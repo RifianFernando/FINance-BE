@@ -65,10 +65,10 @@
                     </div>
 
                 <!-- Second Row -->
-                <div class=" flex grid- gap-x-2 justify-center col-span-1">
+                <div class=" grid grid-cols-4 gap-x-5 justify-center col-span-2 ">
                      <!-- Income Overview Chart -->
-                     <div class=" border-gray-500 border-1 border-solid bg-white drop-shadow-subs-card rounded-md">
-                     <div class="flex justify-center flex-col w-full">
+                    <div class=" border-gray-500 border-1 border-solid bg-white drop-shadow-subs-card rounded-md col-span-1">
+                        <div class="flex justify-center flex-col w-full">
                             <div class="flex justify-center">
                                 <h1 class="font-poppins text-xl">Income Report Overview</h1>
                             </div>
@@ -91,9 +91,7 @@
                                 </div>
                             </div> -->
                             <script>
-                            // PHP code to generate chart data
                             <?php
-                                // Generate sample data
                                 $IncomeData = [
                                 'labels' => $Data['MonthIncomeCategory'],
                                 'datasets' => [
@@ -108,7 +106,7 @@
                                 ];
                             ?>
 
-                            // JavaScript code to create the chart
+  
                             var ctx = document.getElementById('IncomeChart').getContext('2d');
                             var myChart = new Chart(ctx, {
                                 type: 'doughnut',
@@ -123,10 +121,10 @@
                                     },
                                     scales: {
                                         x: {
-                                            display: false // Show the x-axis
+                                            display: false
                                         },
                                         y: {
-                                            display: false // Hide the y-axis
+                                            display: false
                                         }
                                     },
                                 }
@@ -135,7 +133,7 @@
                         </div>
                     </div>
                      <!-- Expense Overview Chart -->
-                    <div class=" border-gray-500 border-1 border-solid  bg-white drop-shadow-subs-card rounded-md">
+                    <div class=" border-gray-500 border-1 border-solid  bg-white drop-shadow-subs-card rounded-md col-span-1">
                         <div class="flex justify-center flex-col w-full">
                             <div class="flex justify-center">
                                 <h1 class="font-poppins text-xl">Expense Report Overview</h1>
@@ -179,9 +177,7 @@
                                 </div>
                             </div> -->
                             <script>
-                            // PHP code to generate chart data
                             <?php
-                                // Generate sample data
                                 $ExpenseData = [
                                 'labels' => $Data['MonthExpenseCategory'],
                                 'datasets' => [
@@ -195,7 +191,6 @@
                                 ];
                             ?>
 
-                            // JavaScript code to create the chart
                             var ctx = document.getElementById('ExpenseChart').getContext('2d');
                             var myChart = new Chart(ctx, {
                                 type: 'doughnut',
@@ -210,10 +205,10 @@
                                     },
                                     scales: {
                                         x: {
-                                            display: false // Show the x-axis
+                                            display: false 
                                         },
                                         y: {
-                                            display: false // Hide the y-axis
+                                            display: false 
                                         }
                                     },
                                 }
@@ -221,64 +216,63 @@
                             </script>
                         </div>
                     </div>
+                            <div class="w-full bg-slate-50 drop-shadow-subs-card px-4 py-2 col-span-2">
+                                <div class="flex justify-center flex-col w-full">
+                                    <div class="flex justify-center">
+                                        <h1 class="font-poppins text-xl">Transaction Report Overview</h1>
+                                    </div>
+                                    <div class="w-[100%] py-4 flex justify-center">
+                                        <hr class="h-[3px] border-0 w-[10%] bg-black">
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <canvas id="TransactionReportChart"></canvas>
+
+                                    <script>
+                                    <?php
+                                        $data = [
+                                        'labels' => ['Week 1', 'Week 2', 'Week 3', 'Week 4','Week 3', 'Week 4'],
+                                        'datasets' => [
+                                            [
+                                            'label' => 'Sales',
+                                            'data' => [120, 180, 150, 200, 220,220],
+                                            'backgroundColor' => '#316787',
+                                            'borderColor' => '#C0E2F6',
+                                            'borderWidth' => 1
+                                            ]
+                                        ]
+                                        ];
+                                    ?>
+
+                                    var ctx = document.getElementById('TransactionReportChart').getContext('2d');
+                                    var myChart = new Chart(ctx, {
+                                        type: 'bar',
+                                        data: <?php echo json_encode($data); ?>,
+                                        options: {
+                                            scales: {
+                                                y: {
+                                                beginAtZero: true
+                                                }
+                                            },
+                                            plugins: {
+                                                legend: {
+                                                position: 'bottom'
+                                                }
+                                            }
+                                        }
+                                    });
+                                    </script>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
                     </div>
 
                 <!-- Third Row -->
                 <div class="flex justify-center items-center flex-row w-full col-span-1">
-                    <div class="w-full bg-slate-50 drop-shadow-subs-card px-4 py-2">
-                            <div class="flex justify-center flex-col w-full">
-                                <div class="flex justify-center">
-                                    <h1 class="font-poppins text-xl">Transaction Report Overview</h1>
-                                </div>
-                                <div class="w-[100%] py-4 flex justify-center">
-                                    <hr class="h-[3px] border-0 w-[10%] bg-black">
-                                </div>
-                            </div>
-
-                            <div>
-                                <canvas id="TransactionReportChart"></canvas>
-
-                                <script>
-                                // PHP code to generate chart data
-                                <?php
-                                    // Generate sample data
-                                    $data = [
-                                    'labels' => ['Week 1', 'Week 2', 'Week 3', 'Week 4','Week 3', 'Week 4'],
-                                    'datasets' => [
-                                        [
-                                        'label' => 'Sales',
-                                        'data' => [120, 180, 150, 200, 220,220],
-                                        'backgroundColor' => '#316787',
-                                        'borderColor' => '#C0E2F6',
-                                        'borderWidth' => 1
-                                        ]
-                                    ]
-                                    ];
-                                ?>
-
-                                // JavaScript code to create the chart
-                                var ctx = document.getElementById('TransactionReportChart').getContext('2d');
-                                var myChart = new Chart(ctx, {
-                                    type: 'bar',
-                                    data: <?php echo json_encode($data); ?>,
-                                    options: {
-                                        scales: {
-                                            y: {
-                                            beginAtZero: true
-                                            }
-                                        },
-                                        plugins: {
-                                            legend: {
-                                            position: 'bottom'
-                                            }
-                                        }
-                                    }
-                                });
-                                </script>
-                            </div>
-                    </div>
-                </div>
+                    
 
                 </div>
 
