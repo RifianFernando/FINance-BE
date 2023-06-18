@@ -147,7 +147,7 @@ class DashboardController extends Controller
             ->join('transactions AS t', 't.id', '=', 'transaction_join_tables.transaction_id')
             ->where('t.is_expense', true)
             ->whereMonth('t.date', '=', $currentMonth)
-            ->select('t.category', DB::raw('SUM(t.amount) as total_amount'))
+            ->select('t.category')
             ->groupBy('t.category')
             ->orderByRaw('SUM(t.amount) DESC')
             ->get();
@@ -207,10 +207,10 @@ class DashboardController extends Controller
             'LatestTransaction' => $LatestTransaction,
             'LargestTransaction' => $LargestTransaction,
             'SetBudget' => $SetBudget,
-            'MonthIncomeAmount' => $getMonthsIncomeAmount->ToArray(),
-            'MonthIncomeCategory' => $getMonthsIncomeCategory->ToArray(),
-            'MonthExpenseAmount' => $getMonthsExpenseAmount->ToArray(),
-            'MonthExpenseCategory' => $getMonthsIncomeCategory->ToArray(),
+            'MonthIncomeAmount' => $getMonthsIncomeAmount->pluck('total_amount')->ToArray(),
+            'MonthIncomeCategory' => $getMonthsIncomeCategory->pluck('category')->ToArray(),
+            'MonthExpenseAmount' => $getMonthsExpenseAmount->pluck('total_amount')->ToArray(),
+            'MonthExpenseCategory' => $getMonthsExpenseCategory->pluck('category')->ToArray(),
         ];
 
         return $Data;
