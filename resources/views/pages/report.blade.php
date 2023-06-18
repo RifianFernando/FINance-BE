@@ -8,7 +8,7 @@
 @section('body')
 
     <body>
-        <div class="flex flex-col items-center w-full bg-darker-white">
+        <div class="flex flex-col items-center w-[1320px]  bg-darker-white">
             <div>
                 <h1 class="font-castoro text-5xl mt-2">Report</h1>
             </div>
@@ -18,18 +18,17 @@
                 <hr class="h-[2px] border-0 w-[30%] bg-black">
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 justify-center mt-4 p-4 gap-y-5 ">
-                <!-- First Row -->
-                <div class="grid grid-cols-6 w-full gap-x-2 xl:gap-x-2 gap-y-4 sm:gap-y-2 col-span-1">
+            <div class="grid grid-cols-1 md:grid-cols-2 mt-4 p-4 gap-y-5 w-full">
+            <!-- First Row -->
+                <div class="grid grid-cols-6 gap-x-2 xl:gap-x-2 gap-y-4 sm:gap-y-2 col-span-1 ">
                     <!-- Wallet  -->
                     <div class="grid col-span-12 sm:col-span-6 bg-white drop-shadow-subs-card py-2 px-4 lg:px-8 rounded-md">
                         <div class="flex flex-row justify-between text-gray-400 text-sm lg:text-md py-1">
                             <h1>Wallet</h1>
                             <h1>Total Balance</h1>
                         </div>
-                        <div
-                            class="flex flex-row justify-between items-center text-black font-bold text-sm py-2 font-poppins">
-                            <h1 class="flex flex-row items-center text-2xl"><img class="w-[25px] h-[25px] text-white mr-2"
+                        <div class="flex flex-row justify-between items-center text-black font-bold text-sm py-2 font-poppins">
+                            <h1 class="flex flex-row items-center justify-center text-2xl"><img class="w-[25px] h-[25px] text-white mr-2"
                                     src="{{ asset('assets/dashboard/Wallet.png') }}">
                                 Rifian's
                                 Wallet
@@ -71,10 +70,9 @@
 
                 <!-- Second Row -->
                 <div class=" flex grid- gap-x-2 justify-center col-span-1">
-                    <!-- Income Overview Chart -->
-                    <div
-                        class="w-[550px] h-[360px] border-gray-500 border-1 border-solid bg-white drop-shadow-subs-card rounded-md">
-                        <div class="flex justify-center flex-col w-full">
+                     <!-- Income Overview Chart -->
+                     <div class=" border-gray-500 border-1 border-solid bg-white drop-shadow-subs-card rounded-md">
+                     <div class="flex justify-center flex-col w-full">
                             <div class="flex justify-center">
                                 <h1 class="font-poppins text-xl">Income Report Overview</h1>
                             </div>
@@ -139,9 +137,8 @@
                             </script>
                         </div>
                     </div>
-                    <!-- Expense Overview Chart -->
-                    <div
-                        class="max-w-[550px] h-[360px] border-gray-500 border-1 border-solid  bg-white drop-shadow-subs-card rounded-md">
+                     <!-- Expense Overview Chart -->
+                    <div class=" border-gray-500 border-1 border-solid  bg-white drop-shadow-subs-card rounded-md">
                         <div class="flex justify-center flex-col w-full">
                             <div class="flex justify-center">
                                 <h1 class="font-poppins text-xl">Expense Report Overview</h1>
