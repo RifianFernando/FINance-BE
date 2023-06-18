@@ -113,7 +113,7 @@
                 </div>
                 
             <!-- Payment -->
-                <div id="formContainer" class="fixed inset-0 flex items-center justify-center">
+                <div id="formContainer" class="fixed inset-0 hidden items-center justify-center">
 
                     <div class="overlay fixed inset-0 bg-black/[0.5]"></div>
 
