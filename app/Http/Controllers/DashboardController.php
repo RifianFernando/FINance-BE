@@ -155,8 +155,22 @@ class DashboardController extends Controller
         //get data
         $Data = $this->UserData($user);
 
+        // get all income
+        $IncomeReport =
+            TransactionJoinTable::where('user_id', $user->id)
+            ->join('transactions AS t', 't.id', '=', 'transaction_join_tables.transaction_id')
+            ->where('t.is_expense', false)
+            ->select('t.*')
+            ->get();
+        if (empty($IncomeReport)) {
+            $IncomeReport = null;
+        } else {
+            $IncomeReport = $IncomeReport->toArray();
+        }
+
         return view('pages.report', [
             'Data' => $Data,
+            'IncomeReport' => $IncomeReport,
         ]);
     }
 }
