@@ -193,7 +193,7 @@
                                                 src="{{ asset('assets/dashboard/Budget.png') }}">
                                         </div>
 
-                                        @if($Data['Budget'] == 102938.4756)
+                                        @if($Data['SetBudget'] == 0)
                                             <div class="ml-2">
                                                 <h1 class="font-bold text-xs md:text-md lg:text-lg">You have yet to set your budget</h1>
                                             </div>
@@ -217,7 +217,7 @@
                                         Set Budget
                                     </button>
 
-                                    @if ($Data['Budget'] == 102938.4756)
+                                    @if ($Data['SetBudget'] == 0)
                                         <p class="text-xs text-gray-500 py-2">
                                             <Span class="font-bold">Reminder :</Span>
                                                 Let's set your budget now
@@ -294,7 +294,7 @@
                         <div class="w-full h-full flex flex-col justify-around">
                             <div>
                                 <h1 class="text-sm ">Current set budget</h1>
-                                @if($Data['Budget'] == 102938.4756)
+                                @if($Data['SetBudget'] == 0)
                                     <h1 class="text-3xl">No Budget</h1>
                                 @else
                                     <h1 class="text-3xl">Rp {{ number_format($Data['SetBudget'], 2, '.', ',') }}</h1>
