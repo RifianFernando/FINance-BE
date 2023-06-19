@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Balance_Money_User extends Model
+class budget extends Model
 {
     use HasFactory;
 
@@ -15,11 +15,14 @@ class Balance_Money_User extends Model
      * @var array<int, string>
      */
     protected $fillable = [
-        'balance_amount'
+        'user_id',
+        'budget_amount'
     ];
 
-    public function TransactionJoinTable()
+
+
+    public function user()
     {
-        return $this->hasOne(TransactionJoinTable::class);
+        return $this->belongsTo(User::class);
     }
 }

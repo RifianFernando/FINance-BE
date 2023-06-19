@@ -69,30 +69,6 @@ class TransactionController extends Controller
     }
 
     /**
-     * Store a newly created resource budget in storage.
-     */
-    public function setBudget(StoreBudgetReqeust $request)
-    {
-        $userId = auth()->user()->id;
-        try {
-            $Budget_user =
-                TransactionJoinTable::where('user_id', $userId)
-                ->get('balance_id')
-                ->first()->balance_id;
-
-            $BudgetAmount =
-                Balance_Money_User::where('id', $Budget_user)
-                ->first();
-            $BudgetAmount->budget_amount = $request->budget;
-            $BudgetAmount->save();
-        } catch (\Exception $e) {
-            return redirect(route('transaction.view'))->with('error', 'Please add transaction first!');
-        }
-
-        return redirect(route('dashboard'))->with('success', 'Budget has been set!');
-    }
-
-    /**
      * Display the specified resource.
      */
     public function show(Transaction $transaction)

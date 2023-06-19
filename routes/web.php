@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BudgetController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\TransactionController;
@@ -33,7 +34,7 @@ Route::group(['middleware' => ['auth']], function () {
     Route::post('/transaction', [TransactionController::class, 'create'])->name('transaction.create');
     Route::get('/report', [DashboardController::class, 'reportIndex'])->name('report');
     Route::post('/budget/add', [
-        TransactionController::class, 'setBudget'
+        BudgetController::class, 'setBudget'
     ])->name('budget.set');
 });
 

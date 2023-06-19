@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Balance_Money_User;
+use App\Models\budget;
 use App\Models\TransactionJoinTable;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
@@ -47,8 +48,7 @@ class DashboardController extends Controller
     private function getBudget($userId)
     {
         //get total balance with query builder
-        $data =  TransactionJoinTable::where('user_id', $userId)
-            ->join('balance__money__users AS bmu', 'bmu.id', '=', 'transaction_join_tables.balance_id')
+        $data =  budget::where('user_id', $userId)
             ->select('budget_amount AS amount')
             ->first();
         $data = $data == null ? 0 : $data->amount;
